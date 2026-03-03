@@ -1,372 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Docket &mdash; March 3, 2026</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0D1B2A; --navy2: #162336; --navy3: #1e3050;
+      --gold: #C9A84C; --gold2: #e8c96a;
+      --cream: #F9F6F0; --cream2: #f0ebe0;
+      --ink: #1A1A2E; --muted: #6B7280; --rule: #E5E1D8;
+      --red: #C0392B; --red2: #e74c3c;
+      --green: #166534; --green2: #1a7a40;
+      --slate: #334155; --amber: #92400e;
+    }
+    body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; line-height: 1.6; }
 
-    body {
-      background: #0D1B2A;
-      color: #F9F6F0;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 15px;
-      line-height: 1.6;
-    }
+    /* ── HEADER ── */
+    .top-bar { background: var(--navy); color: rgba(255,255,255,0.4); font-size: 10.5px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; padding: 7px 40px; display: flex; justify-content: space-between; }
+    .top-bar span { color: var(--gold); }
+    .masthead { background: var(--navy); padding: 44px 40px 28px; border-bottom: 4px solid var(--gold); }
+    .mast-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+    .mast-title { font-family: 'DM Serif Display', serif; font-size: clamp(52px, 9vw, 100px); line-height: 0.9; color: #fff; letter-spacing: -0.02em; }
+    .mast-title em { font-style: italic; color: var(--gold); }
+    .mast-row { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .mast-sub { font-size: 12px; color: rgba(255,255,255,0.35); letter-spacing: 0.05em; }
+    .mast-meta { display: flex; gap: 24px; flex-wrap: wrap; }
+    .mmi { font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 0.15em; text-transform: uppercase; }
+    .mmi span { color: rgba(255,255,255,0.7); }
 
-    /* ─── HEADER ─── */
-    .header {
-      background: #0D1B2A;
-      border-bottom: 3px solid #C9A84C;
-      padding: 40px 24px 28px;
-      text-align: center;
-    }
-    .header .kicker {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #C9A84C;
-      opacity: 0.8;
-      margin-bottom: 10px;
-    }
-    .header .masthead {
-      font-family: 'DM Serif Display', serif;
-      font-size: 56px;
-      color: #F9F6F0;
-      letter-spacing: 6px;
-      line-height: 1;
-    }
-    .header .masthead span {
-      color: #C9A84C;
-    }
-    .header .tagline {
-      font-size: 13px;
-      color: #F9F6F0;
-      opacity: 0.55;
-      margin-top: 10px;
-      letter-spacing: 1px;
-    }
-    .header .date-strip {
-      display: inline-block;
-      margin-top: 16px;
-      background: #C9A84C18;
-      border: 1px solid #C9A84C44;
-      border-radius: 20px;
-      padding: 5px 18px;
-      font-size: 12px;
-      color: #C9A84C;
-      letter-spacing: 1px;
-      font-weight: 500;
-    }
+    /* ── GLANCE ── */
+    .glance { background: var(--navy2); padding: 20px 40px; border-bottom: 2px solid rgba(201,168,76,0.3); }
+    .gl { font-size: 10px; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .glance-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px 24px; }
+    .gi { font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.55; padding-left: 14px; position: relative; }
+    .gi::before { content: '\2014'; position: absolute; left: 0; color: var(--gold); }
+    .gi strong { color: var(--white, #fff); }
 
-    /* ─── LAYOUT ─── */
-    .container {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 28px 20px 48px;
-    }
+    main { max-width: 1300px; margin: 0 auto; padding: 0 40px 60px; }
 
-    /* ─── SECTION LABEL ─── */
-    .section-label {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: #C9A84C;
-      margin: 36px 0 14px;
-    }
-    .section-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: #C9A84C44;
-    }
+    /* ── SECTION HEADERS ── */
+    .sh { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+    .sh-label { font-family: 'DM Serif Display', serif; font-size: 18px; }
+    .sh-desc { font-size: 11px; color: var(--muted); font-style: italic; flex: 1; }
+    .sh-tag { font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 2px 9px; border-radius: 100px; white-space: nowrap; }
 
-    /* ─── CARD ─── */
-    .card {
-      background: #112035;
-      border-radius: 10px;
-      padding: 20px 22px;
-      margin-bottom: 10px;
-      border-left: 3px solid #C9A84C;
-      transition: border-color 0.2s;
-    }
-    .card.top-story {
-      background: #142840;
-      border-left: 4px solid #C9A84C;
-    }
-    .card .flag {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-      color: #C9A84C;
-      margin-bottom: 9px;
-    }
-    .card h3 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 20px;
-      color: #F9F6F0;
-      line-height: 1.3;
-      margin-bottom: 10px;
-    }
-    .card.top-story h3 {
-      font-size: 22px;
-    }
-    .card p {
-      font-size: 14px;
-      color: #b8b0a6;
-      line-height: 1.65;
-      margin-bottom: 14px;
-    }
-    .card-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 11px;
-      color: #55606d;
-      border-top: 1px solid #1c3452;
-      padding-top: 10px;
-    }
-    .card-footer a {
-      color: #C9A84C;
-      text-decoration: none;
-      font-weight: 500;
-      letter-spacing: 0.3px;
-    }
-    .card-footer a:hover { text-decoration: underline; }
+    /* ── SECTION 1: TOP STORY — cinematic, full-bleed navy ── */
+    .section-top { background: var(--navy); margin: 0 -40px; padding: 40px 40px 44px; border-bottom: 3px solid var(--gold); }
+    .section-top .sh { margin-bottom: 24px; }
+    .section-top .sh-label { color: var(--gold); font-size: 13px; letter-spacing: 0.25em; text-transform: uppercase; font-family: 'DM Sans', sans-serif; font-weight: 700; }
+    .section-top .sh-tag { background: var(--red); color: #fff; border: none; }
+    .top-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+    .top-hero { background: var(--navy3); border: 1px solid rgba(201,168,76,0.25); border-left: 4px solid var(--gold); padding: 28px; border-radius: 2px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 12px; transition: border-color 0.2s; }
+    .top-hero:hover { border-left-color: var(--gold2); }
+    .hero-flag { font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red2); }
+    .top-hero h2 { font-family: 'DM Serif Display', serif; font-size: 26px; line-height: 1.2; color: #fff; }
+    .top-hero p { font-size: 13.5px; line-height: 1.75; color: rgba(255,255,255,0.6); }
+    .top-hero .callout { background: rgba(201,168,76,0.1); border-left: 3px solid var(--gold); padding: 10px 14px; font-size: 12px; color: rgba(255,255,255,0.65); font-style: italic; }
+    .top-hero .foot { margin-top: auto; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 11px; color: rgba(255,255,255,0.25); display: flex; justify-content: space-between; }
+    .top-sidebar { display: flex; flex-direction: column; gap: 14px; }
+    .top-side-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); padding: 18px; border-radius: 2px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 8px; transition: background 0.2s; }
+    .top-side-card:hover { background: rgba(255,255,255,0.07); }
+    .top-side-card h3 { font-family: 'DM Serif Display', serif; font-size: 15px; line-height: 1.3; color: #fff; }
+    .top-side-card p { font-size: 12px; line-height: 1.6; color: rgba(255,255,255,0.5); }
+    .top-side-card .foot { margin-top: auto; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 10px; color: rgba(255,255,255,0.2); display: flex; justify-content: space-between; }
 
-    /* ─── SPORTS CARDS ─── */
-    .sports-card {
-      background: #0f1f32;
-      border-left: 3px solid #C9A84C;
-      border-radius: 10px;
-      padding: 18px 22px;
-      margin-bottom: 10px;
-    }
-    .sports-card .team-name {
-      font-family: 'DM Serif Display', serif;
-      font-size: 19px;
-      color: #F9F6F0;
-      margin-bottom: 4px;
-    }
-    .sports-card .meta {
-      font-size: 11px;
-      color: #C9A84C;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-    .sports-card .result {
-      font-size: 14px;
-      color: #b8b0a6;
-      line-height: 1.55;
-    }
-    .sports-card .tonight-badge {
-      display: inline-block;
-      margin-top: 10px;
-      background: #C9A84C1a;
-      border: 1px solid #C9A84C55;
-      border-radius: 5px;
-      padding: 6px 12px;
-      font-size: 12px;
-      color: #C9A84C;
-      font-weight: 600;
-    }
+    /* ── SECTION 2: POLITICS — broadsheet newspaper ── */
+    .section-politics { padding: 40px 0 0; }
+    .section-politics .sh { border-bottom: 3px double var(--ink); padding-bottom: 10px; margin-bottom: 20px; }
+    .section-politics .sh-label { color: var(--ink); font-size: 22px; }
+    .section-politics .sh-tag { background: var(--ink); color: var(--cream); border: none; }
+    .pol-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 0; border: 1px solid var(--ink); }
+    .pol-card { padding: 22px; border-right: 1px solid var(--ink); text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 10px; transition: background 0.15s; }
+    .pol-card:last-child { border-right: none; }
+    .pol-card:hover { background: var(--cream2); }
+    .pol-card.lead { border-right: 2px solid var(--ink); }
+    .pol-kicker { font-size: 9px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--rule); padding-bottom: 6px; }
+    .pol-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; line-height: 1.25; color: var(--ink); }
+    .pol-card.lead h3 { font-size: 22px; }
+    .pol-card p { font-size: 12.5px; line-height: 1.7; color: var(--slate); }
+    .pol-card .foot { margin-top: auto; padding-top: 8px; font-size: 10.5px; color: var(--muted); border-top: 1px solid var(--rule); display: flex; justify-content: space-between; }
+    .pol-row2 { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--ink); border-top: none; }
+    .pol-row2 .pol-card { border-right: 1px solid var(--ink); }
+    .pol-row2 .pol-card:last-child { border-right: none; }
 
-    /* ─── FOOTER ─── */
-    .footer {
-      background: #071420;
-      border-top: 2px solid #1a3050;
-      padding: 28px 20px;
-      text-align: center;
-      font-size: 12px;
-      color: #3d5068;
-      letter-spacing: 0.5px;
+    /* ── SECTION 3: INTERNATIONAL — dark slate with color accents ── */
+    .section-intl { background: var(--slate); margin: 40px -40px 0; padding: 36px 40px 40px; }
+    .section-intl .sh { margin-bottom: 22px; }
+    .section-intl .sh-label { color: rgba(255,255,255,0.9); font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; font-family: 'DM Sans', sans-serif; font-weight: 600; }
+    .section-intl .sh-tag { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.15); }
+    .intl-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+    .intl-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-top: 3px solid; padding: 20px; border-radius: 2px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 10px; transition: background 0.2s; }
+    .intl-card:hover { background: rgba(255,255,255,0.09); }
+    .intl-card.c1 { border-top-color: #e74c3c; }
+    .intl-card.c2 { border-top-color: var(--gold); }
+    .intl-card.c3 { border-top-color: #3498db; }
+    .intl-region { font-size: 9px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; }
+    .intl-card.c1 .intl-region { color: #e74c3c; }
+    .intl-card.c2 .intl-region { color: var(--gold); }
+    .intl-card.c3 .intl-region { color: #5dade2; }
+    .intl-card h3 { font-family: 'DM Serif Display', serif; font-size: 16px; line-height: 1.3; color: #fff; }
+    .intl-card p { font-size: 12.5px; line-height: 1.65; color: rgba(255,255,255,0.55); }
+    .intl-card .foot { margin-top: auto; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 10px; color: rgba(255,255,255,0.25); display: flex; justify-content: space-between; }
+
+    /* ── SECTION 4: MARKETS — amber terminal ── */
+    .section-markets { background: #1a1200; margin: 0 -40px; padding: 32px 40px 36px; border-top: 3px solid #92400e; border-bottom: 3px solid #92400e; }
+    .section-markets .sh { margin-bottom: 18px; }
+    .section-markets .sh-label { color: #f59e0b; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; font-family: 'DM Sans', sans-serif; font-weight: 600; }
+    .section-markets .sh-tag { background: #92400e; color: #fbbf24; border: none; font-size: 9px; }
+    .mkt-card { background: rgba(245,158,11,0.07); border: 1px solid rgba(245,158,11,0.2); border-left: 4px solid #f59e0b; padding: 22px 26px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 10px; transition: background 0.2s; max-width: 900px; }
+    .mkt-card:hover { background: rgba(245,158,11,0.11); }
+    .mkt-flag { font-size: 9px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #f59e0b; }
+    .mkt-card h3 { font-family: 'DM Serif Display', serif; font-size: 20px; line-height: 1.2; color: #fbbf24; }
+    .mkt-card p { font-size: 13px; line-height: 1.7; color: rgba(255,220,100,0.55); }
+    .mkt-card .foot { padding-top: 10px; border-top: 1px solid rgba(245,158,11,0.15); font-size: 11px; color: rgba(245,158,11,0.3); display: flex; justify-content: space-between; }
+
+    /* ── SECTION 5: NY SPORTS — broadcast scoreboard ── */
+    .section-sports { padding: 40px 0 0; }
+    .section-sports .sh { border-bottom: 2px solid var(--red); padding-bottom: 10px; margin-bottom: 20px; }
+    .section-sports .sh-label { color: var(--red); font-size: 20px; }
+    .section-sports .sh-tag { background: var(--red); color: #fff; border: none; }
+    .sports-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .sport-card { border: 1px solid var(--rule); border-top: 4px solid; background: #fff; padding: 20px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 8px; transition: box-shadow 0.15s; }
+    .sport-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+    .sport-card.nhl { border-top-color: #003f8f; }
+    .sport-card.mlb { border-top-color: #003087; }
+    .sport-card.ncaa { border-top-color: #e55b13; }
+    .sport-league { font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+    .sport-team { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--ink); line-height: 1; }
+    .sport-record { font-size: 12px; font-weight: 600; color: var(--slate); margin-top: 2px; }
+    .sport-result { font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .sport-result strong { color: var(--ink); }
+    .sport-card .foot { margin-top: auto; padding-top: 10px; border-top: 1px solid var(--rule); font-size: 10px; color: var(--muted); display: flex; justify-content: space-between; }
+    .badge { display: inline-block; font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.1em; }
+    .badge-l { background: #fee2e2; color: var(--red); }
+    .badge-tonight { background: #fef3c7; color: #92400e; }
+    .badge-st { background: #dbeafe; color: #1d4ed8; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--navy); padding: 28px 40px; border-top: 4px solid var(--gold); margin-top: 60px; }
+    .fi { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
+    .ft { font-family: 'DM Serif Display', serif; font-size: 22px; color: #fff; }
+    .ft em { color: var(--gold); font-style: italic; }
+    .fs { font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 4px; }
+    .fr { font-size: 11px; color: rgba(255,255,255,0.25); text-align: right; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .top-layout, .intl-grid, .sports-grid { grid-template-columns: 1fr 1fr; }
+      .pol-grid { grid-template-columns: 1fr; }
+      .pol-card { border-right: none; border-bottom: 1px solid var(--ink); }
+      .pol-row2 { grid-template-columns: 1fr; }
     }
-    .footer strong {
-      color: #C9A84C;
-      font-family: 'DM Serif Display', serif;
-      font-size: 14px;
+    @media (max-width: 640px) {
+      body { overflow-x: hidden; }
+      .top-bar, .masthead, .section-top, .section-intl, .section-markets, main, footer { padding-left: 16px; padding-right: 16px; }
+      .section-top, .section-intl, .section-markets { margin-left: -16px; margin-right: -16px; }
+      .top-layout, .intl-grid, .sports-grid, .pol-grid, .pol-row2 { grid-template-columns: 1fr; }
+      .glance-grid { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<div class="header">
-  <div class="kicker">Your Morning Brief</div>
-  <div class="masthead">THE <span>DOCKET</span></div>
-  <div class="tagline">For Matt Reilly &bull; What matters today</div>
-  <div class="date-strip">Tuesday, March 3, 2026</div>
+<div class="top-bar">
+  <div>U.S. Department of Justice &bull; Criminal Division</div>
+  <div><span>The Docket</span> &bull; Tuesday, March 3, 2026</div>
 </div>
 
-<div class="container">
-
-  <!-- ═══ TOP STORY ═══ -->
-  <div class="section-label">Top Story</div>
-
-  <div class="card top-story">
-    <div class="flag">&#9888;&#65039; Breaking &mdash; Iran War</div>
-    <h3>Israel Steps Up Airstrikes in Tehran, Iran Widens Its Retaliation</h3>
-    <p>Israel escalated its air campaign against Tehran overnight as Iran broadened its retaliatory strikes, marking a dangerous new phase in direct conflict. US forces remain entangled in the widening exchange with diplomatic channels under severe strain. The window for de-escalation is narrowing fast.</p>
-    <div class="card-footer">
-      <span>AP News &bull; March 3, 2026</span>
-      <a href="https://apnews.com/article/iran-israel-us-03-03-2026-8755877b603e46ed3df8107689c1ee23" target="_blank">Read more &#8594;</a>
+<div class="masthead">
+  <div class="mast-eyebrow">Matt Reilly&rsquo;s Daily Brief &mdash; Issue No. 1</div>
+  <div class="mast-title">The <em>Docket</em></div>
+  <div class="mast-row">
+    <div class="mast-sub">Politics &bull; National &bull; International &bull; Business &bull; NY Sports</div>
+    <div class="mast-meta">
+      <div class="mmi">Date &nbsp;<span>March 3, 2026</span></div>
+      <div class="mmi">By &nbsp;<span>Pavano</span></div>
+      <div class="mmi">All content &nbsp;<span>AP / ESPN, verified today</span></div>
     </div>
   </div>
-
-  <div class="card top-story">
-    <div class="flag">&#127758; Regional Ripple</div>
-    <h3>How the Unfolding War Is Affecting Countries Across the Middle East</h3>
-    <p>Oil flows through the Strait of Hormuz are under threat, civilian casualties are climbing, and neighboring states are being forced to pick sides or absorb the fallout. A region-wide crisis is taking shape as the conflict expands beyond its initial flashpoints.</p>
-    <div class="card-footer">
-      <span>AP News &bull; March 3, 2026</span>
-      <a href="https://apnews.com/article/iran-us-war-israel-strait-or-hormuz-deaths-f1619c6bfbbd5fe10857ff0af073aa0e" target="_blank">Read more &#8594;</a>
-    </div>
-  </div>
-
-
-  <!-- ═══ POLITICS & NATIONAL ═══ -->
-  <div class="section-label">Politics &amp; National</div>
-
-  <div class="card">
-    <div class="flag">&#128202; Texas Primaries</div>
-    <h3>A Mess in Texas? What to Watch in Tuesday&rsquo;s Primaries</h3>
-    <p>Texas heads to the polls today with multiple contested Republican primaries drawing national attention. With the Iran war dominating the news cycle, candidates are scrambling to align their foreign policy positions with Trump&rsquo;s aggressive posture &mdash; creating some unexpected fault lines inside the GOP.</p>
-    <div class="card-footer">
-      <span>AP News &bull; March 3, 2026</span>
-      <a href="https://apnews.com/article/senate-primaries-texas-north-carolina-iran-trump-65ea095df05d3a537e71fefa7aa9aec1" target="_blank">Read more &#8594;</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="flag">&#128196; Texas House</div>
-    <h3>GOP Rep. Tony Gonzales Fighting to Keep His Seat After Affair Allegations</h3>
-    <p>Rep. Tony Gonzales faces a tough primary challenge in his South Texas district tonight, fighting to hold on to his seat after affair allegations rocked his campaign. One of several Texas House contests being watched closely as results come in.</p>
-    <div class="card-footer">
-      <span>AP News &bull; March 3, 2026</span>
-      <a href="https://apnews.com/article/texas-primary-tony-gonzales-c77fa9a83c374d5991bc7985d7df19d3" target="_blank">Read more &#8594;</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="flag">&#127963;&#65039; NC Senate Race</div>
-    <h3>North Carolina Primary to Set Stage for Critical US Senate Campaign</h3>
-    <p>Today&rsquo;s NC primary will determine which candidates advance into what&rsquo;s shaping up to be one of the most competitive Senate races in the country. The seat is seen as a potential pickup opportunity for Democrats, and the Iran-driven national security debate is already shaping messaging on both sides.</p>
-    <div class="card-footer">
-      <span>AP News &bull; March 3, 2026</span>
-      <a href="https://apnews.com/article/north-carolina-primaries-senate-redistricting-4467e23d7fba545c6679d543ce936902" target="_blank">Read more &#8594;</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="flag">&#127968; DHS Hearing</div>
-    <h3>Noem Blames &lsquo;Violent Protesters&rsquo; for Minneapolis Chaos in Tense Senate Hearing</h3>
-    <p>Homeland Security Secretary Kristi Noem faced sharp questioning on Capitol Hill over federal enforcement actions in Minneapolis, deflecting responsibility onto protesters while defending the administration&rsquo;s crackdown. Democratic senators pressed her on use-of-force reports that contradict her account.</p>
-    <div class="card-footer">
-      <span>AP News &bull; March 3, 2026</span>
-      <a href="https://apnews.com/article/noem-testifies-congress-homeland-security-immigration-enforcement-ebb715699e3f4f6dd6fdd22157b4e1a7" target="_blank">Read more &#8594;</a>
-    </div>
-  </div>
-
-
-  <!-- ═══ INTERNATIONAL ═══ -->
-  <div class="section-label">International</div>
-
-  <div class="card">
-    <div class="flag">&#127940;&#65039; Shockwaves</div>
-    <h3>Death of Khamenei in US-Israeli Strikes Shakes Shiites Across the World</h3>
-    <p>The confirmed death of Supreme Leader Ali Khamenei has sent shockwaves through Shiite communities from Lebanon to Pakistan to Iraq. Religious leaders are calling for retaliation, and the succession question is already reshaping the regional order &mdash; with no clear heir apparent commanding the same authority.</p>
-    <div class="card-footer">
-      <span>AP News &bull; March 3, 2026</span>
-      <a href="https://apnews.com/article/iran-strikes-shiite-lebanon-pakistan-iraq-israel-e3d7546954143b0e9cb96c09ff24065f" target="_blank">Read more &#8594;</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="flag">&#127482;&#127480; Americans Abroad</div>
-    <h3>Americans in Limbo as War Leads US to Draw Down in Mideast</h3>
-    <p>The State Department has begun evacuating embassy personnel from multiple Middle Eastern posts as the conflict escalates. Thousands of American citizens in the region face mounting uncertainty, with travel advisories elevated to the highest level across several countries.</p>
-    <div class="card-footer">
-      <span>AP News &bull; March 3, 2026</span>
-      <a href="https://apnews.com/article/embassies-iran-state-department-strikes-travel-1ce7865cb17bf201025aab98a17afb74" target="_blank">Read more &#8594;</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="flag">&#127468;&#127463; UK-US Relations</div>
-    <h3>Starmer-Trump Relationship Tested Amid Iran Strike Disagreement</h3>
-    <p>UK Prime Minister Keir Starmer and President Trump are publicly at odds over the Iran strikes, threatening one of Washington&rsquo;s most important alliances. Britain was not consulted before the strikes were launched, and Starmer is facing intense domestic pressure to distance himself from US policy.</p>
-    <div class="card-footer">
-      <span>AP News &bull; March 3, 2026</span>
-      <a href="https://apnews.com/article/trump-starmer-iran-war-disagreement-fead317c818151d52ec249c8c21fee0b" target="_blank">Read more &#8594;</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="flag">&#127466;&#127480; Trade Threat</div>
-    <h3>Trump Threatens to Cut Off Trade With Spain</h3>
-    <p>President Trump escalated tensions with another NATO ally, threatening to sever trade ties with Spain over the country&rsquo;s refusal to increase defense spending and its public criticism of the Iran military operation. Madrid called the remarks &ldquo;deeply concerning&rdquo; and said it would not be coerced.</p>
-    <div class="card-footer">
-      <span>AP News &bull; March 3, 2026</span>
-      <a href="https://apnews.com/article/trump-spain-iran-trade-defense-nato-spending-43e0f13e7b1c7e6ebcc4b558474aacdc" target="_blank">Read more &#8594;</a>
-    </div>
-  </div>
-
-
-  <!-- ═══ BUSINESS & MARKETS ═══ -->
-  <div class="section-label">Business &amp; Markets</div>
-
-  <div class="card">
-    <div class="flag">&#9981;&#65039; Energy Markets</div>
-    <h3>Gasoline Prices in the US Jump Overnight as Iran Conflict Rattles Oil Markets</h3>
-    <p>Gas prices spiked sharply overnight as the Iran conflict spooked crude markets and raised fears of disruption to Gulf shipping lanes. AAA reported the national average is trending toward its highest point in years, with regions dependent on Hormuz-route oil seeing the steepest jumps. Drivers overseas are rushing to fill up in anticipation of worse.</p>
-    <div class="card-footer">
-      <span>AP News &bull; March 3, 2026</span>
-      <a href="https://apnews.com/article/iran-oil-gas-gallon-aaa-e2daee318b8e3e6a1124713909a410e4" target="_blank">Read more &#8594;</a>
-    </div>
-  </div>
-
-
-  <!-- ═══ NY SPORTS ═══ -->
-  <div class="section-label">NY Sports</div>
-
-  <div class="sports-card">
-    <div class="team-name">New York Rangers</div>
-    <div class="meta">NHL &bull; 23-29-7</div>
-    <div class="result">Dropped a tough one in overtime last night. The Rangers sit well outside the playoff picture and the math is getting harder every game. Rough stretch with no signs of stabilizing yet.</div>
-  </div>
-
-  <div class="sports-card">
-    <div class="team-name">New York Mets</div>
-    <div class="meta">MLB &bull; Spring Training</div>
-    <div class="result">Camp is in full swing down in Port St. Lucie. No standings to report &mdash; the real action starts in late March. Early reports on the roster look encouraging.</div>
-  </div>
-
-  <div class="sports-card">
-    <div class="team-name">Syracuse Orange</div>
-    <div class="meta">Men&rsquo;s Basketball &bull; ACC</div>
-    <div class="result">The Orange hit the road tonight, heading to Louisville for a late ACC showdown. Tip-off is at 9 PM.</div>
-    <div class="tonight-badge">&#9654;&nbsp; Tonight @ Louisville &mdash; 9:00 PM ET &bull; ACC Network</div>
-  </div>
-
-</div><!-- /container -->
-
-<!-- FOOTER -->
-<div class="footer">
-  <strong>The Docket</strong><br>
-  <br>
-  Tuesday, March 3, 2026 &bull; Built for Matt Reilly<br>
-  Sources: AP News &bull; ESPN
 </div>
+
+<div class="glance">
+  <div class="gl">Today at a glance</div>
+  <div class="glance-grid">
+    <div class="gi"><strong>War, Day 4:</strong> Israel escalates Tehran airstrikes. Iran widens retaliation across Gulf. Gas prices spiked overnight. (AP)</div>
+    <div class="gi"><strong>Politics:</strong> Texas &amp; NC primaries today. Noem defends Minneapolis operation to Congress. (AP)</div>
+    <div class="gi"><strong>International:</strong> Khamenei death rippling through Shiite world. Trump threatens Spain on trade. Starmer-Trump rift widens. (AP)</div>
+    <div class="gi"><strong>NY Sports:</strong> Rangers lost 5&ndash;4 OT. Mets 5-3 in Grapefruit League. Syracuse at Louisville tonight, 9 PM ET. (ESPN)</div>
+  </div>
+</div>
+
+<div class="section-top">
+  <div class="sh">
+    <div class="sh-label">Top Story</div>
+    <div class="sh-tag">&#128308; Live</div>
+  </div>
+  <div class="top-layout">
+    <a class="top-hero" href="https://apnews.com/article/iran-israel-us-03-03-2026-8755877b603e46ed3df8107689c1ee23" target="_blank">
+      <div class="hero-flag">&#128308; War &mdash; Day 4</div>
+      <h2>Israel Steps Up Tehran Airstrikes; Iran Widens Retaliation Across the Gulf</h2>
+      <p>Israel escalated airstrikes on Iranian missile factories and infrastructure Tuesday. Iran responded by widening strikes across the Gulf region, hitting shipping lanes and energy infrastructure. Gas prices in the US surged overnight as the Hormuz disruption hit supply chains. Supreme Leader Khamenei was killed in opening strikes. Trump is not ruling out US ground forces. Day 4 with no clear end in sight.</p>
+      <div class="callout">&#128204; <strong>DOJ angle:</strong> Expect emergency IEEPA enforcement and sanctions-evasion criminal referrals. OFAC designations likely within 48&ndash;72 hours.</div>
+      <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
+    </a>
+    <div class="top-sidebar">
+      <a class="top-side-card" href="https://apnews.com/article/iran-us-war-israel-strait-or-hormuz-deaths-f1619c6bfbbd5fe10857ff0af073aa0e" target="_blank">
+        <div class="hero-flag">&#127758; Regional Impact</div>
+        <h3>How the War Is Affecting Countries Across the Middle East</h3>
+        <p>Gulf states, Lebanon, Iraq, Pakistan all responding to Khamenei&rsquo;s death and ongoing strikes. Shiite communities in shock. Regional alliances under pressure.</p>
+        <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
+      </a>
+      <a class="top-side-card" href="https://apnews.com/article/iran-oil-gas-gallon-aaa-e2daee318b8e3e6a1124713909a410e4" target="_blank">
+        <div class="hero-flag">&#9981; Energy</div>
+        <h3>Gas Prices Jump Overnight &mdash; Drivers Overseas Rushing to Fill Tanks</h3>
+        <p>Iranian conflict directly hitting fuel prices at the pump. US drivers seeing overnight jumps. Overseas markets in a rush. AAA tracking hourly.</p>
+        <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- POLITICS -->
+  <div class="section-politics" style="margin-top: 44px;">
+    <div class="sh">
+      <div class="sh-label">Politics &amp; National</div>
+      <div class="sh-desc">AP &mdash; verified March 3, 2026</div>
+      <div class="sh-tag" style="background:var(--ink);color:var(--cream);border:none;">Today</div>
+    </div>
+    <div class="pol-grid">
+      <a class="pol-card lead" href="https://apnews.com/article/senate-primaries-texas-north-carolina-iran-trump-65ea095df05d3a537e71fefa7aa9aec1" target="_blank">
+        <div class="pol-kicker">&#127937; Primary Day</div>
+        <h3>A Mess in Texas? What to Watch in Tuesday&rsquo;s Primaries</h3>
+        <p>Texas and North Carolina hold primaries today. In Texas, GOP infighting has created fractured races and uncertain outcomes &mdash; even incumbents are sweating. Watch the downballot races as the clearest signal of where the party base is heading. Both states matter for Senate math heading into 2026 midterms.</p>
+        <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
+      </a>
+      <a class="pol-card" href="https://apnews.com/article/north-carolina-primaries-senate-redistricting-4467e23d7fba545c6679d543ce936902" target="_blank">
+        <div class="pol-kicker">&#127968; NC Senate</div>
+        <h3>North Carolina Primary Sets Stage for Critical Senate Campaign</h3>
+        <p>NC&rsquo;s Senate primary today determines who faces off in a race that could flip Senate control. Redistricting complicates the map. A seat both parties need.</p>
+        <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
+      </a>
+      <a class="pol-card" href="https://apnews.com/article/texas-primary-tony-gonzales-c77fa9a83c374d5991bc7985d7df19d3" target="_blank">
+        <div class="pol-kicker">&#127981; Texas House</div>
+        <h3>Rep. Tony Gonzales Enters Primary Fighting for His Job After Affair Allegations</h3>
+        <p>Gonzales (R-TX) is in a primary battle, fighting to keep his seat amid revelations of an extramarital affair. Whether the base forgives him is the vote to watch.</p>
+        <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
+      </a>
+    </div>
+    <div class="pol-row2" style="margin-top:0;">
+      <a class="pol-card" href="https://apnews.com/article/noem-testifies-congress-homeland-security-immigration-enforcement-ebb715699e3f4f6dd6fdd22157b4e1a7" target="_blank">
+        <div class="pol-kicker">&#127963; Homeland Security</div>
+        <h3>Noem Blames &lsquo;Violent Protesters&rsquo; for Minneapolis Chaos Under Tough Congressional Questioning</h3>
+        <p>DHS Secretary Noem testified before Congress defending the federal immigration enforcement operation in Minneapolis. Faced sharp bipartisan questioning. Framed disorder as protester-driven, not a federal overreach. Expect follow-up oversight requests.</p>
+        <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
+      </a>
+      <a class="pol-card" href="https://apnews.com/article/embassies-iran-state-department-strikes-travel-1ce7865cb17bf201025aab98a17afb74" target="_blank">
+        <div class="pol-kicker">&#9992; Evacuation</div>
+        <h3>Americans in Limbo as War Leads US to Draw Down Across the Mideast</h3>
+        <p>The State Department is drawing down embassy staff across the Middle East. Americans abroad stranded or in limbo. Consular services limited. Travel advisories updated to Do Not Travel for multiple countries.</p>
+        <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<!-- INTERNATIONAL -->
+<div class="section-intl">
+  <div style="max-width:1300px;margin:0 auto;">
+    <div class="sh">
+      <div class="sh-label">International</div>
+      <div class="sh-desc" style="color:rgba(255,255,255,0.35);">AP World &mdash; verified March 3, 2026</div>
+      <div class="sh-tag">Global</div>
+    </div>
+    <div class="intl-grid">
+      <a class="intl-card c1" href="https://apnews.com/article/iran-strikes-shiite-lebanon-pakistan-iraq-israel-e3d7546954143b0e9cb96c09ff24065f" target="_blank">
+        <div class="intl-region">&#127470;&#127479; Iran / Shiite World</div>
+        <h3>Death of Khamenei Shakes Shiite Communities Across Lebanon, Iraq, Pakistan</h3>
+        <p>The killing of Supreme Leader Khamenei is sending shockwaves beyond Iran&rsquo;s borders. Shiite communities in Lebanon, Iraq, and Pakistan are in mourning and political turmoil. Hezbollah&rsquo;s posture under close watch. The power vacuum in Tehran remains unresolved.</p>
+        <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
+      </a>
+      <a class="intl-card c2" href="https://apnews.com/article/trump-starmer-iran-war-disagreement-fead317c818151d52ec249c8c21fee0b" target="_blank">
+        <div class="intl-region">&#127468;&#127463; UK &mdash; US</div>
+        <h3>Starmer-Trump Relationship Tested as UK Refuses to Back Iran Strikes</h3>
+        <p>UK PM Starmer declined to endorse the US-Israeli military operation, straining the Atlantic relationship. Trump publicly called Starmer &ldquo;dithering.&rdquo; A critical moment for NATO cohesion with Russia-Ukraine still unresolved.</p>
+        <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
+      </a>
+      <a class="intl-card c3" href="https://apnews.com/article/trump-spain-iran-trade-defense-nato-spending-43e0f13e7b1c7e6ebcc4b558474aacdc" target="_blank">
+        <div class="intl-region">&#127466;&#127480; Spain &mdash; Trade</div>
+        <h3>Trump Threatens to Cut Off Trade with Spain Over Iran Stance and NATO Spending</h3>
+        <p>Trump escalated pressure on Spain, threatening trade penalties over their refusal to back the Iran operation and failure to meet NATO spending targets. Adds to a widening rift with European allies unwilling to take sides in the Iran conflict.</p>
+        <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- MARKETS -->
+<div class="section-markets">
+  <div style="max-width:1300px;margin:0 auto;">
+    <div class="sh">
+      <div class="sh-label">Business &amp; Markets</div>
+      <div class="sh-tag">Iran Impact</div>
+    </div>
+    <a class="mkt-card" href="https://apnews.com/article/iran-oil-gas-gallon-aaa-e2daee318b8e3e6a1124713909a410e4" target="_blank">
+      <div class="mkt-flag">&#9981; Energy / Commodities</div>
+      <h3>Gasoline Prices Jump Overnight as Iran War Hits Supply &mdash; Drivers Overseas Rush to Fill Up</h3>
+      <p>The Iran conflict is hitting American wallets at the pump. Prices jumped overnight as Hormuz disruptions ripple through global supply chains. AAA tracking real-time. Overseas markets are seeing panic buying. Live market index data unavailable at publish time &mdash; check Bloomberg or Yahoo Finance for current figures.</p>
+      <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
+    </a>
+  </div>
+</div>
+
+<main>
+
+  <!-- NY SPORTS -->
+  <div class="section-sports" style="margin-top: 44px;">
+    <div class="sh">
+      <div class="sh-label">NY Sports</div>
+      <div class="sh-desc">Rangers &bull; Mets &bull; Syracuse &mdash; sourced ESPN, Mar 3</div>
+      <div class="sh-tag">&#127944;</div>
+    </div>
+    <div class="sports-grid">
+      <a class="sport-card nhl" href="https://www.espn.com/nhl/team/_/name/nyr/new-york-rangers" target="_blank">
+        <div class="sport-league">NHL &bull; Eastern Conference</div>
+        <div class="sport-team">Rangers</div>
+        <div class="sport-record">23-29-7 &bull; 54 pts &bull; 8th Metro (Last)</div>
+        <span class="badge badge-l">L &nbsp;5&ndash;4 OT</span>
+        <div class="sport-result">Lost to Columbus last night. <strong>Artemi Marchenko</strong> scored the OT winner at 1:04. Goals against per game: 3.17 (21st in league). This team is in the basement.</div>
+        <div class="foot"><span>ESPN</span><span>Mar 3, 2026</span></div>
+      </a>
+      <a class="sport-card mlb" href="https://www.espn.com/mlb/team/_/name/nym/new-york-mets" target="_blank">
+        <div class="sport-league">MLB &bull; Spring Training</div>
+        <div class="sport-team">Mets</div>
+        <div class="sport-record">5-3 Grapefruit League &bull; 2.5 GB</div>
+        <span class="badge badge-st">Spring Training</span>
+        <div class="sport-result"><strong>Christopher Suero</strong> homered two days ago to tie a game. BA .229 (26th), OBP .327 (24th). Roster competition ongoing heading into Opening Day.</div>
+        <div class="foot"><span>ESPN</span><span>Mar 3, 2026</span></div>
+      </a>
+      <a class="sport-card ncaa" href="https://www.espn.com/mens-college-basketball/team/_/id/183/syracuse-orange" target="_blank">
+        <div class="sport-league">NCAAM &bull; ACC</div>
+        <div class="sport-team">Syracuse</div>
+        <div class="sport-record">15-14 Overall &bull; 6-10 ACC &bull; T-13th</div>
+        <span class="badge badge-tonight">Tonight 9 PM ET</span>
+        <div class="sport-result">At <strong>Louisville</strong> tonight &mdash; ACC Network, 9 PM ET. At 15-14 and 6-10 in conference, the NCAA Tournament is a long shot. NIT is the realistic conversation.</div>
+        <div class="foot"><span>ESPN</span><span>Mar 3, 2026</span></div>
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="fi">
+    <div>
+      <div class="ft">The <em>Docket</em></div>
+      <div class="fs">Curated by Pavano &#129302; for <span style="color:var(--gold)">Matt Reilly</span> &bull; Powered by Wally &bull; Sources: AP, ESPN</div>
+    </div>
+    <div class="fr">Tuesday, March 3, 2026<br>Issue No. 1<br><span style="color:rgba(255,255,255,0.15)">No fabrication. Verified today.</span></div>
+  </div>
+</footer>
 
 </body>
 </html>
