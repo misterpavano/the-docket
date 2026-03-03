@@ -16,14 +16,14 @@
       --green: #166534; --green2: #1a7a40;
       --slate: #334155; --amber: #92400e;
     }
-    body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; line-height: 1.6; }
+    body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; line-height: 1.65; -webkit-font-smoothing: antialiased; }
 
     /* ── HEADER ── */
     .top-bar { background: var(--navy); color: rgba(255,255,255,0.4); font-size: 10.5px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; padding: 7px 40px; display: flex; justify-content: space-between; }
     .top-bar span { color: var(--gold); }
     .masthead { background: var(--navy); padding: 44px 40px 28px; border-bottom: 4px solid var(--gold); }
     .mast-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
-    .mast-title { font-family: 'DM Serif Display', serif; font-size: clamp(52px, 9vw, 100px); line-height: 0.9; color: #fff; letter-spacing: -0.02em; }
+    .mast-title { font-family: 'DM Serif Display', serif; font-size: clamp(56px, 10vw, 108px); line-height: 0.88; color: #fff; letter-spacing: -0.02em; }
     .mast-title em { font-style: italic; color: var(--gold); }
     .mast-row { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); }
     .mast-sub { font-size: 12px; color: rgba(255,255,255,0.35); letter-spacing: 0.05em; }
@@ -32,7 +32,7 @@
     .mmi span { color: rgba(255,255,255,0.7); }
 
     /* ── GLANCE ── */
-    .glance { background: var(--navy2); padding: 20px 40px; border-bottom: 2px solid rgba(201,168,76,0.3); }
+    .glance { background: var(--navy2); padding: 22px 40px 26px; border-bottom: 2px solid rgba(201,168,76,0.22); }
     .gl { font-size: 10px; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
     .glance-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px 24px; }
     .gi { font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.55; padding-left: 14px; position: relative; }
@@ -106,7 +106,7 @@
     .intl-card .foot { margin-top: auto; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 10px; color: rgba(255,255,255,0.25); display: flex; justify-content: space-between; }
 
     /* ── SECTION 4: MARKETS — amber terminal ── */
-    .section-markets { background: #1a1200; margin: 0 -40px; padding: 32px 40px 36px; border-top: 3px solid #92400e; border-bottom: 3px solid #92400e; }
+    .section-markets { background: #120d00; margin: 0 -40px; padding: 32px 40px 36px; border-top: 3px solid #92400e; border-bottom: 3px solid #92400e; }
     .section-markets .sh { margin-bottom: 18px; }
     .section-markets .sh-label { color: #f59e0b; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; font-family: 'DM Sans', sans-serif; font-weight: 600; }
     .section-markets .sh-tag { background: #92400e; color: #fbbf24; border: none; font-size: 9px; }
@@ -124,7 +124,7 @@
     .section-sports .sh-tag { background: var(--red); color: #fff; border: none; }
     .sports-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .sport-card { border: 1px solid var(--rule); border-top: 4px solid; background: #fff; padding: 20px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 8px; transition: box-shadow 0.15s; }
-    .sport-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+    .sport-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.13); transform: translateY(-2px); }
     .sport-card.nhl { border-top-color: #003f8f; }
     .sport-card.mlb { border-top-color: #003087; }
     .sport-card.ncaa { border-top-color: #e55b13; }
@@ -140,7 +140,7 @@
     .badge-st { background: #dbeafe; color: #1d4ed8; }
 
     /* ── FOOTER ── */
-    footer { background: var(--navy); padding: 28px 40px; border-top: 4px solid var(--gold); margin-top: 60px; }
+    footer { background: var(--navy); padding: 32px 40px; border-top: 3px solid var(--gold); margin-top: 64px; }
     .fi { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
     .ft { font-family: 'DM Serif Display', serif; font-size: 22px; color: #fff; }
     .ft em { color: var(--gold); font-style: italic; }
