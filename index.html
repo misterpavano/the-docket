@@ -36,7 +36,6 @@
     .g { display: grid; gap: 16px; }
     .g2 { grid-template-columns: 1fr 1fr; }
     .g3 { grid-template-columns: 1fr 1fr 1fr; }
-    .g-lead { grid-template-columns: 1.6fr 1fr; }
     .g-wide { grid-template-columns: 2fr 1fr 1fr; }
     .card { background: var(--white); border: 1px solid var(--rule); padding: 22px; border-radius: 3px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 9px; transition: box-shadow 0.15s, transform 0.1s; }
     .card:hover { box-shadow: 0 4px 18px rgba(13,27,42,0.1); transform: translateY(-1px); }
@@ -48,7 +47,6 @@
     .f-dk { background: var(--navy); color: var(--white); }
     .f-gd { background: var(--gold); color: var(--navy); }
     .f-rd { background: var(--red); color: var(--white); }
-    .f-gr { background: var(--green); color: var(--white); }
     .f-ol { background: transparent; border: 1.5px solid var(--navy); color: var(--navy); }
     .card.dk .f-ol { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.6); }
     .card h3 { font-family: 'DM Serif Display', serif; font-size: 18px; line-height: 1.25; color: var(--navy); }
@@ -71,8 +69,8 @@
     .fs { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 4px; }
     .fs span { color: var(--gold); }
     .fr { font-size: 11px; color: rgba(255,255,255,0.3); text-align: right; }
-    @media (max-width: 960px) { .g3, .g-wide { grid-template-columns: 1fr 1fr; } .g-lead { grid-template-columns: 1fr; } }
-    @media (max-width: 640px) { body { overflow-x: hidden; } .top-bar, .masthead, .glance, main, footer { padding-left: 16px; padding-right: 16px; } .g2, .g3, .g-lead, .g-wide { grid-template-columns: 1fr; } .glance-grid { grid-template-columns: 1fr; } .card { padding: 16px; } }
+    @media (max-width: 960px) { .g3, .g-wide { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) { body { overflow-x: hidden; } .top-bar, .masthead, .glance, main, footer { padding-left: 16px; padding-right: 16px; } .g2, .g3, .g-wide { grid-template-columns: 1fr; } .glance-grid { grid-template-columns: 1fr; } .card { padding: 16px; } }
   </style>
 </head>
 <body>
@@ -85,7 +83,7 @@
 <div class="masthead">
   <div class="mast-rule"><div class="mast-rule-line"></div><div class="mast-rule-text">Matt Reilly&rsquo;s Daily Brief</div><div class="mast-rule-line"></div></div>
   <div class="mast-title">The <em>Docket</em></div>
-  <div class="mast-sub">Politics &bull; National &bull; International &bull; Business &bull; Federal Employment &bull; DOJ &amp; SEC &bull; Legal &bull; DC Local &bull; Science &amp; Space &bull; NY Sports</div>
+  <div class="mast-sub">Politics &bull; National &bull; International &bull; Business &bull; Federal &bull; DOJ &amp; SEC &bull; Legal &bull; DC &bull; Science &bull; NY Sports</div>
   <div class="mast-meta">
     <div class="mast-meta-item">Date &nbsp;<span>March 3, 2026</span></div>
     <div class="mast-meta-item">Issue &nbsp;<span>No. 1</span></div>
@@ -95,172 +93,91 @@
 </div>
 
 <div class="glance">
-  <div class="glance-label">Today at a glance</div>
+  <div class="glance-label">Today at a glance &mdash; March 3, 2026</div>
   <div class="glance-grid">
-    <div class="gi"><strong>US-Iran War, Day 4:</strong> Khamenei killed in initial strikes. Israel escalating airstrikes in Tehran. Iran attacked US Embassy in Saudi Arabia via drones. 11 killed in Israel; hundreds killed in Iran. Trump not ruling out boots on the ground. (AP)</div>
-    <div class="gi"><strong>ICE Oversight:</strong> Federal judge blocked the policy requiring Congress members to give 7 days&rsquo; notice before visiting ICE facilities. Minnesota simultaneously launched a criminal investigation into federal immigration officers. (AP)</div>
-    <div class="gi"><strong>SCOTUS:</strong> Supreme Court blocked California&rsquo;s law preventing schools from notifying parents when a student identifies as transgender. Case heading toward a full merits ruling. (AP)</div>
-    <div class="gi"><strong>Federal Employment:</strong> Ryan Zinke (R-MT) won&rsquo;t seek reelection. Savannah Guthrie&rsquo;s missing mother found at her Arizona home. Federal employee unions seeking emergency injunctions against mass layoff orders. (AP / FNN)</div>
-    <div class="gi"><strong>NY Sports:</strong> Rangers 23-29-7, lost 5&ndash;4 OT to Columbus last night, 8th in Metro. Mets 5-3 in Grapefruit League spring training. Syracuse men&rsquo;s hoops 15-14, 6-10 ACC &mdash; tied 13th/14th in conference. Giants hired John Harbaugh as head coach. (ESPN)</div>
-    <div class="gi"><strong>Science:</strong> Winter Olympics: US gold medalists Hilary Knight and Quinn and Jack Hughes appearing on Tonight Show. Michael Jordan testifying in NASCAR antitrust trial. (AP)</div>
+    <div class="gi"><strong>Iran War, Day 4:</strong> Israel intensifying Tehran strikes. Iran drone attack hit US Embassy compound in Saudi Arabia. Hundreds dead in Iran, 11 in Israel. Trump not ruling out ground troops. (AP, Mar 3)</div>
+    <div class="gi"><strong>Federal/DOJ:</strong> Minnesota AG launched investigation that could bring criminal charges against federal immigration officers &mdash; direct state-federal constitutional collision. (AP, Mar 3)</div>
+    <div class="gi"><strong>Markets:</strong> Iran conflict disrupting Gulf energy supply and travel. No verified index numbers at publish time &mdash; check live feeds. (AP, Mar 3)</div>
+    <div class="gi"><strong>Rangers:</strong> Lost 5&ndash;4 OT to Columbus last night. Marchenko scored at 1:04 OT. Record: 23-29-7, 8th (last) in Metro. (ESPN, Mar 3)</div>
+    <div class="gi"><strong>Mets:</strong> 5-3 in Grapefruit League. Christopher Suero homered 2 days ago. BA .229 (26th). (ESPN, Mar 3)</div>
+    <div class="gi"><strong>Syracuse:</strong> 15-14 overall, 6-10 ACC, tied 13th/14th in conference. At Louisville tonight, 9 PM ET, ACC Network. (ESPN, Mar 3)</div>
   </div>
 </div>
 
 <main>
 
-  <!-- BREAKING -->
-  <div class="sh"><div class="sh-label">&#128308; Breaking News</div><div class="sh-desc">verified from AP &mdash; March 3, 2026</div><div class="sh-tag">Live</div></div>
+  <!-- TOP STORY -->
+  <div class="sh"><div class="sh-label">&#128308; Top Story</div><div class="sh-tag">Live</div></div>
   <div class="g g-wide">
     <a class="card dk big" href="https://apnews.com/article/iran-israel-us-03-03-2026-8755877b603e46ed3df8107689c1ee23" target="_blank">
       <div class="flags"><span class="f f-rd">&#128308; Breaking</span><span class="f f-ol">War &mdash; Day 4</span></div>
-      <h3>Israel Escalates Tehran Airstrikes; Iran Drones Hit US Embassy in Saudi Arabia &mdash; Trump Won&rsquo;t Rule Out Boots on the Ground</h3>
-      <p>Israel stepped up airstrikes on Iranian missile launchers and factories Tuesday. Iran retaliated across the Gulf &mdash; including a drone attack on the US Embassy in Riyadh &mdash; disrupting energy supplies and travel. Explosions in Tehran and Lebanon, where Israel struck Hezbollah. Hundreds killed in Iran; 11 killed in Israel. Supreme Leader Khamenei was killed in the initial US-Israeli strikes. Trump told the New York Post Monday he is not ruling out ground troops. Four days in, no clear end in sight.</p>
-      <div class="callout">&#128204; NSD/OFAC angle: Expect emergency sanctions designations and potential IEEPA enforcement activity targeting Iran-linked assets and financial networks. Watch for criminal referrals on sanctions evasion.</div>
+      <h3>Israel Escalates Tehran Airstrikes; Iran Drone Hits US Embassy in Saudi Arabia &mdash; Trump Won&rsquo;t Rule Out Ground Troops</h3>
+      <p>Israel stepped up airstrikes on Iranian missile factories Tuesday. Iran retaliated with a drone attack on the US Embassy compound in Riyadh and widened strikes across the Gulf, disrupting energy and travel. Hundreds killed in Iran, 11 in Israel. Supreme Leader Khamenei was killed in the opening strikes. Trump told the New York Post he is not ruling out US ground forces. Four days in, no clear end.</p>
+      <div class="callout">&#128204; NSD/OFAC: Expect emergency sanctions designations and IEEPA enforcement targeting Iran-linked financial networks. Watch for criminal sanctions-evasion referrals.</div>
       <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
     </a>
-    
-    
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- POLITICS & NATIONAL -->
-  <div class="sh"><div class="sh-label">&#127968; Politics &amp; National</div><div class="sh-desc">Washington and the country</div></div>
-  <div class="g g2">
-    
-    <a class="card cr" href="https://apnews.com/article/bovino-minnesota-immigration-minneapolis-good-pretti-0ace82ca68846109fbf6d30439e6f0f1" target="_blank">
-      <div class="flags"><span class="f f-rd">State vs. Federal</span></div>
-      <h3>Minnesota Launches Criminal Investigation That Could Bring Charges Against Federal Immigration Officers</h3>
-      <p>Minnesota&rsquo;s attorney general launched an investigation that could result in criminal charges against federal immigration officers operating in the state. A direct state-federal collision that is almost certain to escalate into a major constitutional confrontation over the limits of state criminal jurisdiction over federal law enforcement.</p>
-      <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
-    </a>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- INTERNATIONAL -->
-  <div class="sh"><div class="sh-label">&#127758; International Affairs</div><div class="sh-desc">sourced from AP, March 3, 2026</div></div>
-  <div class="g g3">
-    <a class="card dk" href="https://apnews.com/live/iran-war-israel-trump-03-03-2026" target="_blank">
-      <div class="flags"><span class="f f-rd">War</span><span class="f f-ol">Live Updates</span></div>
-      <h3>Live: Iran War Widens Across the Gulf &mdash; Hezbollah Struck in Lebanon, Drones Over Riyadh</h3>
-      <p>Beyond Tehran, the war is spreading. Israel struck Hezbollah in Lebanon as Iran fires dozens of ballistic missiles toward Israeli territory &mdash; most intercepted. The US Embassy in Saudi Arabia was hit by Iranian drones. Travel and energy supply disruptions rippling across the Gulf. Trump says war could last &ldquo;several weeks but perhaps longer.&rdquo;</p>
+    <a class="card" href="https://apnews.com/live/iran-war-israel-trump-03-03-2026" target="_blank">
+      <div class="flags"><span class="f f-rd">Live</span></div>
+      <h3>Iran War Live Updates: Hezbollah Struck in Lebanon, Drones Over Riyadh</h3>
+      <p>Beyond Tehran &mdash; Israel struck Hezbollah in Lebanon, Iran fired dozens of ballistic missiles toward Israel (most intercepted), and the US Embassy in Saudi Arabia was hit by Iranian drones. Energy supply disruptions spreading across the Gulf.</p>
       <div class="foot"><span>AP Live</span><span>Mar 3, 2026</span></div>
     </a>
-    
-    <a class="card cr" href="https://apnews.com/hub/russia-ukraine" target="_blank">
-      <div class="flags"><span class="f f-ol">Europe</span></div>
-      <h3>Russia-Ukraine: NATO Members Watching Whether Iran Conflict Shifts US Attention and Aid Timelines</h3>
-      <p>With Washington heavily focused on the Iran operation, NATO allies and Kyiv are watching for any reduction in US attention and resources toward Ukraine. No policy changes announced yet, but the diplomatic bandwidth question is real. (Source: AP Russia-Ukraine hub &mdash; no specific breaking story today.)</p>
+    <a class="card cr" href="https://apnews.com/article/iran-israel-us-03-03-2026-8755877b603e46ed3df8107689c1ee23" target="_blank">
+      <div class="flags"><span class="f f-ol">Geopolitics</span></div>
+      <h3>Trump Floats Regime Change, Then Walks It Back &mdash; Mixed Signals on War Objectives</h3>
+      <p>With Khamenei dead, Trump suggested &ldquo;someone from within&rdquo; Iran&rsquo;s regime could take power, then senior officials said regime change is not the objective. The contradictions are creating uncertainty among allies and adversaries. Russia-Ukraine watchers also noting the diversion of US attention.</p>
       <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
     </a>
   </div>
 
   <div class="divider"></div>
 
-  <!-- BUSINESS & MARKETS -->
-  <div class="sh"><div class="sh-label">&#128200; Business &amp; Markets</div><div class="sh-desc">no fabricated numbers &mdash; sourced only</div></div>
+  <!-- FEDERAL / DOJ -->
+  <div class="sh"><div class="sh-label">&#127963; Federal &amp; DOJ</div><div class="sh-desc">your beat</div><div class="sh-tag">&#9733; Priority</div></div>
   <div class="g g2">
-    <a class="card gd big" href="https://apnews.com/hub/business" target="_blank">
-      <div class="flags"><span class="f f-dk">Markets</span></div>
-      <h3>Iran War Disrupting Energy Supply and Travel Across the Gulf &mdash; Market Impact Ongoing</h3>
-      <p>AP confirmed that the Iran conflict is disrupting energy supplies and travel across the Gulf region. The extent of market impact &mdash; specific index levels and oil price moves &mdash; were not available from verified sources at publication time. Check live market feeds for current numbers.</p>
-      <div class="callout">&#128204; Note: Market numbers will be current in tomorrow&rsquo;s issue once sourced from real-time verified feeds. We do not publish unverified figures.</div>
-      <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
-    </a>
-    
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- FEDERAL / DOJ / SEC -->
-  <div class="sh"><div class="sh-label">&#127963; Federal Employment &amp; DOJ / SEC</div><div class="sh-desc">your beat</div><div class="sh-tag">&#9733; Priority</div></div>
-  <div class="g g3">
     <a class="card dk" href="https://apnews.com/article/bovino-minnesota-immigration-minneapolis-good-pretti-0ace82ca68846109fbf6d30439e6f0f1" target="_blank">
-      <div class="flags"><span class="f f-rd">State-Federal Collision</span></div>
-      <h3>Minnesota AG Investigates Federal Immigration Officers &mdash; Could Result in State Criminal Charges</h3>
-      <p>Minnesota launched a state criminal investigation into federal immigration officers. If charges are filed, it sets up a direct constitutional confrontation: can a state prosecute federal officers acting under federal authority? Expect immediate DOJ intervention and likely emergency federal court filings to block any state prosecution.</p>
-      <div class="callout">&#128204; DOJ angle: This goes straight to intergovernmental immunity and Supremacy Clause doctrine. The Criminal Division and Civil Rights Division will both be watching closely.</div>
+      <div class="flags"><span class="f f-rd">State vs. Federal</span></div>
+      <h3>Minnesota Launches Criminal Investigation Into Federal Immigration Officers &mdash; Could Result in State Charges</h3>
+      <p>Minnesota&rsquo;s AG launched a criminal investigation into federal immigration officers operating in the state. If charges are filed, it sets up a direct Supremacy Clause confrontation: can a state prosecute federal officers acting under federal authority? DOJ intervention and emergency federal filings are almost certain.</p>
+      <div class="callout">&#128204; Criminal Division and Civil Rights Division will both be watching. This goes straight to intergovernmental immunity doctrine.</div>
       <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
     </a>
-    
-    
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- LEGAL -->
-  <div class="sh"><div class="sh-label">&#9878; Legal</div><div class="sh-desc">courts, cases, enforcement</div></div>
-  <div class="g g-lead">
-    
-    <div style="display:flex;flex-direction:column;gap:16px;">
-      
-      <a class="card cr" href="https://apnews.com/hub/us-supreme-court" target="_blank">
-        <div class="flags"><span class="f f-ol">SCOTUS Watch</span></div>
-        <h3>No Additional SCOTUS Decisions Today &mdash; Next Opinion Day TBD</h3>
-        <p>No additional Supreme Court opinions were issued today beyond the emergency stay noted above. The Court is expected to issue additional merits opinions in the coming weeks as the term progresses. Watch the docket.</p>
-        <div class="foot"><span>AP / SCOTUS</span><span>Mar 3, 2026</span></div>
-      </a>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- DC LOCAL -->
-  <div class="sh"><div class="sh-label">&#127963;&#65039; DC Local</div><div class="sh-desc">the District</div></div>
-  <div class="g g3">
-    
-    
-    
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- SCIENCE & SPACE -->
-  <div class="sh"><div class="sh-label">&#128302; Science &amp; Space</div><div class="sh-desc">what we&rsquo;re learning as a people</div></div>
-  <div class="g g2">
-    <a class="card cr" href="https://apnews.com/hub/science" target="_blank">
-      <div class="flags"><span class="f f-ol">Science</span></div>
-      <h3>No Major Science Discoveries Breaking Today &mdash; Check AP Science Hub for Latest</h3>
-      <p>No major science or space discoveries were confirmed from verified sources at publication time for March 3, 2026. The AP science and space hubs are the best real-time sources for breaking discoveries. This section will be fully populated in daily issues as real stories are sourced each morning.</p>
-      <div class="foot"><span>AP Science Hub</span><span>Mar 3, 2026</span></div>
-    </a>
-    <a class="card" href="https://apnews.com/hub/milan-cortina-2026-winter-olympics" target="_blank">
-      <div class="flags"><span class="f f-dk">Winter Olympics</span></div>
-      <h3>US Olympic Hockey Gold Medalists Hilary Knight, Quinn, and Jack Hughes Appear on Tonight Show</h3>
-      <p>US gold medalists from the Milan-Cortina 2026 Winter Olympics &mdash; hockey stars Hilary Knight, Quinn, and Jack Hughes &mdash; appeared on the Tonight Show. Trump announced he will give the Medal of Freedom to Team USA hockey goalie. Winter Olympics coverage continuing from Milan-Cortina.</p>
-      <div class="foot"><span>AP Sports / NBC</span><span>Mar 3, 2026</span></div>
+    <a class="card" href="https://apnews.com/hub/business" target="_blank">
+      <div class="flags"><span class="f f-ol">Markets / Iran</span></div>
+      <h3>Iran Conflict Disrupting Gulf Energy Supply and Travel &mdash; Market Impact Ongoing</h3>
+      <p>AP confirmed energy supply and travel disruptions across the Gulf from the Iran conflict. Specific market levels were not available from verified sources at publish time &mdash; check live feeds for current figures. Sanctions and asset-freeze activity expected to accelerate.</p>
+      <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
     </a>
   </div>
 
   <div class="divider"></div>
 
   <!-- NY SPORTS -->
-  <div class="sh"><div class="sh-label">&#127944; NY Sports</div><div class="sh-desc">Mets &bull; Rangers &bull; Syracuse &bull; Giants &mdash; real stats only, sourced from ESPN</div><div class="sh-tag">Go NY</div></div>
+  <div class="sh"><div class="sh-label">&#127944; NY Sports</div><div class="sh-desc">Mets &bull; Rangers &bull; Syracuse &bull; Giants &mdash; sourced from ESPN, Mar 3</div></div>
   <div class="g g2">
     <a class="card dk" href="https://www.espn.com/nhl/team/_/name/nyr/new-york-rangers" target="_blank">
-      <div class="flags"><span class="f f-ol">Rangers</span><span class="f f-ol">NHL</span></div>
-      <h3>Rangers: 23-29-7 &mdash; Lost 5&ndash;4 in OT to Columbus Last Night. (Marchenko, 1:04 OT)</h3>
-      <p>The Rangers fell 5&ndash;4 in overtime to the Columbus Blue Jackets last night. Artemi Marchenko scored the OT winner at 1:04 to seal it. Rangers sit at 23-29-7, 8th (last) in the Metropolitan Division. Goals against per game: 3.17 (21st in league). This is a team in the basement, not in a playoff push. (Source: Cron / ESPN, March 3, 2026)</p>
+      <div class="flags"><span class="f f-ol">Rangers</span><span class="f f-rd">L</span></div>
+      <h3>Rangers Fall 5&ndash;4 in OT to Columbus &mdash; Marchenko at 1:04 OT. Record: 23-29-7, Last in Metro.</h3>
+      <p>The Rangers dropped a 5&ndash;4 overtime decision to the Columbus Blue Jackets last night. Artemi Marchenko ended it at 1:04 of OT. New York sits 23-29-7 with 54 points &mdash; last place in the Metropolitan Division. Goals against per game: 3.17 (21st in the league).</p>
       <div class="foot"><span>ESPN</span><span>Mar 3, 2026</span></div>
     </a>
     <a class="card" href="https://www.espn.com/mlb/team/_/name/nym/new-york-mets" target="_blank">
       <div class="flags"><span class="f f-ol">Mets</span><span class="f f-ol">Spring Training</span></div>
-      <h3>Mets: 5-3 in Grapefruit League, 2.5 GB in Standings. Christopher Suero Hit a Homer to Tie 2 Days Ago.</h3>
-      <p>New York Mets are 5-3 in Grapefruit League spring training, sitting 2.5 games back in the standings. Christopher Suero belted a homer to tie a game 2 days ago. Team batting average .229 (26th), OBP .327 (24th). Spring training games are meaningless in the standings but the roster competition is real. (Source: ESPN, March 3, 2026)</p>
+      <h3>Mets: 5-3 in Grapefruit League. Suero Homer. Team BA .229 (26th).</h3>
+      <p>New York Mets are 5-3 in Grapefruit League spring training, 2.5 GB in the standings. Christopher Suero belted a homer to tie a game two days ago. Batting average .229 (26th), OBP .327 (24th). Roster competition ongoing.</p>
       <div class="foot"><span>ESPN</span><span>Mar 3, 2026</span></div>
     </a>
     <a class="card cr" href="https://www.espn.com/mens-college-basketball/team/_/id/183/syracuse-orange" target="_blank">
       <div class="flags"><span class="f f-ol">Syracuse</span><span class="f f-ol">NCAAM</span></div>
-      <h3>Syracuse: 15-14 Overall, 6-10 ACC &mdash; Tied 13th/14th in Conference. Beat Wake Forest 3 Days Ago.</h3>
-      <p>The Orange are 15-14 overall and 6-10 in ACC play, tied for 13th/14th in the conference standings. They beat Wake Forest 3 days ago and lost to North Carolina 10 days ago (second-half surge by UNC). At 15-14 with this ACC record, the NCAA Tournament is a very long shot &mdash; NIT is the more realistic conversation. (Source: ESPN, March 3, 2026)</p>
+      <h3>Syracuse: 15-14, 6-10 ACC &mdash; At Louisville Tonight, 9 PM ET, ACC Network</h3>
+      <p>The Orange are 15-14 overall, 6-10 in ACC play &mdash; tied 13th/14th in the conference. They head to Louisville tonight (9 PM ET, ACC Network) in a critical late-season game. At this record, NIT is the realistic conversation, not NCAA Tournament.</p>
       <div class="foot"><span>ESPN</span><span>Mar 3, 2026</span></div>
     </a>
-    <a class="card" href="https://apnews.com/hub/nfl" target="_blank">
-      <div class="flags"><span class="f f-ol">Giants</span><span class="f f-ol">NFL</span></div>
-      <h3>Giants Hired John Harbaugh as Head Coach &mdash; Trump Mentioned the Hire While Congratulating Indiana on CFP Win</h3>
-      <p>The New York Giants hired John Harbaugh as head coach. AP noted Trump congratulating Indiana on the CFP championship win in the same remarks where he commented on the Giants&rsquo; Harbaugh hire. It is the NFL offseason &mdash; draft and free agency decisions are the next major milestones for the organization. (Source: AP, March 2026)</p>
-      <div class="foot"><span>AP News</span><span>Mar 2026</span></div>
+    <a class="card cr" href="https://apnews.com/hub/nfl" target="_blank">
+      <div class="flags"><span class="f f-ol">Giants</span><span class="f f-ol">NFL Offseason</span></div>
+      <h3>Giants Hired John Harbaugh as Head Coach &mdash; Draft and Free Agency Next</h3>
+      <p>The New York Giants hired John Harbaugh as head coach. It is the NFL offseason &mdash; draft preparation and free agency decisions are the next major milestones for the organization. No breaking Giants news today.</p>
+      <div class="foot"><span>AP / NFL</span><span>Mar 2026</span></div>
     </a>
   </div>
 
@@ -272,7 +189,7 @@
       <div class="ft">The <em>Docket</em></div>
       <div class="fs">Curated by Pavano &#129302; for <span>Matt Reilly</span> &bull; Powered by Wally</div>
     </div>
-    <div class="fr">Tuesday, March 3, 2026<br>Issue No. 1<br><span style="color:rgba(255,255,255,0.2)">All content sourced &amp; verified. No fabrication.</span></div>
+    <div class="fr">Tuesday, March 3, 2026<br>Issue No. 1<br><span style="color:rgba(255,255,255,0.2)">All content verified. No fabrication.</span></div>
   </div>
 </footer>
 
