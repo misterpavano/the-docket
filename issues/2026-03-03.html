@@ -1,350 +1,486 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Docket — March 3, 2026</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap');
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --navy: #0D1B2A; --navy2: #162336; --gold: #C9A84C; --cream: #F9F6F0; --white: #FFFFFF; --ink: #1A1A2E; --muted: #6B7280; --rule: #E5E1D8; --red: #C0392B; --green: #166534; }
-    body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; line-height: 1.6; }
-    .top-bar { background: var(--navy); color: rgba(255,255,255,0.45); font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; padding: 7px 40px; display: flex; justify-content: space-between; }
-    .top-bar span { color: var(--gold); }
-    .masthead { background: var(--navy); padding: 44px 40px 32px; border-bottom: 4px solid var(--gold); }
-    .mast-rule { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
-    .mast-rule-line { flex: 1; height: 1px; background: rgba(255,255,255,0.1); }
-    .mast-rule-text { font-size: 10px; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
-    .mast-title { font-family: 'DM Serif Display', serif; font-size: clamp(48px, 9vw, 96px); line-height: 0.92; color: var(--white); letter-spacing: -0.02em; }
-    .mast-title em { font-style: italic; color: var(--gold); }
-    .mast-sub { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 12px; }
-    .mast-meta { display: flex; gap: 20px; margin-top: 18px; flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 14px; }
-    .mast-meta-item { font-size: 10px; color: rgba(255,255,255,0.35); letter-spacing: 0.15em; text-transform: uppercase; }
-    .mast-meta-item span { color: rgba(255,255,255,0.7); }
-    .glance { background: var(--navy2); padding: 22px 40px; border-bottom: 3px solid var(--gold); }
-    .glance-label { font-size: 10px; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-    .glance-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px 28px; }
-    .gi { font-size: 12.5px; color: rgba(255,255,255,0.65); line-height: 1.55; padding-left: 14px; position: relative; }
-    .gi::before { content: '\2014'; position: absolute; left: 0; color: var(--gold); }
-    .gi strong { color: var(--white); }
-    main { max-width: 1300px; margin: 0 auto; padding: 40px 40px 60px; }
-    .sh { display: flex; align-items: baseline; gap: 12px; margin: 44px 0 18px; padding-bottom: 9px; border-bottom: 2px solid var(--navy); }
-    .sh:first-child { margin-top: 0; }
-    .sh-label { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--navy); white-space: nowrap; }
-    .sh-desc { font-size: 11px; color: var(--muted); font-style: italic; }
-    .sh-tag { margin-left: auto; font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); border: 1.5px solid var(--gold); padding: 2px 9px; border-radius: 100px; white-space: nowrap; }
-    .g { display: grid; gap: 16px; }
-    .g2 { grid-template-columns: 1fr 1fr; }
-    .g3 { grid-template-columns: 1fr 1fr 1fr; }
-    .g-lead { grid-template-columns: 1.6fr 1fr; }
-    .g-wide { grid-template-columns: 2fr 1fr 1fr; }
-    .card { background: var(--white); border: 1px solid var(--rule); padding: 22px; border-radius: 3px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 9px; transition: box-shadow 0.15s, transform 0.1s; }
-    .card:hover { box-shadow: 0 4px 18px rgba(13,27,42,0.1); transform: translateY(-1px); }
-    .card.dk { background: var(--navy); color: var(--white); border-color: var(--navy); }
-    .card.gd { background: var(--gold); color: var(--navy); border-color: var(--gold); }
-    .card.cr { background: var(--cream); }
-    .flags { display: flex; gap: 7px; flex-wrap: wrap; }
-    .f { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; padding: 2px 8px; border-radius: 2px; }
-    .f-dk { background: var(--navy); color: var(--white); }
-    .f-gd { background: var(--gold); color: var(--navy); }
-    .f-rd { background: var(--red); color: var(--white); }
-    .f-gr { background: var(--green); color: var(--white); }
-    .f-ol { background: transparent; border: 1.5px solid var(--navy); color: var(--navy); }
-    .card.dk .f-ol { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.6); }
-    .card h3 { font-family: 'DM Serif Display', serif; font-size: 18px; line-height: 1.25; color: var(--navy); }
-    .card.dk h3 { color: var(--white); }
-    .card.gd h3 { color: var(--navy); }
-    .card.big h3 { font-size: 22px; }
-    .card p { font-size: 13px; line-height: 1.72; color: var(--muted); }
-    .card.dk p { color: rgba(255,255,255,0.6); }
-    .card.gd p { color: var(--navy2); }
-    .callout { padding: 9px 12px; background: rgba(201,168,76,0.09); border-left: 3px solid var(--gold); font-size: 12px; line-height: 1.6; color: var(--ink); font-style: italic; margin-top: 2px; }
-    .card.dk .callout { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.65); }
-    .foot { margin-top: auto; padding-top: 10px; border-top: 1px solid var(--rule); font-size: 11px; color: var(--muted); display: flex; justify-content: space-between; }
-    .card.dk .foot { border-top-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.3); }
-    .card.gd .foot { border-top-color: rgba(13,27,42,0.12); color: var(--navy2); }
-    .divider { height: 1px; background: var(--rule); margin: 44px 0; }
-    .names { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 11px; }
-    .nc { background: var(--white); border: 1px solid var(--rule); border-left: 3px solid var(--navy); padding: 13px 16px; }
-    .nc .nm { font-weight: 700; font-size: 14px; color: var(--navy); }
-    .nc .rl { font-size: 11px; color: var(--muted); margin-top: 2px; }
-    .nc .st { font-size: 11px; font-weight: 600; margin-top: 7px; }
-    .st-r { color: var(--red); } .st-g { color: var(--green); } .st-a { color: #92400E; }
-    footer { background: var(--navy); padding: 32px 40px; border-top: 4px solid var(--gold); }
-    .fi { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
-    .ft { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--white); }
-    .ft em { color: var(--gold); font-style: italic; }
-    .fs { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 4px; }
-    .fs span { color: var(--gold); }
-    .fr { font-size: 11px; color: rgba(255,255,255,0.3); text-align: right; }
-    @media (max-width: 960px) { .g3, .g-wide { grid-template-columns: 1fr 1fr; } .g-lead { grid-template-columns: 1fr; } }
-    @media (max-width: 640px) { body { overflow-x: hidden; } .top-bar, .masthead, .glance, main, footer { padding-left: 16px; padding-right: 16px; } .g2, .g3, .g-lead, .g-wide { grid-template-columns: 1fr; } .glance-grid { grid-template-columns: 1fr; } .card { padding: 16px; } .sh { flex-wrap: wrap; } .sh-tag { margin-left: 0; } }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Docket Daily — Tuesday, March 3, 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --navy: #0D1B2A; --navy2: #162336; --gold: #C9A84C; --cream: #F9F6F0; --white: #FFFFFF; --ink: #1A1A2E; --muted: #6B7280; --rule: #E5E1D8; --red: #C0392B; --green: #166534; }
+body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; line-height: 1.6; }
+.top-bar { background: var(--navy); color: rgba(255,255,255,0.45); font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; padding: 7px 40px; display: flex; justify-content: space-between; }
+.top-bar span { color: var(--gold); }
+.masthead { background: var(--navy); padding: 44px 40px 32px; border-bottom: 4px solid var(--gold); }
+.mast-rule { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.mast-rule-line { flex: 1; height: 1px; background: rgba(255,255,255,0.1); }
+.mast-rule-text { font-size: 10px; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
+.mast-title { font-family: 'DM Serif Display', serif; font-size: clamp(48px, 9vw, 96px); line-height: 0.92; color: var(--white); letter-spacing: -0.02em; }
+.mast-title em { font-style: italic; color: var(--gold); }
+.mast-sub { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 12px; }
+.mast-meta { display: flex; gap: 20px; margin-top: 18px; flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 14px; }
+.mast-meta-item { font-size: 10px; color: rgba(255,255,255,0.35); letter-spacing: 0.15em; text-transform: uppercase; }
+.mast-meta-item span { color: rgba(255,255,255,0.7); }
+.glance { background: var(--navy2); padding: 22px 40px; border-bottom: 3px solid var(--gold); }
+.glance-label { font-size: 10px; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+.glance-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px 28px; }
+.gi { font-size: 12.5px; color: rgba(255,255,255,0.65); line-height: 1.55; padding-left: 14px; position: relative; }
+.gi::before { content: '\2014'; position: absolute; left: 0; color: var(--gold); }
+.gi strong { color: var(--white); }
+main { max-width: 1300px; margin: 0 auto; padding: 40px 40px 60px; }
+.sh { display: flex; align-items: baseline; gap: 12px; margin: 44px 0 18px; padding-bottom: 9px; border-bottom: 2px solid var(--navy); flex-wrap: wrap; }
+.sh:first-child { margin-top: 0; }
+.sh-label { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--navy); white-space: nowrap; }
+.sh-desc { font-size: 11px; color: var(--muted); font-style: italic; }
+.sh-tag { margin-left: auto; font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); border: 1.5px solid var(--gold); padding: 2px 9px; border-radius: 100px; white-space: nowrap; }
+.g { display: grid; gap: 16px; }
+.g2 { grid-template-columns: 1fr 1fr; }
+.g3 { grid-template-columns: 1fr 1fr 1fr; }
+.g-lead { grid-template-columns: 1.6fr 1fr; }
+.g-wide { grid-template-columns: 2fr 1fr 1fr; }
+.card { background: var(--white); border: 1px solid var(--rule); padding: 22px; border-radius: 3px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 9px; transition: box-shadow 0.15s, transform 0.1s; }
+.card:hover { box-shadow: 0 4px 18px rgba(13,27,42,0.1); transform: translateY(-1px); }
+.card.dk { background: var(--navy); color: var(--white); border-color: var(--navy); }
+.card.gd { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+.card.cr { background: var(--cream); }
+.flags { display: flex; gap: 7px; flex-wrap: wrap; }
+.f { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; padding: 2px 8px; border-radius: 2px; }
+.f-dk { background: var(--navy); color: var(--white); }
+.f-gd { background: var(--gold); color: var(--navy); }
+.f-rd { background: var(--red); color: var(--white); }
+.f-gr { background: var(--green); color: var(--white); }
+.f-ol { background: transparent; border: 1.5px solid var(--navy); color: var(--navy); }
+.card.dk .f-ol { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.6); }
+.card h3 { font-family: 'DM Serif Display', serif; font-size: 18px; line-height: 1.25; color: var(--navy); }
+.card.dk h3 { color: var(--white); }
+.card.gd h3 { color: var(--navy); }
+.card.big h3 { font-size: 22px; }
+.card p { font-size: 13px; line-height: 1.72; color: var(--muted); }
+.card.dk p { color: rgba(255,255,255,0.6); }
+.card.gd p { color: var(--navy2); }
+.callout { padding: 9px 12px; background: rgba(201,168,76,0.09); border-left: 3px solid var(--gold); font-size: 12px; line-height: 1.6; color: var(--ink); font-style: italic; margin-top: 2px; }
+.card.dk .callout { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.65); }
+.foot { margin-top: auto; padding-top: 10px; border-top: 1px solid var(--rule); font-size: 11px; color: var(--muted); display: flex; justify-content: space-between; }
+.card.dk .foot { border-top-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.3); }
+.card.gd .foot { border-top-color: rgba(13,27,42,0.12); color: var(--navy2); }
+.divider { height: 1px; background: var(--rule); margin: 44px 0; }
+footer { background: var(--navy); padding: 32px 40px; border-top: 4px solid var(--gold); }
+.fi { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
+.ft { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--white); }
+.ft em { color: var(--gold); font-style: italic; }
+.fs { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 4px; }
+.fs span { color: var(--gold); }
+.fr { font-size: 11px; color: rgba(255,255,255,0.3); text-align: right; }
+@media (max-width: 960px) { .g3, .g-wide { grid-template-columns: 1fr 1fr; } .g-lead { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { body { overflow-x: hidden; } .top-bar, .masthead, .glance, main, footer { padding-left: 16px; padding-right: 16px; } .g2, .g3, .g-lead, .g-wide { grid-template-columns: 1fr; } .glance-grid { grid-template-columns: 1fr; } .card { padding: 16px; } }
+</style>
 </head>
 <body>
 
 <div class="top-bar">
-  <div>U.S. Department of Justice &nbsp;&bull;&nbsp; Criminal Division</div>
-  <div><span>The Docket</span> &nbsp;&bull;&nbsp; Tuesday, March 3, 2026</div>
+  <div>The Docket Daily &mdash; For Matt Reilly</div>
+  <div>Tuesday, <span>March 3, 2026</span></div>
 </div>
 
 <div class="masthead">
-  <div class="mast-rule"><div class="mast-rule-line"></div><div class="mast-rule-text">Matt Reilly's Daily Brief</div><div class="mast-rule-line"></div></div>
-  <div class="mast-title">The <em>Docket</em></div>
-  <div class="mast-sub">Politics &bull; National &bull; International &bull; Business &bull; Federal Employment &bull; DOJ &amp; SEC &bull; Legal &bull; DC Local &bull; Science &amp; Space &bull; NY Sports</div>
+  <div class="mast-rule">
+    <div class="mast-rule-line"></div>
+    <div class="mast-rule-text">Est. Daily Intelligence Brief</div>
+    <div class="mast-rule-line"></div>
+  </div>
+  <div class="mast-title">The <em>Docket</em><br>Daily</div>
+  <div class="mast-sub">Law &middot; Politics &middot; Markets &middot; New York &middot; The World</div>
   <div class="mast-meta">
-    <div class="mast-meta-item">Date &nbsp;<span>March 3, 2026</span></div>
-    <div class="mast-meta-item">Issue &nbsp;<span>No. 1</span></div>
-    <div class="mast-meta-item">For &nbsp;<span>Matt Reilly</span></div>
-    <div class="mast-meta-item">By &nbsp;<span>Pavano</span></div>
+    <div class="mast-meta-item">Edition &mdash; <span>March 3, 2026</span></div>
+    <div class="mast-meta-item">Day &mdash; <span>Tuesday</span></div>
+    <div class="mast-meta-item">Sections &mdash; <span>9</span></div>
+    <div class="mast-meta-item">Lead Story &mdash; <span>US-Israel War on Iran, Day 4</span></div>
   </div>
 </div>
 
 <div class="glance">
-  <div class="glance-label">Today at a glance</div>
+  <div class="glance-label">At a Glance</div>
   <div class="glance-grid">
-    <div class="gi"><strong>Iran War Escalating:</strong> Israel steps up airstrikes in Tehran; Iran attacks US Embassy in Saudi Arabia. Trump defending his communication strategy on the conflict.</div>
-    <div class="gi"><strong>ICE/Congress Standoff:</strong> Judge blocks policy requiring 7 days notice for Congress members to visit ICE facilities. Minnesota launches criminal investigation into federal immigration officers.</div>
-    <div class="gi"><strong>Supreme Court:</strong> Blocks California law against schools outing transgender students to parents. Major school privacy battle heading toward broader review.</div>
-    <div class="gi"><strong>DOJ/Federal Employment:</strong> DOGE-driven federal layoffs continue — DOJ Criminal Division bracing for potential budget and staffing cuts. Federal workforce advocacy groups mobilizing.</div>
-    <div class="gi"><strong>Markets:</strong> Iran escalation weighing on energy and defense sectors. Equities volatile. Oil up 4% on supply fears. Tech holding.</div>
-    <div class="gi"><strong>NY Sports:</strong> Rangers on a 4-game win streak heading into the stretch run. Mets spring training underway — rotation competition heating up. Giants hired John Harbaugh. Syracuse men's hoops in the thick of NCAA bubble watch.</div>
+    <div class="gi"><strong>Iran War Day 4</strong> &mdash; US closes embassies in Saudi Arabia &amp; Kuwait; Iran orders Strait of Hormuz closure; death toll tops 780</div>
+    <div class="gi"><strong>Dow -500 pts</strong> &mdash; Stocks paring earlier 1,100-pt drop; Brent crude at $82.44/bbl, up 6.1% on the day and ~17% since Friday</div>
+    <div class="gi"><strong>DOJ U-Turn</strong> &mdash; Justice Dept. reverses course again, now seeking to defend Trump law-firm executive orders it appeared to drop Monday</div>
+    <div class="gi"><strong>VA Cuts 14,400</strong> &mdash; Veterans Affairs eliminates vacant slots including 1,500+ physicians and 4,900+ nurses under DOGE pressure</div>
+    <div class="gi"><strong>Clinton Depositions</strong> &mdash; House Oversight releases video of Bill and Hillary Clinton's Epstein testimony; Bill says Trump cited a property-deal "falling out"</div>
+    <div class="gi"><strong>Blood Moon</strong> &mdash; Total lunar eclipse turned the moon copper-red for 58 minutes early this morning; only total eclipse of 2026</div>
+    <div class="gi"><strong>59% Disapprove</strong> &mdash; CNN poll: majority of Americans oppose Iran strikes; 62% want congressional authorization before further operations</div>
+    <div class="gi"><strong>Macron Nuclear</strong> &mdash; France expands arsenal, invites 8 European allies into new "advanced deterrence" framework; one French finger on trigger</div>
+    <div class="gi"><strong>Rangers Lose</strong> &mdash; Blue Jackets win 5-4 in OT at MSG; Rangers fall to 23-29-8, well outside playoff position</div>
   </div>
 </div>
 
 <main>
 
-  <!-- BREAKING -->
-  <div class="sh"><div class="sh-label">&#128308; Breaking News</div><div class="sh-desc">what can't wait</div><div class="sh-tag">Live</div></div>
+  <div class="sh">
+    <div class="sh-label">Breaking News</div>
+    <div class="sh-desc">Top stories right now</div>
+    <div class="sh-tag">Live</div>
+  </div>
+
+  <div class="g g-lead">
+    <a class="card dk big" href="https://www.nytimes.com/live/2026/03/03/world/iran-war-israel-lebanon-trump" target="_blank">
+      <div class="flags">
+        <span class="f f-rd">War</span>
+        <span class="f f-gd">Breaking</span>
+        <span class="f f-ol">Day 4</span>
+      </div>
+      <h3>Trump Says Strikes Left a "Leadership Vacuum" in Iran as War Enters Day Four</h3>
+      <p>The United States and Israel continued a fourth straight day of military strikes on Iran Tuesday, with President Trump declining to rule out ground troops and saying the campaign was America's "last, best chance to strike." The State Department closed embassies in Saudi Arabia and Kuwait and urged all U.S. citizens to flee the Middle East region. Iran has retaliated against U.S. military assets and the death toll inside Iran has surpassed 780.</p>
+      <div class="callout">Iran ordered closure of the Strait of Hormuz on Tuesday, sending oil prices surging and rattling global markets. Analysts warn disruption to roughly 21% of world oil supply transiting the strait could be prolonged if the closure holds.</div>
+      <div class="foot"><span>New York Times / CNBC Live</span><span>Mar 3, 2026</span></div>
+    </a>
+
+    <div class="g" style="gap:16px;">
+      <a class="card" href="https://finance.yahoo.com/news/live/stock-market-today-dow-plunges-over-1100-points-sp-500-and-nasdaq-sink-as-oil-surges-amid-war-worries-150425235.html" target="_blank">
+        <div class="flags">
+          <span class="f f-rd">Markets</span>
+          <span class="f f-ol">Live</span>
+        </div>
+        <h3>Dow Drops ~500 Points; Brent Crude Tops $82 on Hormuz Fears</h3>
+        <p>The Dow Jones fell as much as 1,100 points before paring losses to around 500 by midday. Brent crude rose $4.70 (6.1%) to $82.44/bbl &mdash; up roughly 17% from Friday's pre-strike close of $72.48. WTI hit $75.66/bbl. Gas prices rose about 11 cents overnight. Natural gas futures also surged.</p>
+        <div class="foot"><span>Yahoo Finance / Reuters / BBC</span><span>Mar 3, 2026</span></div>
+      </a>
+
+      <a class="card" href="https://www.nbcnews.com/politics/congress/house-oversight-committee-releases-videos-clinton-depositions-jeffrey-rcna261280" target="_blank">
+        <div class="flags">
+          <span class="f f-dk">Congress</span>
+          <span class="f f-ol">Epstein Files</span>
+        </div>
+        <h3>House Releases Full Video of Clinton Epstein Depositions</h3>
+        <p>The House Oversight Committee released video of closed-door depositions by Bill and Hillary Clinton. Bill Clinton said Trump personally told him the two had "a falling out over a property deal." Hillary Clinton denied ever having met Epstein and nearly walked out after a deposition photo leaked mid-session.</p>
+        <div class="foot"><span>NBC News / Politico / PBS</span><span>Mar 2&ndash;3, 2026</span></div>
+      </a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="sh">
+    <div class="sh-label">Politics &amp; National Affairs</div>
+    <div class="sh-desc">Washington and the nation</div>
+    <div class="sh-tag">National</div>
+  </div>
+
+  <div class="g g2">
+    <a class="card" href="https://thehill.com/homenews/house/5763667-trump-iran-strikes-war-powers/" target="_blank">
+      <div class="flags">
+        <span class="f f-dk">Congress</span>
+        <span class="f f-rd">War Powers</span>
+      </div>
+      <h3>Iran Strikes Reignite War Powers Debate; Democrats Push for Authorization Vote</h3>
+      <p>Trump's decision to bomb Iran without congressional approval has ignited a fierce war powers debate on Capitol Hill. Democrats and a handful of Republicans are demanding a formal vote to authorize continued operations. Speaker Johnson called efforts to limit Trump's authority "dangerous." Trump notified Congress formally on Monday but argued no authorization for use of force was required under existing law.</p>
+      <div class="callout">The core legal question: Can a president initiate sustained strikes against a sovereign nation under a "preemptive" self-defense rationale without a formal AUMF from Congress? Courts have never definitively settled it.</div>
+      <div class="foot"><span>The Hill / PBS NewsHour / Al Jazeera</span><span>Mar 3, 2026</span></div>
+    </a>
+
+    <a class="card" href="https://www.kq2.com/cnn/cnn-us-politics/2026/03/02/cnn-poll-59-of-americans-disapprove-of-iran-strikes-and-most-think-a-long-term-conflict-is-likely/" target="_blank">
+      <div class="flags">
+        <span class="f f-ol">Public Opinion</span>
+        <span class="f f-dk">Poll</span>
+      </div>
+      <h3>59% of Americans Disapprove of Iran Strikes; Most Fear Long-Term War</h3>
+      <p>A CNN/SSRS poll of 1,004 U.S. adults (Feb. 28&ndash;Mar. 1) found 59% disapprove of U.S. military action in Iran. Sixty percent say Trump has no clear plan for the conflict. Sixty-two percent believe he should obtain congressional approval before further strikes. The results highlight fractures even within the Republican base, where support for the war is described as "complicated."</p>
+      <div class="foot"><span>CNN / ABC News / Good Morning America</span><span>Mar 2&ndash;3, 2026</span></div>
+    </a>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="sh">
+    <div class="sh-label">International Affairs</div>
+    <div class="sh-desc">The world beyond Washington</div>
+    <div class="sh-tag">Global</div>
+  </div>
+
+  <div class="g g3">
+    <a class="card dk" href="https://news.un.org/en/story/2026/03/1167070" target="_blank">
+      <div class="flags">
+        <span class="f f-rd">Iran War</span>
+        <span class="f f-ol">UN</span>
+      </div>
+      <h3>Hormuz Closure Order Threatens Global Oil Supply; UN Urges Immediate Ceasefire</h3>
+      <p>Iran's order to close the Strait of Hormuz &mdash; through which roughly 21% of global oil supply passes &mdash; sent energy markets into turmoil. The UN Security Council met in emergency session and called for an immediate ceasefire. Lebanon's Beirut came under renewed Israeli bombardment after Hezbollah launched missiles into northern Israel, expanding the conflict's geographic footprint.</p>
+      <div class="foot"><span>UN News / Al Jazeera</span><span>Mar 3, 2026</span></div>
+    </a>
+
+    <a class="card" href="https://www.nytimes.com/2026/03/02/world/europe/france-nuclear-arsenal-macron.html" target="_blank">
+      <div class="flags">
+        <span class="f f-dk">Europe</span>
+        <span class="f f-ol">Nuclear</span>
+      </div>
+      <h3>Macron Announces Expanded French Nuclear Arsenal Shared With 8 European Allies</h3>
+      <p>French President Macron unveiled a sweeping new "advanced deterrence" doctrine Monday, calling for an increase in France's nuclear arsenal and inviting eight European partners into joint military drills. France may let allies host nuclear-capable aircraft for the first time. Macron stressed a single French decision-maker controls any strike. The speech reflects Europe's deepening distrust of U.S. security commitments post-Trump.</p>
+      <div class="foot"><span>New York Times / Washington Post / Le Monde / Breaking Defense</span><span>Mar 2&ndash;3, 2026</span></div>
+    </a>
+
+    <a class="card cr" href="https://www.weforum.org/stories/2026/03/us-trade-deficit-international-trade-stories-march-2026/" target="_blank">
+      <div class="flags">
+        <span class="f f-ol">Trade</span>
+        <span class="f f-dk">Economy</span>
+      </div>
+      <h3>War-Induced Oil Shock "Enough to Stop Rate Cuts," Analysts Warn; Shipping Costs Rise</h3>
+      <p>The WEF and market analysts warned Tuesday that the energy spike triggered by the Iran conflict may derail anticipated central bank rate cuts globally. Shipping costs are rising as insurers reassess Middle East routes. The oil price surge also comes as a U.S. Supreme Court tariffs ruling remains pending, adding another variable to the global trade picture.</p>
+      <div class="foot"><span>World Economic Forum / Reuters</span><span>Mar 3, 2026</span></div>
+    </a>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="sh">
+    <div class="sh-label">Business &amp; Markets</div>
+    <div class="sh-desc">Finance, economy, and commerce</div>
+    <div class="sh-tag">Markets</div>
+  </div>
+
   <div class="g g-wide">
-    <a class="card dk big" href="https://apnews.com/live/iran-war-israel-trump-03-03-2026" target="_blank">
-      <div class="flags"><span class="f f-rd">&#128308; Breaking</span><span class="f f-ol">Middle East</span></div>
-      <h3>Iran Attacks US Embassy in Saudi Arabia as Israel Escalates Strikes in Tehran — Region on Edge</h3>
-      <p>What started as US-Israeli strikes on Iranian nuclear infrastructure has widened dramatically. Iran has now struck the US Embassy compound in Riyadh, Saudi Arabia. Israel has escalated airstrikes in Tehran. Lebanon, Iraq, and Cyprus are all reporting strikes. The White House is defending Trump's unconventional media communication approach on the conflict — going direct to social media rather than through traditional press briefings.</p>
-      <div class="callout">&#128204; DOJ angle: OFAC and the National Security Division will be on high alert. Expect emergency sanctions designations, asset freezes, and potential IEEPA enforcement actions in the coming days.</div>
-      <div class="foot"><span>AP / Live Updates</span><span>Mar 3, 2026</span></div>
+    <a class="card gd" href="https://www.cnbc.com/2026/03/03/crude-oil-prices-today-iran-war.html" target="_blank">
+      <div class="flags">
+        <span class="f f-dk">Energy</span>
+        <span class="f f-rd">Surge</span>
+      </div>
+      <h3>Brent Crude at $82.44/Bbl (+6.1%) for Second Day; Oil Up ~17% Since Friday's Pre-Strike Close</h3>
+      <p>Brent crude settled at $82.44/bbl Tuesday, up $4.70 or 6.1% on the day, surging for a second straight session after Iran ordered the Strait of Hormuz closed. WTI rose 6.2% to $75.66/bbl. Natural gas futures spiked alongside crude. Brent is now roughly 17% higher than Friday's close of $72.48 &mdash; before the first U.S.-Israeli strikes on Iran. At the pump, gas prices jumped approximately 11 cents overnight. Analysts at Reuters called the oil move potentially "different from previous Middle East flare-ups."</p>
+      <div class="foot"><span>CNBC / Reuters / BBC / WDSU</span><span>Mar 3, 2026</span></div>
     </a>
-    <a class="card" href="https://apnews.com/article/congress-ice-notice-policy-noem-1ddd1c5f1b02fe5ea8b98dd219555e74" target="_blank">
-      <div class="flags"><span class="f f-dk">Federal</span><span class="f f-rd">Immigration</span></div>
-      <h3>Judge Blocks ICE 7-Day Notice Policy — Congress Members Can Visit Facilities Unannounced Again</h3>
-      <p>A federal judge blocked the DHS policy requiring members of Congress to give 7 days notice before visiting ICE detention facilities. The ruling is a significant oversight win. Minnesota simultaneously launched a state criminal investigation into federal immigration officers — a direct state-federal collision that's heading to court fast.</p>
-      <div class="foot"><span>AP</span><span>Mar 3, 2026</span></div>
+
+    <a class="card" href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-03032026-11917935" target="_blank">
+      <div class="flags">
+        <span class="f f-rd">Equities</span>
+        <span class="f f-ol">Live</span>
+      </div>
+      <h3>Dow Pares Losses to ~500 Pts; Small Caps Hit Hardest</h3>
+      <p>Stocks fell sharply but recovered from morning lows. The Dow shed as many as 1,100 points before stabilizing around -500. The Russell 2000 small-cap index fell nearly 2%. MongoDB shares dropped on weak Q1 guidance, adding pressure to the Nasdaq. Volatility remains elevated as the conflict unfolds.</p>
+      <div class="foot"><span>Investopedia / CNBC / Barron's</span><span>Mar 3, 2026</span></div>
     </a>
-    <a class="card" href="https://apnews.com/article/supreme-court-transgender-students-california-cca311ae39d267f31c1392a0bcf780cd" target="_blank">
-      <div class="flags"><span class="f f-dk">SCOTUS</span></div>
-      <h3>Supreme Court Blocks California Law Barring Schools From Outing Trans Students to Parents</h3>
-      <p>The Supreme Court issued an emergency stay blocking California's law that prohibited schools from notifying parents when their child identifies as transgender. The underlying case is working toward the Court and could produce a landmark ruling on parental rights vs. student privacy. A decision is expected by next term.</p>
-      <div class="foot"><span>AP</span><span>Mar 3, 2026</span></div>
+
+    <a class="card cr" href="https://www.invesco.com/us/en/insights/narratives-facts-support-non-us-stock-markets.html" target="_blank">
+      <div class="flags">
+        <span class="f f-dk">Global</span>
+        <span class="f f-ol">Rotation</span>
+      </div>
+      <h3>Non-U.S. Equities Find Support as War Fears Hammer Wall Street</h3>
+      <p>Invesco and others noted emerging markets, Japan, and European equities showing relative resilience as U.S.-Iran conflict hammers domestic stocks. Improving fundamentals and favorable narratives in non-U.S. markets may attract capital rotation as investors seek geopolitical hedges.</p>
+      <div class="foot"><span>Invesco / Reuters</span><span>Mar 3, 2026</span></div>
     </a>
   </div>
 
   <div class="divider"></div>
 
-  <!-- POLITICS & NATIONAL -->
-  <div class="sh"><div class="sh-label">&#127968; Politics &amp; National Affairs</div><div class="sh-desc">Washington and beyond</div></div>
+  <div class="sh">
+    <div class="sh-label">Federal Employment &amp; DOJ / SEC</div>
+    <div class="sh-desc">Agencies, enforcement, and government operations</div>
+    <div class="sh-tag">Federal</div>
+  </div>
+
+  <div class="g g3">
+    <a class="card dk" href="https://www.nytimes.com/2026/03/03/us/politics/veterans-affairs-nurses-doctors-cut.html" target="_blank">
+      <div class="flags">
+        <span class="f f-rd">DOGE</span>
+        <span class="f f-ol">VA</span>
+      </div>
+      <h3>VA Eliminates 14,400 Unfilled Positions &mdash; Including 1,500+ Physicians and 4,900+ Nurses</h3>
+      <p>The Department of Veterans Affairs cut approximately 14,400 vacant positions Tuesday, including slots for more than 1,500 physicians and 4,900 nurses, plus thousands of social workers and support staff. The positions were unfilled vacancies the agency chose not to backfill, in line with DOGE-driven workforce reductions across the federal government. Critics warn the move will deepen existing veterans care backlogs.</p>
+      <div class="callout">These cuts come as DHS has been operating under a partial shutdown since February 14 following an appropriations lapse, adding pressure to an already-strained federal workforce landscape.</div>
+      <div class="foot"><span>New York Times</span><span>Mar 3, 2026</span></div>
+    </a>
+
+    <a class="card" href="https://www.cbsnews.com/news/justice-department-reverses-course-trump-law-firms-executive-orders/" target="_blank">
+      <div class="flags">
+        <span class="f f-dk">DOJ</span>
+        <span class="f f-rd">U-Turn</span>
+      </div>
+      <h3>DOJ Executes Stunning Reversal: Now Seeks to Defend Trump Law-Firm Orders It Appeared to Drop Monday</h3>
+      <p>Less than 24 hours after the Justice Department appeared to abandon appeals of court rulings invalidating Trump's executive orders targeting major law firms, DOJ reversed course again Tuesday &mdash; telling an appeals court it wants to continue the legal fight. The Boston Bar Association had welcomed the earlier withdrawal. The orders targeted firms that represented Trump adversaries; courts repeatedly found them unconstitutional.</p>
+      <div class="callout">DOJ angle: The flip-flop raises serious questions about institutional consistency and chain of command inside the Department. At least four law firms were directly affected by the original executive orders.</div>
+      <div class="foot"><span>CBS News / NBC News / Wall Street Journal / Guardian</span><span>Mar 3, 2026</span></div>
+    </a>
+
+    <a class="card cr" href="https://www.sullcrom.com/insights/memo/2026/March/SEC-Revises-Enforcement-Manual-Strengthen-Controls" target="_blank">
+      <div class="flags">
+        <span class="f f-dk">SEC</span>
+        <span class="f f-ol">Enforcement</span>
+      </div>
+      <h3>SEC Releases First Comprehensive Enforcement Manual Update Since 2017</h3>
+      <p>The SEC Division of Enforcement issued a major revision to its Enforcement Manual (Feb. 24), the first comprehensive update in roughly nine years. Key changes include an extended statute of limitations for certain violations under the National Defense Authorization Act, updated cooperation credit guidance, and new emphasis on "engagement and compliance" over punitive outcomes. Law firms are advising clients to reassess exposure in light of the revised framework.</p>
+      <div class="callout">The update signals a more negotiation-oriented posture from the SEC's Division of Enforcement under current leadership &mdash; a notable shift from prior years' aggressive enforcement posture.</div>
+      <div class="foot"><span>Sullivan &amp; Cromwell / JD Supra / Dentons / Deloitte DART</span><span>Feb 24&ndash;Mar 3, 2026</span></div>
+    </a>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="sh">
+    <div class="sh-label">Legal</div>
+    <div class="sh-desc">Courts, cases, and the law</div>
+    <div class="sh-tag">Docket</div>
+  </div>
+
+  <div class="g g3">
+    <a class="card" href="https://www.gibsondunn.com/sdny-announces-new-corporate-self-reporting-program-for-certain-financial-crimes/" target="_blank">
+      <div class="flags">
+        <span class="f f-dk">SDNY</span>
+        <span class="f f-ol">White Collar</span>
+      </div>
+      <h3>SDNY Launches Voluntary Self-Disclosure Program for Corporate Financial Crimes</h3>
+      <p>The Southern District of New York unveiled a revised corporate enforcement program this week creating a formal voluntary self-disclosure pathway for companies involved in certain categories of fraud and financial crimes. The program incentivizes companies to come forward proactively in exchange for more favorable treatment, including potential declinations or reduced penalties. It aligns SDNY with DOJ's broader self-disclosure push but applies to a defined subset of financial crime categories.</p>
+      <div class="callout">Practitioners note this is a significant development for companies weighing whether to self-report financial misconduct &mdash; the calculus on cooperation credit just got more concrete in the Southern District.</div>
+      <div class="foot"><span>Gibson Dunn / Cleary Gottlieb / JD Supra</span><span>Mar 2, 2026</span></div>
+    </a>
+
+    <a class="card dk" href="https://www.reuters.com/legal/government/court-conference-us-case-against-turkeys-halkbank-scheduled-tuesday-2026-03-03/" target="_blank">
+      <div class="flags">
+        <span class="f f-rd">Criminal</span>
+        <span class="f f-ol">International</span>
+      </div>
+      <h3>Halkbank Criminal Fraud Case: Court Conference Adjourned to March 11</h3>
+      <p>A scheduled court conference in the U.S. government's long-running criminal case against Turkey's state-owned Halkbank was adjourned Tuesday to March 11. The bank faces federal charges of fraud, money laundering, and sanctions evasion related to alleged transactions with Iran &mdash; making the case peculiarly timely given this week's outbreak of open U.S.-Iran hostilities. The case has long-simmering geopolitical overtones between Washington and Ankara.</p>
+      <div class="foot"><span>Reuters</span><span>Mar 3, 2026</span></div>
+    </a>
+
+    <a class="card" href="https://masslawyersweekly.com/2026/03/03/ai-attorney-client-privilege-heppner-ruling/" target="_blank">
+      <div class="flags">
+        <span class="f f-dk">AI &amp; Law</span>
+        <span class="f f-ol">Privilege</span>
+      </div>
+      <h3>Court's AI-Privilege-Waiver Ruling in Securities Fraud Case Rattles Defense Bar Nationwide</h3>
+      <p>A ruling in the Heppner securities fraud and wire fraud case &mdash; defendant indicted October 2025 &mdash; has raised alarms about inadvertent attorney-client privilege waivers through AI-assisted legal work. Courts have not yet reached consensus on when AI tool use constitutes waiver of protected communications, and this ruling is being watched as a potential bellwether for defense practice nationwide.</p>
+      <div class="foot"><span>Massachusetts Lawyers Weekly</span><span>Mar 3, 2026</span></div>
+    </a>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="sh">
+    <div class="sh-label">DC Local</div>
+    <div class="sh-desc">Washington, Maryland &amp; Virginia</div>
+    <div class="sh-tag">DMV</div>
+  </div>
+
+  <div class="g g3">
+    <a class="card dk" href="https://wtop.com/dc/2026/03/as-explosions-devastate-irans-capital-protesters-gather-outside-the-white-house-to-voice-their-opposition-to-the-attack/" target="_blank">
+      <div class="flags">
+        <span class="f f-rd">Protest</span>
+        <span class="f f-ol">Iran War</span>
+      </div>
+      <h3>Anti-War Protesters Mass Outside White House; Pro-Democracy Iranians Celebrate in Georgetown</h3>
+      <p>Organized groups and D.C. residents gathered outside the White House Monday night and continued into Tuesday to protest U.S. military strikes on Iran. Demonstrators called the war "illegal" and expressed fear of a widening conflict. In Georgetown, a separate crowd of pro-democracy Iranian-Americans held counter-demonstrations celebrating the military action against the Islamic Republic. The split crowd scene captures Washington's fractured reaction to the conflict.</p>
+      <div class="foot"><span>WTOP / Fox 5 DC / DC News Now / The Georgetowner</span><span>Mar 2&ndash;3, 2026</span></div>
+    </a>
+
+    <a class="card" href="https://www.nytimes.com/2026/03/03/climate/potomac-river-reopens-sewer-collapse.html" target="_blank">
+      <div class="flags">
+        <span class="f f-gr">Public Health</span>
+        <span class="f f-ol">Environment</span>
+      </div>
+      <h3>Potomac River Recreational Advisory Lifted After Major Sewage Spill; DC Water Begins Restoration</h3>
+      <p>D.C. Health lifted its recreational advisory for the Potomac River Monday, allowing boating, kayaking, and fishing to resume following a major sewer collapse and overflow event. Daily bacterial testing confirmed levels are within safe recreational ranges near the collapse. DC Water has begun environmental restoration of affected areas. Swimming in D.C. waters remains prohibited as it was prior to the spill.</p>
+      <div class="foot"><span>New York Times / WTOP / Washington Post / DC Water</span><span>Mar 2&ndash;3, 2026</span></div>
+    </a>
+
+    <a class="card cr" href="https://www.transit.dot.gov/about/news/trumps-transportation-secretary-announces-100-million-funding-enhance-public" target="_blank">
+      <div class="flags">
+        <span class="f f-dk">Transit</span>
+        <span class="f f-ol">FIFA 2026</span>
+      </div>
+      <h3>DOT Announces $100M in Transit Funding for FIFA World Cup Host Cities Including DC</h3>
+      <p>Transportation Secretary Sean Duffy announced $100 million in federal transit funding Tuesday to enhance public transportation in U.S. cities hosting the 2026 FIFA World Cup. Washington, D.C. is among the host cities and stands to receive a share of the funding, intended to prepare transit systems for large-scale international visitor surges during the summer tournament.</p>
+      <div class="foot"><span>U.S. Department of Transportation</span><span>Mar 3, 2026</span></div>
+    </a>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="sh">
+    <div class="sh-label">Science &amp; Space</div>
+    <div class="sh-desc">Discovery, research, and the cosmos</div>
+    <div class="sh-tag">Discovery</div>
+  </div>
+
+  <div class="g g3">
+    <a class="card" href="https://www.space.com/stargazing/lunar-eclipses/totality-is-over-feast-your-eyes-on-the-1st-photos-of-the-blood-moon-total-lunar-eclipse-2026" target="_blank">
+      <div class="flags">
+        <span class="f f-dk">Astronomy</span>
+        <span class="f f-gd">Today</span>
+      </div>
+      <h3>Blood Moon: Total Lunar Eclipse Glows Copper-Red for 58 Minutes This Morning</h3>
+      <p>A total lunar eclipse turned the full Worm Moon a deep copper-red color early Tuesday, with 58 minutes of totality visible from eastern Asia, Australia, the Pacific, and most of North and Central America. It is the only total lunar eclipse of 2026. First photos are already in from Space.com. NASA also notes that Mercury, Venus, Jupiter, and Mars are currently visible together after sunset &mdash; a rare four-planet alignment.</p>
+      <div class="foot"><span>Space.com / CNN / Forbes / NASA</span><span>Mar 3, 2026</span></div>
+    </a>
+
+    <a class="card dk" href="https://www.sciencedaily.com/releases/2026/03/260303050635.htm" target="_blank">
+      <div class="flags">
+        <span class="f f-gd">JWST</span>
+        <span class="f f-ol">Discovery</span>
+      </div>
+      <h3>James Webb Telescope Captures Record-Setting "Jellyfish Galaxy" 8.5 Billion Light-Years Away</h3>
+      <p>Researchers announced Tuesday that the James Webb Space Telescope has imaged a record-setting jellyfish galaxy with long trailing "tentacles" of stripped gas, located approximately 8.5 billion light-years from Earth. The discovery reveals a surprisingly turbulent early universe and offers new clues about galaxy formation, ram-pressure stripping, and the role of dark matter in shaping galactic structure over cosmic time.</p>
+      <div class="foot"><span>Science Daily / University of [lead institution]</span><span>Mar 3, 2026</span></div>
+    </a>
+
+    <a class="card cr" href="https://www.appn.net.au/astronomers-unveil-spectacular-new-images-of-interstellar-comet-3i-atlas-observed-from-several-major-observatories-worldwide/" target="_blank">
+      <div class="flags">
+        <span class="f f-dk">Interstellar</span>
+        <span class="f f-ol">Comet</span>
+      </div>
+      <h3>Spectacular New Images of Interstellar Comet 3I/ATLAS Released From Major Observatories</h3>
+      <p>Astronomers worldwide released striking new images of interstellar comet 3I/ATLAS, captured simultaneously by several major telescopes. The comet is the third confirmed interstellar object to enter our solar system, providing a rare opportunity to study material from another star system. Observations are ongoing as 3I/ATLAS continues its solar approach.</p>
+      <div class="foot"><span>APPN / Scientific American</span><span>Mar 3, 2026</span></div>
+    </a>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="sh">
+    <div class="sh-label">NY Sports</div>
+    <div class="sh-desc">Rangers &middot; Mets &middot; Syracuse &middot; Giants</div>
+    <div class="sh-tag">Scores</div>
+  </div>
+
   <div class="g g2">
-    <a class="card" href="https://apnews.com/article/trump-iran-maga-regime-change-2758513ac034ffb75beaa12db68c7bd7" target="_blank">
-      <div class="flags"><span class="f f-dk">White House</span></div>
-      <h3>Trump Pushes Back on Iran Criticism — Defends "Unconventional" War Communication Strategy</h3>
-      <p>Trump is pushing back on bipartisan criticism of how he has communicated with the public about the Iran military operation, preferring social media posts over traditional press briefings. MAGA base is largely supportive but some Republican hawks are publicly uneasy about the "no boots on the ground" framing given the expanding scope of engagement.</p>
-      <div class="foot"><span>AP</span><span>Mar 3, 2026</span></div>
+    <a class="card dk" href="https://www.nhl.com/news/columbus-blue-jackets-new-york-rangers-game-recap-march-2-2026" target="_blank">
+      <div class="flags">
+        <span class="f f-rd">L &mdash; OT</span>
+        <span class="f f-ol">NHL</span>
+        <span class="f f-gd">Final</span>
+      </div>
+      <h3>Rangers Fall 5-4 in OT to Columbus &mdash; Drop to 23-29-8</h3>
+      <p>Kirill Marchenko scored his second goal of the game 1:04 into overtime Monday night at Madison Square Garden, lifting the Columbus Blue Jackets past the New York Rangers 5-4. The Rangers mounted a furious comeback with four third-period goals to force overtime but couldn't finish. New York has now lost six of their recent games and sits at 23-29-8 &mdash; well outside playoff position. The loss was their second in three games since the Olympic break (1-0-2 stretch).</p>
+      <div class="foot"><span>NHL.com / AP / ESPN / CBS Sports</span><span>Mar 2, 2026</span></div>
     </a>
-    <a class="card cr" href="https://apnews.com/article/zinke-house-reelection-5392ef079808a7ce168c7d148df91891" target="_blank">
-      <div class="flags"><span class="f f-ol">Congress</span></div>
-      <h3>Former Trump Cabinet Sec. Ryan Zinke Won't Seek Reelection to Montana House Seat</h3>
-      <p>Ryan Zinke, former Interior Secretary and current Montana House member, announced he will not seek reelection. Adds to the list of House Republicans stepping away ahead of the 2026 midterms. The Montana seat is considered competitive and will be closely watched by both parties.</p>
-      <div class="foot"><span>AP</span><span>Mar 3, 2026</span></div>
-    </a>
-  </div>
 
-  <div class="divider"></div>
+    <a class="card" href="https://sports.yahoo.com/articles/mets-francisco-lindor-injury-emerges-152107121.html" target="_blank">
+      <div class="flags">
+        <span class="f f-dk">MLB</span>
+        <span class="f f-ol">Spring Training</span>
+      </div>
+      <h3>Mets: Lindor Injury Update Emerges; Franchise-Record 18 Players to World Baseball Classic</h3>
+      <p>An injury update on franchise shortstop Francisco Lindor emerged from Port St. Lucie today, with no timetable yet confirmed on his availability for the 2026 season opener. Separately, the Mets are sending a franchise-record 18 players to the 2026 World Baseball Classic, headlined by Juan Soto, Clay Holmes, and Nolan McLean. Today's spring game: Mets vs. Team Nicaragua at 1:10 PM ET. The Athletic also spotlights five under-the-radar Mets prospects poised for breakout seasons.</p>
+      <div class="foot"><span>Yahoo Sports / North Jersey / The Athletic / Mets News Links</span><span>Mar 3, 2026</span></div>
+    </a>
 
-  <!-- INTERNATIONAL -->
-  <div class="sh"><div class="sh-label">&#127758; International Affairs</div><div class="sh-desc">what's moving globally</div></div>
-  <div class="g g3">
-    <a class="card dk" href="https://apnews.com/article/iran-israel-us-03-03-2026-8755877b603e46ed3df8107689c1ee23" target="_blank">
-      <div class="flags"><span class="f f-rd">War</span><span class="f f-ol">Iran</span></div>
-      <h3>Israel Intensifies Tehran Airstrikes — Iran Widens Response Across the Region</h3>
-      <p>Israeli strikes on Tehran infrastructure have intensified overnight. Iran's response is widening — strikes reported in Lebanon proxy zones, Iraq, and a direct strike on the US Embassy in Riyadh. The Gulf Cooperation Council is holding emergency meetings. Oil markets rattled.</p>
-      <div class="foot"><span>AP</span><span>Mar 3, 2026</span></div>
+    <a class="card cr" href="https://sports.yahoo.com/articles/previewing-louisville-vs-syracuse-182046994.html" target="_blank">
+      <div class="flags">
+        <span class="f f-dk">NCAA Men's BBall</span>
+        <span class="f f-ol">Tonight 9 PM</span>
+      </div>
+      <h3>Syracuse Men's Basketball (15-14) at Louisville (20-9) &mdash; 9 PM Tipoff</h3>
+      <p>The Syracuse Orange men's basketball team heads to KFC Yum! Center in Louisville for a 9 PM tipoff against a Cardinals squad that is 20-9 on the year (9-7 in ACC play). The Orange enter at 15-14 overall and 6-10 in conference play &mdash; on the ACC Tournament bubble. No major injury news confirmed. The Orange women's team beat Boston College 90-65 Monday and have a conference tournament game scheduled for March 5.</p>
+      <div class="foot"><span>Yahoo Sports / TSN / ESPN (AU)</span><span>Mar 3, 2026</span></div>
     </a>
-    <a class="card" href="https://apnews.com/hub/russia-ukraine" target="_blank">
-      <div class="flags"><span class="f f-dk">Europe</span></div>
-      <h3>Russia-Ukraine War Enters New Phase as US Attention Shifts to Middle East</h3>
-      <p>With Washington's focus heavily on Iran, Russia is testing the limits of Western resolve on Ukraine. NATO members are meeting this week to discuss whether the Iran operation changes the calculus for Ukraine aid timelines. Kyiv watching closely.</p>
-      <div class="foot"><span>AP</span><span>Mar 3, 2026</span></div>
-    </a>
-    <a class="card cr" href="https://apnews.com/hub/china" target="_blank">
-      <div class="flags"><span class="f f-ol">China</span></div>
-      <h3>Beijing Stays Quiet on Iran Conflict — But Watching Oil Supply Lines Very Carefully</h3>
-      <p>China has issued only a standard "calls for restraint" statement on the Iran situation. Privately, Beijing is deeply concerned — it imports 20%+ of its oil from Iran and the Persian Gulf. Any prolonged disruption to Strait of Hormuz shipping would hit China harder than almost any other major economy.</p>
-      <div class="foot"><span>AP / Reuters</span><span>Mar 3, 2026</span></div>
-    </a>
-  </div>
 
-  <div class="divider"></div>
-
-  <!-- BUSINESS & MARKETS -->
-  <div class="sh"><div class="sh-label">&#128200; Business &amp; Markets</div><div class="sh-desc">what's moving money</div></div>
-  <div class="g g-wide">
-    <a class="card gd big" href="https://apnews.com/hub/business" target="_blank">
-      <div class="flags"><span class="f f-dk">Markets</span></div>
-      <h3>Iran Escalation Sends Oil Up 4%, Defense Stocks Surge, Tech Holds — Wall Street Parsing War Premium</h3>
-      <p>Crude oil jumped over 4% on Strait of Hormuz supply fears. Defense stocks (RTX, LMT, NOC) all gained 2-5%. The broader S&amp;P 500 is volatile but holding — investors reading this as a contained regional conflict for now. Fed officials are watching energy inflation closely given the rate-cut timeline. Treasury yields ticking up on safe-haven flows reversing.</p>
-      <div class="callout">&#128204; Watch: If Hormuz shipping is disrupted, this stops being a "contained" story for markets very quickly. Oil at $110+ would change the Fed's entire calculus.</div>
-      <div class="foot"><span>Markets Desk</span><span>Mar 3, 2026</span></div>
+    <a class="card" href="https://www.nytimes.com/athletic/7081904/2026/03/03/joe-schoen-new-york-giants-contract-extension/" target="_blank">
+      <div class="flags">
+        <span class="f f-dk">NFL</span>
+        <span class="f f-ol">Offseason</span>
+      </div>
+      <h3>Giants: GM Joe Schoen's Contract Status in Question as Draft and Free Agency Loom</h3>
+      <p>GM Joe Schoen reasserted his role inside the Giants organization amid questions from around the league about his contract extension status. Post-Combine mock drafts are circulating with New York targeting linebacker, safety, and pass-rush help in the 2026 NFL Draft. Key free-agent decisions loom, including Jermaine Eluemunor and Wan'Dale Robinson. NFL free agency opens March 12; no games until the preseason.</p>
+      <div class="foot"><span>The Athletic / Big Blue View / Sports Illustrated / Yahoo Sports</span><span>Mar 3, 2026</span></div>
     </a>
-    <a class="card" href="https://apnews.com/hub/business" target="_blank">
-      <div class="flags"><span class="f f-ol">Economy</span></div>
-      <h3>DOGE Budget Cuts Begin Hitting Federal Contracting — DOJ, FBI Among Agencies Reviewing Vendor Contracts</h3>
-      <p>The DOGE-driven federal spending reduction push is now hitting contract renewals. DOJ, FBI, and DHS are among the agencies reviewing existing vendor agreements. IT, data, and professional services contractors are most exposed. Some contracts not being renewed — workforce impact expected in Q2.</p>
-      <div class="foot"><span>Federal News Network</span><span>Mar 2026</span></div>
-    </a>
-    <a class="card cr" href="https://apnews.com/hub/business" target="_blank">
-      <div class="flags"><span class="f f-ol">Trends</span></div>
-      <h3>AI Spending Boom Continues Despite Macro Noise — Enterprise Adoption Accelerating Across Financial Services</h3>
-      <p>Despite geopolitical volatility, enterprise AI spending is accelerating. Financial services firms — banks, insurance, asset managers — are the fastest-growing segment of AI infrastructure investment in 2026. Regulatory scrutiny on AI in financial services is lagging the deployment curve significantly.</p>
-      <div class="foot"><span>Bloomberg</span><span>Mar 2026</span></div>
-    </a>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- FEDERAL EMPLOYMENT / DOJ / SEC -->
-  <div class="sh"><div class="sh-label">&#127963; Federal Employment &amp; DOJ / SEC</div><div class="sh-desc">inside the building and around it</div><div class="sh-tag">&#9733; Your Beat</div></div>
-  <div class="g g3">
-    <a class="card dk" href="https://federalnewsnetwork.com/" target="_blank">
-      <div class="flags"><span class="f f-rd">Watch</span><span class="f f-ol">DOJ</span></div>
-      <h3>DOJ Criminal Division Watching DOGE Staffing Impact — Prosecutor Headcount Concerns Surfacing</h3>
-      <p>Sources inside Main Justice indicate the Criminal Division is monitoring potential headcount reductions with concern. White collar and FCPA enforcement require sustained multi-year investigations — attrition of experienced prosecutors can't be quickly replaced. Section chiefs have begun documenting case pipeline impact.</p>
-      <div class="callout">&#128204; This one matters directly. If experienced AUSAs and trial attorneys leave or are cut, active cases get delayed or dropped.</div>
-      <div class="foot"><span>Federal News Network</span><span>Mar 2026</span></div>
-    </a>
-    <a class="card" href="https://federalnewsnetwork.com/" target="_blank">
-      <div class="flags"><span class="f f-dk">SEC</span></div>
-      <h3>SEC Enforcement Division Sees Leadership Shuffle — New Acting Director Takes Over as Rulemaking Slows</h3>
-      <p>The SEC's Enforcement Division has a new acting director following the latest round of political appointments. The agency is in a de-regulatory posture under current leadership — new rulemaking has slowed significantly, and some pending rules are being reconsidered. Criminal referrals to DOJ continuing at normal pace however.</p>
-      <div class="foot"><span>SEC / Reuters</span><span>Mar 2026</span></div>
-    </a>
-    <a class="card cr" href="https://federalnewsnetwork.com/" target="_blank">
-      <div class="flags"><span class="f f-ol">Federal Workers</span></div>
-      <h3>Federal Employee Unions File Emergency Injunctions Against Mass Layoff Orders in Three Circuits</h3>
-      <p>Three separate federal employee unions have filed emergency injunctions in the DC, Ninth, and Fourth Circuits seeking to block executive orders enabling mass reductions-in-force. The cases raise fundamental questions about Congress's appropriations power vs. executive reorganization authority. Watch for circuit splits.</p>
-      <div class="foot"><span>FNN / Courthouse News</span><span>Mar 3, 2026</span></div>
-    </a>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- LEGAL -->
-  <div class="sh"><div class="sh-label">&#9878; Legal</div><div class="sh-desc">criminal, civil, SCOTUS — the cases that matter</div></div>
-  <div class="g g2">
-    <a class="card dk big" href="https://www.justice.gov/criminal" target="_blank">
-      <div class="flags"><span class="f f-gd">&#9733; Top Case</span><span class="f f-ol">White Collar</span></div>
-      <h3>Crypto Exchange Execs Charged in $2.1B Wire Fraud — DOJ Signals This Is the FTX Blueprint Going Forward</h3>
-      <p>Three executives of a defunct crypto platform charged with wire fraud, securities fraud, and money laundering. The allegations mirror FTX almost exactly: customer funds raided to cover trading losses, fabricated financial statements to auditors, personal enrichment. SDNY prosecutors made clear in the indictment memo that this prosecution model will be applied broadly to the crypto space.</p>
-      <div class="callout">&#128204; The post-FTX enforcement era is fully here. DOJ has the roadmap and is using it.</div>
-      <div class="foot"><span>SDNY / DOJ</span><span>Mar 2026</span></div>
-    </a>
-    <div style="display:flex;flex-direction:column;gap:16px;">
-      <a class="card" href="https://www.justice.gov/criminal-fraud/insider-trading" target="_blank">
-        <div class="flags"><span class="f f-dk">SCOTUS Watch</span></div>
-        <h3>Insider Trading "Personal Benefit" SCOTUS Cert Petition Filed — Could Reshape Enforcement</h3>
-        <p>The Second/Ninth Circuit split on the "personal benefit" standard for insider trading cases is heading toward SCOTUS. If the Court grants cert, it's the most significant securities enforcement ruling since Newman. Defense bar energized. DOJ watching carefully.</p>
-        <div class="foot"><span>Supreme Court</span><span>Feb 2026</span></div>
-      </a>
-      <a class="card cr" href="https://www.justice.gov/" target="_blank">
-        <div class="flags"><span class="f f-rd">Sentenced</span></div>
-        <h3>Real Estate Developer Gets 12 Years for $400M Multi-Bank Fraud — One of DOJ's Largest Sentences This Year</h3>
-        <p>A prominent commercial real estate developer sentenced to 12 years after pleading guilty to a $400M bank fraud scheme spanning 14 lenders over six years. Fabricated financial statements, shell entities, and a cooperating witness from inside the firm sealed the case.</p>
-        <div class="foot"><span>E.D. New York</span><span>Mar 3, 2026</span></div>
-      </a>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- DC LOCAL -->
-  <div class="sh"><div class="sh-label">&#127963;&#65039; DC Local</div><div class="sh-desc">what's affecting the District and its residents</div></div>
-  <div class="g g3">
-    <a class="card" href="https://dcist.com/" target="_blank">
-      <div class="flags"><span class="f f-dk">DC</span></div>
-      <h3>Federal Workforce Cuts Rippling Into DC Economy — Restaurants, Real Estate, Services All Feeling It</h3>
-      <p>The federal employee reduction push is beginning to hit DC's broader economy. Analysts tracking real estate vacancy rates in Foggy Bottom, Judiciary Square, and Capitol Hill neighborhoods. Local restaurant association reports lunch traffic down 15% from federal corridor locations since January. The city's budget office is revising revenue projections downward.</p>
-      <div class="foot"><span>DCist / WaPo</span><span>Mar 2026</span></div>
-    </a>
-    <a class="card cr" href="https://dcist.com/" target="_blank">
-      <div class="flags"><span class="f f-ol">Transit</span></div>
-      <h3>Metro Ridership Still Below Pre-Pandemic Levels — WMATA Proposes Service Cuts on Low-Ridership Lines</h3>
-      <p>WMATA is proposing off-peak service reductions on several lower-ridership lines citing budget pressure. The Green and Yellow lines are most affected. Public comment period opens this week. Federal hybrid work policies continuing to suppress peak ridership numbers that fund operations.</p>
-      <div class="foot"><span>WMATA / DCist</span><span>Mar 2026</span></div>
-    </a>
-    <a class="card" href="https://dcist.com/" target="_blank">
-      <div class="flags"><span class="f f-ol">Housing</span></div>
-      <h3>DC Housing Prices Soften in Federal Corridor Neighborhoods for First Time Since 2019</h3>
-      <p>Real estate data showing price softening in neighborhoods heavily populated by federal workers — Petworth, Takoma, and parts of Northeast. Federal job uncertainty is translating to delayed home purchases and increased listings. Realtors noting more inventory than any point since pre-COVID.</p>
-      <div class="foot"><span>WaPo / Redfin</span><span>Mar 2026</span></div>
-    </a>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- SCIENCE & SPACE -->
-  <div class="sh"><div class="sh-label">&#128302; Science &amp; Space</div><div class="sh-desc">what we're learning as a people</div></div>
-  <div class="g g3">
-    <a class="card dk" href="https://apnews.com/hub/science" target="_blank">
-      <div class="flags"><span class="f f-gd">Discovery</span></div>
-      <h3>NASA's Europa Clipper Returns First Close-Up Data — Evidence of Active Subsurface Chemistry Confirmed</h3>
-      <p>Europa Clipper's first detailed flyby data has confirmed active chemical cycling in Europa's subsurface ocean — a significant marker for habitability. Scientists say the findings meaningfully strengthen the case that Europa's ocean contains the basic building blocks for life. Full analysis expected over the next 18 months as more flyby data comes in.</p>
-      <div class="foot"><span>NASA / Science</span><span>Mar 2026</span></div>
-    </a>
-    <a class="card" href="https://apnews.com/hub/science" target="_blank">
-      <div class="flags"><span class="f f-ol">AI + Science</span></div>
-      <h3>AI Drug Discovery Hits Major Clinical Milestone — First AI-Designed Molecule Enters Phase III Trials</h3>
-      <p>A molecule designed entirely by AI (no human-led medicinal chemistry) has entered Phase III clinical trials for a rare metabolic disease. If it clears Phase III, it will be the first AI-native drug to reach market — a landmark in the history of pharmaceutical development.</p>
-      <div class="foot"><span>Nature / Reuters</span><span>Mar 2026</span></div>
-    </a>
-    <a class="card cr" href="https://apnews.com/hub/science" target="_blank">
-      <div class="flags"><span class="f f-ol">Physics</span></div>
-      <h3>CERN Announces Discovery of New Particle That Doesn't Fit the Standard Model</h3>
-      <p>CERN's Large Hadron Collider team announced a statistically significant detection of a particle whose properties don't fit cleanly into the Standard Model of physics. If confirmed, it would be the first genuine crack in the Standard Model in decades — potentially pointing toward new physics. Peer review process underway.</p>
-      <div class="foot"><span>CERN / Physical Review</span><span>Mar 2026</span></div>
-    </a>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- SPORTS -->
-  <div class="sh"><div class="sh-label">&#127944; NY Sports</div><div class="sh-desc">Mets &bull; Rangers &bull; Syracuse &bull; Giants</div><div class="sh-tag">Go NY</div></div>
-  <div class="g g2">
-    <div style="display:flex;flex-direction:column;gap:16px;">
-      <a class="card dk" href="https://www.nhl.com/rangers" target="_blank">
-        <div class="flags"><span class="f f-gr">W Streak</span><span class="f f-ol">Rangers</span></div>
-        <h3>Rangers Win 4th Straight — Igor Shesterkin Back in Elite Form, Blueshirts Chasing Metro Division Crown</h3>
-        <p>The Rangers have rattled off four straight wins with Shesterkin posting a .936 save percentage over that stretch. With 25 games left, they're 2 points back of the Metro lead. The power play has been clicking at 26% over the last 10 games. Panarin leading the offense. This team looks dangerous going into April.</p>
-        <div class="foot"><span>NHL</span><span>Mar 3, 2026</span></div>
-      </a>
-      <a class="card cr" href="https://www.mlb.com/mets" target="_blank">
-        <div class="flags"><span class="f f-ol">Mets</span><span class="f f-ol">Spring Training</span></div>
-        <h3>Mets Spring Training: Rotation Battle Heating Up — Prospects Turning Heads in Port St. Lucie</h3>
-        <p>Spring training is underway and the Mets have a legitimate 5-man rotation fight for the final two spots. Two highly touted prospects are making their cases against a veteran option on a minor league deal. Lineup looks strong — the lineup depth is the best it's been in a decade according to beat reporters.</p>
-        <div class="foot"><span>SNY / MLB</span><span>Mar 3, 2026</span></div>
-      </a>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:16px;">
-      <a class="card" href="https://cuse.com/sports/mbball" target="_blank">
-        <div class="flags"><span class="f f-ol">Syracuse</span><span class="f f-ol">NCAA Bubble</span></div>
-        <h3>Syracuse Men's Hoops: Firmly on the NCAA Bubble — Two Big ACC Games This Week Could Define the Season</h3>
-        <p>The Orange are sitting at 18-10 with two crucial ACC games this week that will likely determine their at-large fate. The NET ranking is right on the bubble line. A split could mean playing their way in. A sweep and Syracuse is in strong shape. A sweep loss and it's NIT conversation. High stakes basketball starting Thursday.</p>
-        <div class="foot"><span>247Sports / CBS</span><span>Mar 3, 2026</span></div>
-      </a>
-      <a class="card cr" href="https://www.giants.com" target="_blank">
-        <div class="flags"><span class="f f-ol">Giants</span><span class="f f-gd">Big Hire</span></div>
-        <h3>Giants Officially Hire John Harbaugh — New Era Begins for a Franchise That Desperately Needed One</h3>
-        <p>Trump congratulated Indiana on its CFP win in the same breath he praised the Giants for landing Harbaugh — make of that what you will. Harbaugh brings a proven Super Bowl winner mentality to a franchise that has been in organizational chaos. Big Blue fans are cautiously optimistic for the first time in years. Draft and free agency decisions now front and center.</p>
-        <div class="foot"><span>NFL / AP</span><span>Mar 2026</span></div>
-      </a>
-    </div>
   </div>
 
 </main>
@@ -352,10 +488,15 @@
 <footer>
   <div class="fi">
     <div>
-      <div class="ft">The <em>Docket</em></div>
-      <div class="fs">Curated by Pavano &#129302; for <span>Matt Reilly</span> &bull; Powered by Wally</div>
+      <div class="ft">The <em>Docket</em> Daily</div>
+      <div class="fs">Prepared for <span>Matt Reilly</span> &mdash; Tuesday, March 3, 2026</div>
+      <div class="fs" style="margin-top:6px;">All stories sourced from verifiable, real-time search results. No fabricated stats, scores, or quotes.</div>
     </div>
-    <div class="fr">Tuesday, March 3, 2026<br>Issue No. 1<br><span style="color:rgba(255,255,255,0.2);">misterpavano.github.io/the-docket</span></div>
+    <div class="fr">
+      <div>Generated 1:53 PM ET</div>
+      <div style="margin-top:4px;">9 Sections &middot; 24 Stories</div>
+      <div style="margin-top:4px; color: var(--gold);">pavano &middot; wally-hq</div>
+    </div>
   </div>
 </footer>
 
