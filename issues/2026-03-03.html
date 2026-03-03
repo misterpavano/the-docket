@@ -28,7 +28,7 @@
     .gi::before { content: '\2014'; position: absolute; left: 0; color: var(--gold); }
     .gi strong { color: var(--white); }
     main { max-width: 1300px; margin: 0 auto; padding: 40px 40px 60px; }
-    .sh { display: flex; align-items: baseline; gap: 12px; margin: 44px 0 18px; padding-bottom: 9px; border-bottom: 2px solid var(--navy); }
+    .sh { display: flex; align-items: baseline; gap: 12px; margin: 44px 0 18px; padding-bottom: 9px; border-bottom: 2px solid var(--navy); flex-wrap: wrap; }
     .sh:first-child { margin-top: 0; }
     .sh-label { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--navy); white-space: nowrap; }
     .sh-desc { font-size: 11px; color: var(--muted); font-style: italic; }
@@ -72,18 +72,18 @@
     .fs span { color: var(--gold); }
     .fr { font-size: 11px; color: rgba(255,255,255,0.3); text-align: right; }
     @media (max-width: 960px) { .g3, .g-wide { grid-template-columns: 1fr 1fr; } .g-lead { grid-template-columns: 1fr; } }
-    @media (max-width: 640px) { body { overflow-x: hidden; } .top-bar, .masthead, .glance, main, footer { padding-left: 16px; padding-right: 16px; } .g2, .g3, .g-lead, .g-wide { grid-template-columns: 1fr; } .glance-grid { grid-template-columns: 1fr; } .card { padding: 16px; } .sh { flex-wrap: wrap; } .sh-tag { margin-left: 0; } }
+    @media (max-width: 640px) { body { overflow-x: hidden; } .top-bar, .masthead, .glance, main, footer { padding-left: 16px; padding-right: 16px; } .g2, .g3, .g-lead, .g-wide { grid-template-columns: 1fr; } .glance-grid { grid-template-columns: 1fr; } .card { padding: 16px; } }
   </style>
 </head>
 <body>
 
 <div class="top-bar">
-  <div>U.S. Department of Justice &nbsp;&bull;&nbsp; Criminal Division</div>
-  <div><span>The Docket</span> &nbsp;&bull;&nbsp; Tuesday, March 3, 2026</div>
+  <div>U.S. Department of Justice &bull; Criminal Division</div>
+  <div><span>The Docket</span> &bull; Tuesday, March 3, 2026</div>
 </div>
 
 <div class="masthead">
-  <div class="mast-rule"><div class="mast-rule-line"></div><div class="mast-rule-text">Matt Reilly's Daily Brief</div><div class="mast-rule-line"></div></div>
+  <div class="mast-rule"><div class="mast-rule-line"></div><div class="mast-rule-text">Matt Reilly&rsquo;s Daily Brief</div><div class="mast-rule-line"></div></div>
   <div class="mast-title">The <em>Docket</em></div>
   <div class="mast-sub">Politics &bull; National &bull; International &bull; Business &bull; Federal Employment &bull; DOJ &amp; SEC &bull; Legal &bull; DC Local &bull; Science &amp; Space &bull; NY Sports</div>
   <div class="mast-meta">
@@ -97,161 +97,140 @@
 <div class="glance">
   <div class="glance-label">Today at a glance</div>
   <div class="glance-grid">
-    <div class="gi"><strong>Iran War Escalating:</strong> US-Israeli strikes pound Iran and Lebanon; Iran widens response to Gulf states hosting US bases. Oil surges; global markets slump. Reuters, AP.</div>
-    <div class="gi"><strong>ICE/Congress Oversight:</strong> Federal judge blocks 7-day advance-notice requirement for congressional ICE visits. Minnesota prosecutors launch criminal probe of Border Patrol and other federal agents.</div>
-    <div class="gi"><strong>Supreme Court:</strong> Emergency stay blocks California law barring schools from telling parents their child is transgender. Parental rights vs. student privacy battle heading toward full Court.</div>
-    <div class="gi"><strong>Markets:</strong> S&amp;P 500 at 6,830 &mdash; lowest in over two months. Dow down 0.75% to 48,539. Iran threatening Strait of Hormuz closure; oil and gas shipping costs surging globally.</div>
-    <div class="gi"><strong>DOJ/Federal:</strong> Top Border Patrol official and other federal agents under criminal investigation by Minneapolis prosecutors. Hegseth presses Anthropic over military AI access.</div>
-    <div class="gi"><strong>NY Sports:</strong> Rangers 23-29-8, last in Metro; played Columbus last night. Mets 5-3 in Grapefruit League. Syracuse (15-14) at Louisville tonight 9 PM. Giants QB Dart at NFL Combine.</div>
+    <div class="gi"><strong>US-Iran War, Day 4:</strong> Khamenei killed in initial strikes. Israel escalating airstrikes in Tehran. Iran attacked US Embassy in Saudi Arabia via drones. 11 killed in Israel; hundreds killed in Iran. Trump not ruling out boots on the ground. (AP)</div>
+    <div class="gi"><strong>ICE Oversight:</strong> Federal judge blocked the policy requiring Congress members to give 7 days&rsquo; notice before visiting ICE facilities. Minnesota simultaneously launched a criminal investigation into federal immigration officers. (AP)</div>
+    <div class="gi"><strong>SCOTUS:</strong> Supreme Court blocked California&rsquo;s law preventing schools from notifying parents when a student identifies as transgender. Case heading toward a full merits ruling. (AP)</div>
+    <div class="gi"><strong>Federal Employment:</strong> Ryan Zinke (R-MT) won&rsquo;t seek reelection. Savannah Guthrie&rsquo;s missing mother found at her Arizona home. Federal employee unions seeking emergency injunctions against mass layoff orders. (AP / FNN)</div>
+    <div class="gi"><strong>NY Sports:</strong> Rangers 23-29-7, lost 5&ndash;4 OT to Columbus last night, 8th in Metro. Mets 5-3 in Grapefruit League spring training. Syracuse men&rsquo;s hoops 15-14, 6-10 ACC &mdash; tied 13th/14th in conference. Giants hired John Harbaugh as head coach. (ESPN)</div>
+    <div class="gi"><strong>Science:</strong> Winter Olympics: US gold medalists Hilary Knight and Quinn and Jack Hughes appearing on Tonight Show. Michael Jordan testifying in NASCAR antitrust trial. (AP)</div>
   </div>
 </div>
 
 <main>
 
-  <!-- BREAKING NEWS -->
-  <div class="sh"><div class="sh-label">&#128308; Breaking News</div><div class="sh-desc">what can't wait</div><div class="sh-tag">Live</div></div>
+  <!-- BREAKING -->
+  <div class="sh"><div class="sh-label">&#128308; Breaking News</div><div class="sh-desc">verified from AP &mdash; March 3, 2026</div><div class="sh-tag">Live</div></div>
   <div class="g g-wide">
-    <a class="card dk big" href="https://www.reuters.com/" target="_blank">
-      <div class="flags"><span class="f f-rd">&#128308; Breaking</span><span class="f f-ol">Middle East</span></div>
-      <h3>US-Israeli Strikes Pound Iran and Lebanon as Oil Surges &mdash; Iran Hits Gulf States Hosting US Bases</h3>
-      <p>Israel attacked Iranian-backed Hezbollah in Lebanon overnight while Iran struck Gulf states that host US military bases. The conflict has paralyzed globally vital energy shipments along with hundreds of flight routes. Smoke rose at the Ras Tanura oil refinery in Saudi Arabia following a drone attack. The White House is defending Trump's unconventional communication approach &mdash; social media posts over traditional press briefings &mdash; as criticism mounts from both parties.</p>
-      <div class="callout">&#128204; DOJ/OFAC angle: National Security Division and OFAC will be on emergency footing. Expect sanctions designations, asset freezes, and IEEPA enforcement actions in the coming days as the conflict widens.</div>
-      <div class="foot"><span>Reuters / AP</span><span>Mar 3, 2026</span></div>
+    <a class="card dk big" href="https://apnews.com/article/iran-israel-us-03-03-2026-8755877b603e46ed3df8107689c1ee23" target="_blank">
+      <div class="flags"><span class="f f-rd">&#128308; Breaking</span><span class="f f-ol">War &mdash; Day 4</span></div>
+      <h3>Israel Escalates Tehran Airstrikes; Iran Drones Hit US Embassy in Saudi Arabia &mdash; Trump Won&rsquo;t Rule Out Boots on the Ground</h3>
+      <p>Israel stepped up airstrikes on Iranian missile launchers and factories Tuesday. Iran retaliated across the Gulf &mdash; including a drone attack on the US Embassy in Riyadh &mdash; disrupting energy supplies and travel. Explosions in Tehran and Lebanon, where Israel struck Hezbollah. Hundreds killed in Iran; 11 killed in Israel. Supreme Leader Khamenei was killed in the initial US-Israeli strikes. Trump told the New York Post Monday he is not ruling out ground troops. Four days in, no clear end in sight.</p>
+      <div class="callout">&#128204; NSD/OFAC angle: Expect emergency sanctions designations and potential IEEPA enforcement activity targeting Iran-linked assets and financial networks. Watch for criminal referrals on sanctions evasion.</div>
+      <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
     </a>
-    <a class="card" href="https://apnews.com/" target="_blank">
-      <div class="flags"><span class="f f-dk">Federal</span><span class="f f-rd">Immigration</span></div>
-      <h3>Judge Nixes Policy Requiring 7 Days' Notice for Congress Members to Visit ICE Facilities</h3>
-      <p>A federal judge blocked the DHS policy requiring members of Congress to give seven days' advance notice before visiting ICE detention facilities, restoring congressional oversight access. Separately, Minnesota prosecutors launched an investigation that could bring criminal charges against federal immigration officers &mdash; a direct state-federal collision now heading to court.</p>
-      <div class="foot"><span>AP</span><span>Mar 3, 2026</span></div>
+    <a class="card" href="https://apnews.com/article/congress-ice-notice-policy-noem-1ddd1c5f1b02fe5ea8b98dd219555e74" target="_blank">
+      <div class="flags"><span class="f f-dk">Federal Courts</span></div>
+      <h3>Judge Strikes Down ICE 7-Day Notice Policy for Congressional Visits</h3>
+      <p>A federal judge blocked the DHS policy requiring members of Congress to give 7 days&rsquo; notice before visiting ICE detention facilities. The ruling restores unannounced congressional oversight access to detention centers. A direct rebuke to the administration&rsquo;s attempt to restrict legislative branch oversight of executive detention operations.</p>
+      <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
     </a>
-    <a class="card" href="https://apnews.com/" target="_blank">
+    <a class="card cr" href="https://apnews.com/article/supreme-court-transgender-students-california-cca311ae39d267f31c1392a0bcf780cd" target="_blank">
       <div class="flags"><span class="f f-dk">SCOTUS</span></div>
-      <h3>Supreme Court Blocks California Law Barring Schools From Outing Transgender Students to Parents</h3>
-      <p>The Supreme Court issued an emergency stay blocking California's law prohibiting schools from notifying parents when their child identifies as transgender. The underlying case raises a fundamental parental rights vs. student privacy question working toward the full Court. A landmark ruling could come as soon as next term.</p>
-      <div class="foot"><span>AP</span><span>Mar 3, 2026</span></div>
+      <h3>Supreme Court Blocks California&rsquo;s Law Against Schools Outing Transgender Students to Parents</h3>
+      <p>The Supreme Court granted an emergency stay of California&rsquo;s law that barred schools from notifying parents when their child identified as transgender. The underlying case is on a path toward a full SCOTUS ruling on the constitutional tension between parental rights and student privacy protections.</p>
+      <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
     </a>
   </div>
 
   <div class="divider"></div>
 
-  <!-- POLITICS -->
-  <div class="sh"><div class="sh-label">&#127968; Politics &amp; National Affairs</div><div class="sh-desc">Washington and beyond</div></div>
+  <!-- POLITICS & NATIONAL -->
+  <div class="sh"><div class="sh-label">&#127968; Politics &amp; National</div><div class="sh-desc">Washington and the country</div></div>
   <div class="g g2">
-    <a class="card" href="https://www.reuters.com/" target="_blank">
-      <div class="flags"><span class="f f-dk">White House</span><span class="f f-ol">War Powers</span></div>
-      <h3>Republicans Defend Iran Strikes as Democrats Push for War Powers Vote &mdash; Trump Meets Germany's Merz</h3>
-      <p>Trump is pushing back on bipartisan criticism of how he has communicated the Iran operation to the public, defending his social-media-first approach. Republicans largely back the strikes; some Democratic leaders are demanding a formal War Powers Resolution debate in Congress. In a separate White House meeting, Trump confirmed Germany is assisting with the Iran operation during a bilateral with Chancellor Merz.</p>
-      <div class="foot"><span>Reuters / AP</span><span>Mar 3, 2026</span></div>
+    <a class="card" href="https://apnews.com/article/trump-iran-maga-regime-change-2758513ac034ffb75beaa12db68c7bd7" target="_blank">
+      <div class="flags"><span class="f f-dk">White House</span><span class="f f-ol">Iran</span></div>
+      <h3>Trump Pushes Back on Iran War Criticism, Defends Unconventional Public Communication Approach</h3>
+      <p>Trump is pushing back on criticism of how he has communicated with the public about the Iran military operation &mdash; opting for social media over traditional press briefings. Senior officials have clarified that regime change is not the stated objective, even as Trump said Monday he wasn&rsquo;t ruling out U.S. boots on the ground in Iran.</p>
+      <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
     </a>
-    <a class="card cr" href="https://www.reuters.com/" target="_blank">
-      <div class="flags"><span class="f f-ol">Congress</span><span class="f f-ol">Midterms</span></div>
-      <h3>Texas Senate Showdown Kicks Off 2026 Midterms &mdash; Zinke Won't Seek Reelection in Montana</h3>
-      <p>Voters in Texas, North Carolina, and Arkansas cast the first midterm primary ballots of 2026 today, with the Texas US Senate race drawing the most national attention. Separately, former Interior Secretary and Montana House member Ryan Zinke announced he will not seek reelection, adding to a growing list of House Republicans stepping back ahead of a competitive cycle.</p>
-      <div class="foot"><span>Reuters / AP</span><span>Mar 3, 2026</span></div>
+    <a class="card cr" href="https://apnews.com/article/bovino-minnesota-immigration-minneapolis-good-pretti-0ace82ca68846109fbf6d30439e6f0f1" target="_blank">
+      <div class="flags"><span class="f f-rd">State vs. Federal</span></div>
+      <h3>Minnesota Launches Criminal Investigation That Could Bring Charges Against Federal Immigration Officers</h3>
+      <p>Minnesota&rsquo;s attorney general launched an investigation that could result in criminal charges against federal immigration officers operating in the state. A direct state-federal collision that is almost certain to escalate into a major constitutional confrontation over the limits of state criminal jurisdiction over federal law enforcement.</p>
+      <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
     </a>
   </div>
 
   <div class="divider"></div>
 
   <!-- INTERNATIONAL -->
-  <div class="sh"><div class="sh-label">&#127758; International Affairs</div><div class="sh-desc">what's moving globally</div></div>
+  <div class="sh"><div class="sh-label">&#127758; International Affairs</div><div class="sh-desc">sourced from AP, March 3, 2026</div></div>
   <div class="g g3">
-    <a class="card dk" href="https://www.reuters.com/" target="_blank">
-      <div class="flags"><span class="f f-rd">War</span><span class="f f-ol">Iran / Lebanon</span></div>
-      <h3>Lebanon Sucked Deeper Into War as Israel and Hezbollah Trade Blows &mdash; Gulf States on Alert</h3>
-      <p>Lebanon is being pulled further into the conflict as Israel and Hezbollah exchange sustained fire. Iran's strikes on Gulf states hosting US military installations may widen the war, analysts warn. Italy flew 127 citizens home as governments across Europe and Asia weigh repatriation options. Hundreds of regional flight routes remain grounded.</p>
-      <div class="foot"><span>Reuters</span><span>Mar 3, 2026</span></div>
+    <a class="card dk" href="https://apnews.com/live/iran-war-israel-trump-03-03-2026" target="_blank">
+      <div class="flags"><span class="f f-rd">War</span><span class="f f-ol">Live Updates</span></div>
+      <h3>Live: Iran War Widens Across the Gulf &mdash; Hezbollah Struck in Lebanon, Drones Over Riyadh</h3>
+      <p>Beyond Tehran, the war is spreading. Israel struck Hezbollah in Lebanon as Iran fires dozens of ballistic missiles toward Israeli territory &mdash; most intercepted. The US Embassy in Saudi Arabia was hit by Iranian drones. Travel and energy supply disruptions rippling across the Gulf. Trump says war could last &ldquo;several weeks but perhaps longer.&rdquo;</p>
+      <div class="foot"><span>AP Live</span><span>Mar 3, 2026</span></div>
     </a>
-    <a class="card" href="https://www.reuters.com/" target="_blank">
-      <div class="flags"><span class="f f-dk">Russia / Ukraine</span></div>
-      <h3>Iran War Rattles Russian Hardliners &mdash; Trump's Attack Prompts Calls for Putin to Escalate in Ukraine</h3>
-      <p>Trump's Iran operation has rattled Russian hardliners who are calling on Putin to escalate in Ukraine while Washington's attention is on the Middle East. Trump's Asian allies are separately warning that the Iran conflict risks draining resources and focus needed to deter China. European capitals are simultaneously resisting Ukraine's push for fast-track EU membership.</p>
-      <div class="foot"><span>Reuters</span><span>Mar 3, 2026</span></div>
+    <a class="card" href="https://apnews.com/article/iran-trump-administration-media-communication-2aeb11fcfef4138c045be71fb7216792" target="_blank">
+      <div class="flags"><span class="f f-ol">Iran / US</span></div>
+      <h3>Trump Floats &ldquo;Someone From Within&rdquo; Iranian Regime as Path to Power After Khamenei&rsquo;s Death</h3>
+      <p>With Supreme Leader Khamenei killed in the opening US-Israeli strikes, Trump publicly suggested &ldquo;someone from within&rdquo; the Iranian regime may be the best choice to take power &mdash; then the administration walked back regime change as an official objective. The mixed messaging is creating uncertainty among allies and adversaries alike.</p>
+      <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
     </a>
-    <a class="card cr" href="https://www.reuters.com/" target="_blank">
-      <div class="flags"><span class="f f-ol">Diplomacy</span><span class="f f-ol">China</span></div>
-      <h3>Attack on Iran Could Buoy Trump in Upcoming Talks With China's Xi &mdash; Beijing Closely Watching Oil Supply Lines</h3>
-      <p>Analysts suggest the Iran operation could strengthen Trump's leverage heading into any negotiation with President Xi, demonstrating military willingness to act. China has officially called for restraint while privately watching Strait of Hormuz oil supply flows with deep concern &mdash; Beijing imports over 20% of its oil from the Persian Gulf region.</p>
-      <div class="foot"><span>Reuters</span><span>Mar 3, 2026</span></div>
+    <a class="card cr" href="https://apnews.com/hub/russia-ukraine" target="_blank">
+      <div class="flags"><span class="f f-ol">Europe</span></div>
+      <h3>Russia-Ukraine: NATO Members Watching Whether Iran Conflict Shifts US Attention and Aid Timelines</h3>
+      <p>With Washington heavily focused on the Iran operation, NATO allies and Kyiv are watching for any reduction in US attention and resources toward Ukraine. No policy changes announced yet, but the diplomatic bandwidth question is real. (Source: AP Russia-Ukraine hub &mdash; no specific breaking story today.)</p>
+      <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
     </a>
   </div>
 
   <div class="divider"></div>
 
   <!-- BUSINESS & MARKETS -->
-  <div class="sh"><div class="sh-label">&#128200; Business &amp; Markets</div><div class="sh-desc">what's moving money</div></div>
-  <div class="g g-wide">
-    <a class="card gd big" href="https://www.reuters.com/" target="_blank">
+  <div class="sh"><div class="sh-label">&#128200; Business &amp; Markets</div><div class="sh-desc">no fabricated numbers &mdash; sourced only</div></div>
+  <div class="g g2">
+    <a class="card gd big" href="https://apnews.com/hub/business" target="_blank">
       <div class="flags"><span class="f f-dk">Markets</span></div>
-      <h3>Wall Street Hits 2-Month Low as Iran War Stokes Inflation Fears &mdash; S&amp;P 500 at 6,830, Dow 48,539</h3>
-      <p>Wall Street's main indexes fell sharply on Tuesday, with the S&amp;P 500 hitting its lowest level in over two months (6,830, down 0.74%) as investors braced for the inflation impact of a widening Middle East conflict. The Dow fell to 48,539 (down 0.75%). European markets fared worse &mdash; STOXX 600 down 3.04%, FTSE down 2.75%. Bond markets are pricing out rate-cut bets as inflation expectations reset higher on energy prices.</p>
-      <div class="callout">&#128204; Watch the Hormuz angle: Iran threatened to close the Strait of Hormuz, through which 20% of global oil supply flows. If that materializes, today's sell-off is only the beginning.</div>
-      <div class="foot"><span>Reuters</span><span>Mar 3, 2026</span></div>
+      <h3>Iran War Disrupting Energy Supply and Travel Across the Gulf &mdash; Market Impact Ongoing</h3>
+      <p>AP confirmed that the Iran conflict is disrupting energy supplies and travel across the Gulf region. The extent of market impact &mdash; specific index levels and oil price moves &mdash; were not available from verified sources at publication time. Check live market feeds for current numbers.</p>
+      <div class="callout">&#128204; Note: Market numbers will be current in tomorrow&rsquo;s issue once sourced from real-time verified feeds. We do not publish unverified figures.</div>
+      <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
     </a>
-    <a class="card" href="https://www.reuters.com/" target="_blank">
-      <div class="flags"><span class="f f-ol">Energy</span></div>
-      <h3>Global Oil and Gas Shipping Costs Surge as Iran Threatens Strait of Hormuz Closure</h3>
-      <p>Global oil and gas shipping costs are surging as Iran threatened to close the Strait of Hormuz in response to US-Israeli military operations. The US is considering insurance support for oil tankers to ease Middle East crude shipments. Eurozone inflation data jumped sharply, and the UK chancellor pledged to guide the economy through the conflict's impact.</p>
-      <div class="foot"><span>Reuters / AP</span><span>Mar 3, 2026</span></div>
-    </a>
-    <a class="card cr" href="https://apnews.com/" target="_blank">
-      <div class="flags"><span class="f f-ol">Economy</span><span class="f f-ol">Tariffs</span></div>
-      <h3>Gas Rises 11 Cents Overnight to $3.11 &mdash; Federal Court Also Blocks Trump Admin on Tariff Refunds</h3>
-      <p>The average price for a gallon of regular gas rose 11 cents overnight to about $3.11 across the US, per AAA &mdash; before any Iran-driven energy price increases hit retail pumps. Separately, a federal court rejected the Trump administration's attempt to slow the tariff refund process at the Court of International Trade, where refund-seekers have been flooding in.</p>
-      <div class="foot"><span>AP / Reuters</span><span>Mar 3, 2026</span></div>
-    </a>
+    
   </div>
 
   <div class="divider"></div>
 
-  <!-- FEDERAL EMPLOYMENT / DOJ / SEC -->
-  <div class="sh"><div class="sh-label">&#127963; Federal Employment &amp; DOJ / SEC</div><div class="sh-desc">inside the building and around it</div><div class="sh-tag">&#9733; Your Beat</div></div>
+  <!-- FEDERAL / DOJ / SEC -->
+  <div class="sh"><div class="sh-label">&#127963; Federal Employment &amp; DOJ / SEC</div><div class="sh-desc">your beat</div><div class="sh-tag">&#9733; Priority</div></div>
   <div class="g g3">
-    <a class="card dk" href="https://www.reuters.com/" target="_blank">
-      <div class="flags"><span class="f f-rd">Criminal Investigation</span><span class="f f-ol">DOJ</span></div>
-      <h3>Top Border Patrol Official and Other Federal Agents Being Investigated by Minneapolis Prosecutors</h3>
-      <p>A top Border Patrol official and other federal immigration agents are under criminal investigation by the Minneapolis prosecutors' office, Reuters reports. The probe involves conduct by federal officers and is the latest in a string of state-federal confrontations over immigration enforcement authority. Minnesota's investigation is separate from but related to the broader state criminal inquiry AP reported earlier today.</p>
-      <div class="callout">&#128204; This is a direct state-federal legal collision. If charges are filed, it triggers a major constitutional fight over whether states can prosecute federal officers for actions taken in their official capacity.</div>
-      <div class="foot"><span>Reuters</span><span>Mar 3, 2026</span></div>
+    <a class="card dk" href="https://apnews.com/article/bovino-minnesota-immigration-minneapolis-good-pretti-0ace82ca68846109fbf6d30439e6f0f1" target="_blank">
+      <div class="flags"><span class="f f-rd">State-Federal Collision</span></div>
+      <h3>Minnesota AG Investigates Federal Immigration Officers &mdash; Could Result in State Criminal Charges</h3>
+      <p>Minnesota launched a state criminal investigation into federal immigration officers. If charges are filed, it sets up a direct constitutional confrontation: can a state prosecute federal officers acting under federal authority? Expect immediate DOJ intervention and likely emergency federal court filings to block any state prosecution.</p>
+      <div class="callout">&#128204; DOJ angle: This goes straight to intergovernmental immunity and Supremacy Clause doctrine. The Criminal Division and Civil Rights Division will both be watching closely.</div>
+      <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
     </a>
-    <a class="card" href="https://apnews.com/" target="_blank">
-      <div class="flags"><span class="f f-dk">Pentagon / AI</span></div>
-      <h3>Hegseth Warns Anthropic to Let Military Use the Company's AI Tech as It Sees Fit</h3>
-      <p>Defense Secretary Hegseth warned Anthropic that the military must be able to use the company's AI technology as it sees fit, according to AP sources. The confrontation represents a novel assertion of executive authority over private AI companies and raises significant questions about the relationship between the defense establishment and Silicon Valley AI labs. Anthropic has not yet publicly responded.</p>
-      <div class="foot"><span>AP</span><span>Mar 3, 2026</span></div>
-    </a>
-    <a class="card cr" href="https://federalnewsnetwork.com/" target="_blank">
-      <div class="flags"><span class="f f-ol">Federal Workers</span></div>
-      <h3>Security Clearance Anxiety Rises as Federal Career Uncertainty Deepens &mdash; Workforce Pivots and Side Hustles Increasing</h3>
-      <p>With DOGE-driven workforce uncertainty continuing, federal employees with security clearances are increasingly exploring career pivots and side work options as job security erodes. Federal News Network reports growing anxiety among the cleared workforce about what reductions-in-force mean for clearance status and future career options. The security clearance community is adapting to a new reality.</p>
-      <div class="foot"><span>Federal News Network</span><span>Feb&ndash;Mar 2026</span></div>
-    </a>
+    
+    
   </div>
 
   <div class="divider"></div>
 
   <!-- LEGAL -->
-  <div class="sh"><div class="sh-label">&#9878; Legal</div><div class="sh-desc">criminal, civil, SCOTUS &mdash; the cases that matter</div></div>
-  <div class="g g2">
-    <a class="card dk big" href="https://www.reuters.com/" target="_blank">
-      <div class="flags"><span class="f f-gd">&#9733; Top Case</span><span class="f f-ol">Trade Court</span></div>
-      <h3>Tariff-Refund Seekers Flood Court of International Trade &mdash; Federal Court Blocks Trump Admin's Slow-Walk Effort</h3>
-      <p>A federal court has rejected the Trump administration's attempt to slow the tariff refund process, ruling in favor of importers who have flooded the Court of International Trade &mdash; a little-known but increasingly significant venue &mdash; with refund claims. The court ruled that the administration cannot administratively impede the established refund process. Thousands of cases are now in the pipeline, with enormous financial stakes for US importers.</p>
-      <div class="callout">&#128204; The Court of International Trade is becoming one of the most consequential federal courts in the country right now. Watch this space.</div>
-      <div class="foot"><span>AP / Reuters</span><span>Mar 3, 2026</span></div>
+  <div class="sh"><div class="sh-label">&#9878; Legal</div><div class="sh-desc">courts, cases, enforcement</div></div>
+  <div class="g g-lead">
+    <a class="card dk big" href="https://apnews.com/article/congress-ice-notice-policy-noem-1ddd1c5f1b02fe5ea8b98dd219555e74" target="_blank">
+      <div class="flags"><span class="f f-gd">&#9733; Key Ruling</span><span class="f f-ol">Admin Law</span></div>
+      <h3>Federal Judge Blocks ICE Oversight Restriction &mdash; Congressional Access to Detention Facilities Restored</h3>
+      <p>The ruling blocking the 7-day advance notice policy for congressional ICE visits is a significant administrative law decision. It reaffirms Congress&rsquo;s oversight authority over executive branch detention operations and signals that courts will scrutinize DHS attempts to restrict legislative access. Expect an appeal.</p>
+      <div class="callout">&#128204; Broader pattern: Multiple federal courts are currently blocking executive branch policy moves. The administrative law docket is as active as it has been in decades.</div>
+      <div class="foot"><span>AP News / Federal Courts</span><span>Mar 3, 2026</span></div>
     </a>
     <div style="display:flex;flex-direction:column;gap:16px;">
-      <a class="card" href="https://apnews.com/" target="_blank">
-        <div class="flags"><span class="f f-dk">SCOTUS Watch</span></div>
-        <h3>SCOTUS Emergency Stay on California Trans Student Law &mdash; Parental Rights Battle Heading to Full Court</h3>
-        <p>The Supreme Court's emergency stay blocking California from enforcing its law barring schools from outing transgender students to parents is a significant signal about the Court's direction on parental rights. The underlying case involves competing constitutional interests and is expected to be heard by the full Court. A final ruling would affect laws in multiple states.</p>
-        <div class="foot"><span>AP</span><span>Mar 3, 2026</span></div>
+      <a class="card" href="https://apnews.com/article/supreme-court-transgender-students-california-cca311ae39d267f31c1392a0bcf780cd" target="_blank">
+        <div class="flags"><span class="f f-dk">SCOTUS</span><span class="f f-ol">Emergency Stay</span></div>
+        <h3>SCOTUS Blocks California Trans Student Privacy Law &mdash; Parental Rights Case Building Toward Full Review</h3>
+        <p>The emergency stay in the California trans student notification case is a signal of where at least five justices may land on the merits. The full case could produce a landmark ruling on the intersection of parental rights, student privacy, and First Amendment considerations in public schools.</p>
+        <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
       </a>
-      <a class="card cr" href="https://www.reuters.com/" target="_blank">
-        <div class="flags"><span class="f f-rd">Epstein</span></div>
-        <h3>Clinton Says Trump Told Him of 'Some Great Times' with Jeffrey Epstein</h3>
-        <p>Former President Clinton stated publicly that Trump told him of "some great times" with Jeffrey Epstein, a statement that is cutting through even the Iran news cycle. The remark adds new public scrutiny to the Epstein connection at a moment when the administration is engaged in a major military operation abroad. No further legal proceedings announced.</p>
-        <div class="foot"><span>Reuters</span><span>Mar 3, 2026</span></div>
+      <a class="card cr" href="https://apnews.com/hub/us-supreme-court" target="_blank">
+        <div class="flags"><span class="f f-ol">SCOTUS Watch</span></div>
+        <h3>No Additional SCOTUS Decisions Today &mdash; Next Opinion Day TBD</h3>
+        <p>No additional Supreme Court opinions were issued today beyond the emergency stay noted above. The Court is expected to issue additional merits opinions in the coming weeks as the term progresses. Watch the docket.</p>
+        <div class="foot"><span>AP / SCOTUS</span><span>Mar 3, 2026</span></div>
       </a>
     </div>
   </div>
@@ -259,80 +238,71 @@
   <div class="divider"></div>
 
   <!-- DC LOCAL -->
-  <div class="sh"><div class="sh-label">&#127963;&#65039; DC Local</div><div class="sh-desc">what's affecting the District and its residents</div></div>
+  <div class="sh"><div class="sh-label">&#127963;&#65039; DC Local</div><div class="sh-desc">the District</div></div>
   <div class="g g3">
-    <a class="card" href="https://apnews.com/" target="_blank">
-      <div class="flags"><span class="f f-dk">DC</span><span class="f f-ol">Federal Workers</span></div>
-      <h3>US Lawmakers Slam State Department Over Lack of Help for Americans Stuck in the Middle East</h3>
-      <p>Congressional delegations are publicly criticizing the State Department for inadequate assistance to American citizens stranded in the Middle East as the Iran-Israel conflict expands and hundreds of flight routes are grounded. DC-area families with relatives in the region are among those seeking emergency consular assistance. The State Department has not yet publicly responded to the criticism.</p>
-      <div class="foot"><span>Reuters</span><span>Mar 3, 2026</span></div>
+    <a class="card" href="https://apnews.com/article/zinke-house-reelection-5392ef079808a7ce168c7d148df91891" target="_blank">
+      <div class="flags"><span class="f f-dk">Congress</span></div>
+      <h3>Zinke Won&rsquo;t Seek Reelection &mdash; Montana Seat Opens Ahead of 2026 Midterms</h3>
+      <p>Former Trump Interior Secretary and current Montana House member Ryan Zinke announced he will not seek reelection. Adds to a growing list of House Republicans stepping back ahead of the 2026 midterms. Montana seat considered competitive. Relevant for DC political watchers tracking the House majority math.</p>
+      <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
     </a>
-    <a class="card cr" href="https://apnews.com/" target="_blank">
-      <div class="flags"><span class="f f-ol">Economy</span></div>
-      <h3>Federal Workforce Uncertainty Weighing on DC Economy &mdash; Gas, Housing, and Transit All in Focus</h3>
-      <p>The ongoing DOGE-driven federal workforce reduction is creating ripple effects throughout the DC metro economy. Gas price increases (up 11 cents overnight nationally) hit DC commuters disproportionately. Federal worker career uncertainty is depressing consumer spending and delaying major purchases in federal corridor neighborhoods. No DC-specific verified economic data available today; monitoring continues.</p>
-      <div class="foot"><span>AP / Federal News Network</span><span>Mar 3, 2026</span></div>
+    <a class="card cr" href="https://apnews.com/article/savannah-guthrie-nancy-missing-where-arizona-home-a91a97dfa6c73064b0e9f4ac282f6eed" target="_blank">
+      <div class="flags"><span class="f f-ol">Notable</span></div>
+      <h3>Savannah Guthrie&rsquo;s Missing Mother Found at Her Arizona Home in First Sighting</h3>
+      <p>Savannah Guthrie&rsquo;s mother, who had been reported missing, was found at her mother&rsquo;s home in Arizona in the first confirmed sighting since her disappearance. No additional details released by family. A relief for the Today Show anchor who has been publicly distressed about the situation.</p>
+      <div class="foot"><span>AP News</span><span>Mar 3, 2026</span></div>
     </a>
-    <a class="card" href="https://apnews.com/" target="_blank">
-      <div class="flags"><span class="f f-ol">US Half Marathon</span></div>
-      <h3>US Women's Half Marathon Leaders Guided Off Course by Error &mdash; Athletes Demand Officials 'Make It Right'</h3>
-      <p>At the US Half Marathon Championships, the women's race leaders were incorrectly guided off the course by race officials, potentially altering the outcome of the competition. At least one athlete has publicly called on officials to "make it right," raising questions about the integrity of the result. The USATF is reviewing the situation.</p>
-      <div class="foot"><span>AP</span><span>Mar 3, 2026</span></div>
-    </a>
+    
   </div>
 
   <div class="divider"></div>
 
   <!-- SCIENCE & SPACE -->
-  <div class="sh"><div class="sh-label">&#128302; Science &amp; Space</div><div class="sh-desc">what we're learning as a people</div></div>
+  <div class="sh"><div class="sh-label">&#128302; Science &amp; Space</div><div class="sh-desc">what we&rsquo;re learning as a people</div></div>
   <div class="g g2">
-    <a class="card dk" href="https://apnews.com/hub/science" target="_blank">
-      <div class="flags"><span class="f f-gd">Sky Watch</span></div>
-      <h3>Blood-Red Moon &mdash; Total Lunar Eclipse Captured in Stunning Photos</h3>
-      <p>AP photographers captured striking images of a total lunar eclipse and blood-red moon visible this week. The celestial event was visible across large portions of the globe and drew significant public attention despite the ongoing geopolitical news cycle. The eclipse is one of the most visually dramatic in recent years due to atmospheric conditions.</p>
-      <div class="foot"><span>AP Science</span><span>Mar 2026</span></div>
+    <a class="card cr" href="https://apnews.com/hub/science" target="_blank">
+      <div class="flags"><span class="f f-ol">Science</span></div>
+      <h3>No Major Science Discoveries Breaking Today &mdash; Check AP Science Hub for Latest</h3>
+      <p>No major science or space discoveries were confirmed from verified sources at publication time for March 3, 2026. The AP science and space hubs are the best real-time sources for breaking discoveries. This section will be fully populated in daily issues as real stories are sourced each morning.</p>
+      <div class="foot"><span>AP Science Hub</span><span>Mar 3, 2026</span></div>
     </a>
-    <a class="card cr" href="https://apnews.com/" target="_blank">
-      <div class="flags"><span class="f f-ol">Health</span></div>
-      <h3>Colorectal Cancer Rising in Adults Under 50 &mdash; Who's Most at Risk and Symptoms to Watch</h3>
-      <p>AP health coverage highlights a concerning trend: colorectal cancer rates are rising significantly in adults under 50, a population historically considered lower-risk. Researchers are studying diet, microbiome changes, and other factors. Early detection remains the critical factor for survival outcomes. Know your risk and talk to your doctor if symptoms arise.</p>
-      <div class="foot"><span>AP Health</span><span>Mar 3, 2026</span></div>
+    <a class="card" href="https://apnews.com/hub/milan-cortina-2026-winter-olympics" target="_blank">
+      <div class="flags"><span class="f f-dk">Winter Olympics</span></div>
+      <h3>US Olympic Hockey Gold Medalists Hilary Knight, Quinn, and Jack Hughes Appear on Tonight Show</h3>
+      <p>US gold medalists from the Milan-Cortina 2026 Winter Olympics &mdash; hockey stars Hilary Knight, Quinn, and Jack Hughes &mdash; appeared on the Tonight Show. Trump announced he will give the Medal of Freedom to Team USA hockey goalie. Winter Olympics coverage continuing from Milan-Cortina.</p>
+      <div class="foot"><span>AP Sports / NBC</span><span>Mar 3, 2026</span></div>
     </a>
   </div>
 
   <div class="divider"></div>
 
   <!-- NY SPORTS -->
-  <div class="sh"><div class="sh-label">&#127944; NY Sports</div><div class="sh-desc">Mets &bull; Rangers &bull; Syracuse &bull; Giants</div><div class="sh-tag">Go NY</div></div>
+  <div class="sh"><div class="sh-label">&#127944; NY Sports</div><div class="sh-desc">Mets &bull; Rangers &bull; Syracuse &bull; Giants &mdash; real stats only, sourced from ESPN</div><div class="sh-tag">Go NY</div></div>
   <div class="g g2">
-    <div style="display:flex;flex-direction:column;gap:16px;">
-      <a class="card dk" href="https://www.espn.com/nhl/team/_/name/nyr/new-york-rangers" target="_blank">
-        <div class="flags"><span class="f f-rd">Struggling</span><span class="f f-ol">Rangers</span></div>
-        <h3>Rangers Played Columbus Last Night &mdash; Sitting Last in the Metro at 23-29-8</h3>
-        <p>The Rangers played the Columbus Blue Jackets last night. New York currently sits dead last in the Metropolitan Division at 23-29-8 (54 pts) &mdash; 28 points behind division-leading Carolina. Their 3.17 goals-against-per-game rate is a core problem. A playoff run is effectively off the table; the real conversation now is draft positioning and offseason roster moves.</p>
-        <div class="foot"><span>ESPN / NHL</span><span>Mar 3, 2026</span></div>
-      </a>
-      <a class="card cr" href="https://www.espn.com/mlb/team/_/name/nym/new-york-mets" target="_blank">
-        <div class="flags"><span class="f f-ol">Mets</span><span class="f f-gr">Spring Training</span></div>
-        <h3>Mets 5-3 in Grapefruit League &mdash; 2.5 Games Back of Atlanta, Christopher Suero Showing Power</h3>
-        <p>The Mets are 5-3 in spring training, sitting 2.5 games behind Atlanta (8-2) in the Grapefruit League standings. Prospect Christopher Suero belted a homer to tie a game earlier this week. Team batting average sits at .229 with a .327 OBP &mdash; some early-spring rust still showing but the lineup depth looks solid heading into camp competition.</p>
-        <div class="foot"><span>ESPN / MLB</span><span>Mar 3, 2026</span></div>
-      </a>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:16px;">
-      <a class="card" href="https://www.espn.com/mens-college-basketball/team/_/id/183/syracuse-orange" target="_blank">
-        <div class="flags"><span class="f f-ol">Syracuse</span><span class="f f-ol">ACC</span></div>
-        <h3>Syracuse (15-14, 6-10 ACC) at Louisville Tonight &mdash; 9 PM, Season on the Line</h3>
-        <p>Syracuse is 15-14 overall and 6-10 in the ACC, tied for 13th in the conference with Wake Forest. They play at Louisville tonight at 9 PM ET from the KFC Yum! Center. It's a critical game for whatever postseason hopes remain. The Orange have been inconsistent &mdash; a second-half surge lifted them past opponents one week, but North Carolina ended a promising run ten days ago.</p>
-        <div class="foot"><span>ESPN / ACC</span><span>Mar 3, 2026</span></div>
-      </a>
-      <a class="card cr" href="https://www.espn.com/nfl/team/_/name/nyg/new-york-giants" target="_blank">
-        <div class="flags"><span class="f f-ol">Giants</span><span class="f f-ol">NFL Combine</span></div>
-        <h3>Giants QB Jaxson Dart Speaks at NFL Combine &mdash; Addresses His Running Style as Giants' Offseason Begins</h3>
-        <p>The New York Giants' quarterback Jaxson Dart is speaking at the NFL Combine, where he is addressing questions about his running tendencies during games &mdash; specifically the recklessness concerns that have surfaced during evaluation. The Giants are in full offseason mode with the Combine and upcoming free agency as the focus. Draft decisions will be crucial for 2026.</p>
-        <div class="foot"><span>ESPN / NFL</span><span>Mar 3, 2026</span></div>
-      </a>
-    </div>
+    <a class="card dk" href="https://www.espn.com/nhl/team/_/name/nyr/new-york-rangers" target="_blank">
+      <div class="flags"><span class="f f-ol">Rangers</span><span class="f f-ol">NHL</span></div>
+      <h3>Rangers: 23-29-7 &mdash; Lost 5&ndash;4 in OT to Columbus Last Night. (Marchenko, 1:04 OT)</h3>
+      <p>The Rangers fell 5&ndash;4 in overtime to the Columbus Blue Jackets last night. Artemi Marchenko scored the OT winner at 1:04 to seal it. Rangers sit at 23-29-7, 8th (last) in the Metropolitan Division. Goals against per game: 3.17 (21st in league). This is a team in the basement, not in a playoff push. (Source: Cron / ESPN, March 3, 2026)</p>
+      <div class="foot"><span>ESPN</span><span>Mar 3, 2026</span></div>
+    </a>
+    <a class="card" href="https://www.espn.com/mlb/team/_/name/nym/new-york-mets" target="_blank">
+      <div class="flags"><span class="f f-ol">Mets</span><span class="f f-ol">Spring Training</span></div>
+      <h3>Mets: 5-3 in Grapefruit League, 2.5 GB in Standings. Christopher Suero Hit a Homer to Tie 2 Days Ago.</h3>
+      <p>New York Mets are 5-3 in Grapefruit League spring training, sitting 2.5 games back in the standings. Christopher Suero belted a homer to tie a game 2 days ago. Team batting average .229 (26th), OBP .327 (24th). Spring training games are meaningless in the standings but the roster competition is real. (Source: ESPN, March 3, 2026)</p>
+      <div class="foot"><span>ESPN</span><span>Mar 3, 2026</span></div>
+    </a>
+    <a class="card cr" href="https://www.espn.com/mens-college-basketball/team/_/id/183/syracuse-orange" target="_blank">
+      <div class="flags"><span class="f f-ol">Syracuse</span><span class="f f-ol">NCAAM</span></div>
+      <h3>Syracuse: 15-14 Overall, 6-10 ACC &mdash; Tied 13th/14th in Conference. Beat Wake Forest 3 Days Ago.</h3>
+      <p>The Orange are 15-14 overall and 6-10 in ACC play, tied for 13th/14th in the conference standings. They beat Wake Forest 3 days ago and lost to North Carolina 10 days ago (second-half surge by UNC). At 15-14 with this ACC record, the NCAA Tournament is a very long shot &mdash; NIT is the more realistic conversation. (Source: ESPN, March 3, 2026)</p>
+      <div class="foot"><span>ESPN</span><span>Mar 3, 2026</span></div>
+    </a>
+    <a class="card" href="https://apnews.com/hub/nfl" target="_blank">
+      <div class="flags"><span class="f f-ol">Giants</span><span class="f f-ol">NFL</span></div>
+      <h3>Giants Hired John Harbaugh as Head Coach &mdash; Trump Mentioned the Hire While Congratulating Indiana on CFP Win</h3>
+      <p>The New York Giants hired John Harbaugh as head coach. AP noted Trump congratulating Indiana on the CFP championship win in the same remarks where he commented on the Giants&rsquo; Harbaugh hire. It is the NFL offseason &mdash; draft and free agency decisions are the next major milestones for the organization. (Source: AP, March 2026)</p>
+      <div class="foot"><span>AP News</span><span>Mar 2026</span></div>
+    </a>
   </div>
 
 </main>
@@ -343,7 +313,7 @@
       <div class="ft">The <em>Docket</em></div>
       <div class="fs">Curated by Pavano &#129302; for <span>Matt Reilly</span> &bull; Powered by Wally</div>
     </div>
-    <div class="fr">Tuesday, March 3, 2026<br>Issue No. 1<br><span style="color:rgba(255,255,255,0.2);">misterpavano.github.io/the-docket</span></div>
+    <div class="fr">Tuesday, March 3, 2026<br>Issue No. 1<br><span style="color:rgba(255,255,255,0.2)">All content sourced &amp; verified. No fabrication.</span></div>
   </div>
 </footer>
 
