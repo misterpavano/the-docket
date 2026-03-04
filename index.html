@@ -3,242 +3,289 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Docket &mdash; March 4, 2026</title>
+  <title>The Docket — March 4, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--navy:#0D1B2A;--navy2:#162336;--navy3:#1e3050;--gold:#C9A84C;--gold2:#e8c96a;--cream:#F9F6F0;--cream2:#f0ebe0;--ink:#1A1A2E;--muted:#6B7280;--rule:#E5E1D8;--red:#C0392B;--red2:#e74c3c;--slate:#334155}
-    body{background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
-    .top-bar{background:var(--navy);color:rgba(255,255,255,0.4);font-size:10.5px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;padding:7px 40px;display:flex;justify-content:space-between}
-    .top-bar span{color:var(--gold)}
-    .masthead{background:var(--navy);padding:44px 40px 28px;border-bottom:4px solid var(--gold)}
-    .mast-eyebrow{font-size:10px;font-weight:700;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:14px}
-    .mast-eyebrow::after{content:"";flex:1;height:1px;background:rgba(201,168,76,0.3)}
-    .mast-title{font-family:'DM Serif Display',serif;font-size:clamp(56px,10vw,108px);line-height:0.88;color:#fff;letter-spacing:-0.03em}
-    .mast-title em{font-style:italic;color:var(--gold)}
-    .mast-row{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.08)}
-    .mast-sub{font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:0.05em}
-    .mast-meta{display:flex;gap:24px;flex-wrap:wrap}
-    .mmi{font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:0.15em;text-transform:uppercase}
-    .mmi span{color:rgba(255,255,255,0.7)}
-    .glance{background:var(--navy2);padding:22px 40px 26px;border-bottom:2px solid rgba(201,168,76,0.22)}
-    .gl{font-size:10px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
-    .glance-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px 24px}
-    .gi{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.55;padding-left:14px;position:relative}
-    .gi::before{content:'4';position:absolute;left:0;color:var(--gold)}
-    .gi strong{color:#fff}
-    main{max-width:1300px;margin:0 auto;padding:0 40px 60px}
-    .sh{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:20px}
-    .sh-label{font-family:'DM Serif Display',serif;font-size:20px}
-    .sh-desc{font-size:11px;color:var(--muted);font-style:italic;flex:1}
-    .sh-tag{font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:2px 9px;border-radius:100px;white-space:nowrap;background:var(--ink);color:var(--cream);border:none}
-    /* TOP STORY */
-    .section-top{background:var(--navy);margin:0 -40px;padding:40px 40px 44px;border-bottom:3px solid var(--gold)}
-    .section-top .sh{margin-bottom:24px}
-    .section-top .sh-label{color:var(--gold);font-size:13px;letter-spacing:0.25em;text-transform:uppercase;font-family:'DM Sans',sans-serif;font-weight:700}
-    .section-top .sh-tag{background:var(--red);color:#fff;border:none}
-    .top-layout{display:grid;grid-template-columns:2fr 1fr;gap:20px}
-    .top-hero{background:var(--navy3);border:1px solid rgba(201,168,76,0.25);border-left:4px solid var(--gold);padding:28px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:12px;transition:border-color 0.2s}
-    .top-hero:hover{border-left-color:var(--gold2)}
-    .hero-flag{font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--red2)}
-    .top-hero h2{font-family:'DM Serif Display',serif;font-size:26px;line-height:1.18;color:#fff;letter-spacing:-0.01em}
-    .top-hero .foot{margin-top:auto;padding-top:12px;border-top:1px solid rgba(255,255,255,0.1);font-size:10.5px;color:rgba(255,255,255,0.28);display:flex;justify-content:space-between}
-    .top-sidebar{display:flex;flex-direction:column;gap:14px}
-    .top-side-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:18px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:8px;transition:background 0.2s}
-    .top-side-card:hover{background:rgba(255,255,255,0.07)}
-    .top-side-card h3{font-family:'DM Serif Display',serif;font-size:15px;line-height:1.3;color:#fff}
-    .top-side-card .foot{margin-top:auto;padding-top:10px;border-top:1px solid rgba(255,255,255,0.06);font-size:10px;color:rgba(255,255,255,0.2);display:flex;justify-content:space-between}
-    /* POLITICS */
-    .section-politics{padding:40px 0 0}
-    .section-politics .sh{border-bottom:3px double var(--ink);padding-bottom:10px}
-    .section-politics .sh-label{color:var(--ink);font-size:22px}
-    .pol-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:0;border:1px solid var(--ink)}
-    .pol-card{padding:22px;border-right:1px solid var(--ink);text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px;transition:background 0.15s}
-    .pol-card:last-child{border-right:none}
-    .pol-card:hover{background:var(--cream2)}
-    .pol-kicker{font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:6px}
-    .pol-card h3{font-family:'Playfair Display',serif;font-size:17px;line-height:1.25;color:var(--ink)}
-    .pol-card.lead h3{font-size:22px;line-height:1.2;letter-spacing:-0.01em}
-    .pol-card .foot{margin-top:auto;padding-top:8px;font-size:10.5px;color:var(--muted);border-top:1px solid var(--rule);display:flex;justify-content:space-between}
-    /* INTERNATIONAL */
-    .section-intl{background:var(--slate);margin:40px -40px 0;padding:36px 40px 40px}
-    .section-intl .sh-label{color:rgba(255,255,255,0.9);font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-family:'DM Sans',sans-serif;font-weight:600}
-    .section-intl .sh-tag{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.15)}
-    .intl-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
-    .intl-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-top:3px solid;padding:20px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px;transition:background 0.2s}
-    .intl-card:hover{background:rgba(255,255,255,0.09)}
-    .intl-card.c1{border-top-color:#e74c3c}.intl-card.c2{border-top-color:var(--gold)}.intl-card.c3{border-top-color:#3498db}
-    .intl-region{font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase}
-    .intl-card.c1 .intl-region{color:#e74c3c}.intl-card.c2 .intl-region{color:var(--gold)}.intl-card.c3 .intl-region{color:#5dade2}
-    .intl-card h3{font-family:'DM Serif Display',serif;font-size:16px;line-height:1.3;color:#fff}
-    .intl-card .foot{margin-top:auto;padding-top:10px;border-top:1px solid rgba(255,255,255,0.08);font-size:10px;color:rgba(255,255,255,0.25);display:flex;justify-content:space-between}
-    /* MARKETS */
-    .section-markets{background:#120d00;margin:0 -40px;padding:32px 40px 36px;border-top:3px solid #92400e;border-bottom:3px solid #92400e}
-    .section-markets .sh-label{color:#f59e0b;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-family:'DM Sans',sans-serif;font-weight:600}
-    .section-markets .sh-tag{background:#92400e;color:#fbbf24;border:none}
-    .mkt-card{background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.2);border-left:4px solid #f59e0b;padding:22px 26px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px;margin-bottom:12px;transition:background 0.2s}
-    .mkt-card:hover{background:rgba(245,158,11,0.11)}
-    .mkt-flag{font-size:9px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#f59e0b}
-    .mkt-card h3{font-family:'DM Serif Display',serif;font-size:19px;line-height:1.2;color:#fbbf24}
-    .mkt-card .foot{padding-top:10px;border-top:1px solid rgba(245,158,11,0.15);font-size:11px;color:rgba(245,158,11,0.3);display:flex;justify-content:space-between}
-    /* CARDS generic */
-    .g{display:grid;gap:16px}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr 1fr}
-    .card{background:#fff;border:1px solid var(--rule);padding:20px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:9px;transition:box-shadow 0.15s}
-    .card:hover{box-shadow:0 4px 18px rgba(13,27,42,0.1)}
-    .card.dk{background:var(--navy);color:#fff;border-color:var(--navy)}
-    .card.dk h3{color:#fff}.card.dk .foot{border-top-color:rgba(255,255,255,0.1);color:rgba(255,255,255,0.28)}
-    .card h3{font-family:'DM Serif Display',serif;font-size:16px;line-height:1.3;color:var(--ink)}
-    .card .foot{margin-top:auto;padding-top:10px;border-top:1px solid var(--rule);font-size:10.5px;color:var(--muted);display:flex;justify-content:space-between}
-    .flags{display:flex;gap:7px;flex-wrap:wrap}
-    .f{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.18em;padding:2px 8px;border-radius:2px}
-    .f-rd{background:var(--red);color:#fff}
-    /* SPORTS */
-    .section-sports{padding:40px 0 0}
-    .section-sports .sh{border-bottom:2px solid var(--red);padding-bottom:10px}
-    .section-sports .sh-label{color:var(--red);font-size:20px}
-    .section-sports .sh-tag{background:var(--red);color:#fff;border:none}
-    .sports-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .sport-card{border:1px solid var(--rule);border-top:4px solid;background:#fff;padding:22px 22px 18px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:8px;transition:box-shadow 0.15s,transform 0.1s}
-    .sport-card:hover{box-shadow:0 6px 24px rgba(0,0,0,0.13);transform:translateY(-2px)}
-    .sport-card.nhl{border-top-color:#003f8f}.sport-card.mlb{border-top-color:#003087}.sport-card.ncaa{border-top-color:#e55b13}
-    .sport-league{font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted)}
-    .sport-card .foot{margin-top:auto;padding-top:10px;border-top:1px solid var(--rule);font-size:10px;color:var(--muted);display:flex;justify-content:space-between}
-    footer{background:var(--navy);padding:32px 40px;border-top:3px solid var(--gold);margin-top:64px}
-    .fi{max-width:1300px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
-    .ft{font-family:'DM Serif Display',serif;font-size:22px;color:#fff}
-    .ft em{color:var(--gold);font-style:italic}
-    .fs{font-size:11px;color:rgba(255,255,255,0.3);margin-top:4px}
-    .fr{font-size:11px;color:rgba(255,255,255,0.25);text-align:right}
-    @media(max-width:960px){.top-layout,.intl-grid,.sports-grid{grid-template-columns:1fr 1fr}.pol-grid{grid-template-columns:1fr}.pol-card{border-right:none;border-bottom:1px solid var(--ink)}}
-    @media(max-width:640px){body{overflow-x:hidden}.top-bar,.masthead,.section-top,.section-intl,.section-markets,main,footer{padding-left:16px;padding-right:16px}.section-top,.section-intl,.section-markets{margin-left:-16px;margin-right:-16px}.top-layout,.intl-grid,.sports-grid,.pol-grid{grid-template-columns:1fr}.glance-grid{grid-template-columns:1fr 1fr}}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #F8F8F7;
+      --surface: #FFFFFF;
+      --ink: #111111;
+      --ink2: #3a3a3a;
+      --muted: #888;
+      --rule: #E8E8E6;
+      --gold: #C9A84C;
+      --dark: #0D1B2A;
+      --red: #D04040;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: 'Inter', system-ui, sans-serif; line-height: 1.6; font-size: 14px; -webkit-font-smoothing: antialiased; }
+
+    /* ── HEADER ── */
+    .header { background: var(--dark); padding: 12px 48px; display: flex; justify-content: space-between; align-items: center; }
+    .header-left { font-size: 10px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+    .header-right { font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+
+    /* ── MASTHEAD ── */
+    .masthead { padding: 52px 48px 40px; border-bottom: 1px solid var(--rule); }
+    .mast-issue { font-size: 10px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+    .mast-title { font-size: clamp(52px, 8vw, 88px); font-weight: 700; letter-spacing: -0.04em; line-height: 0.92; color: var(--ink); }
+    .mast-title span { color: var(--gold); }
+    .mast-row { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--rule); flex-wrap: wrap; gap: 12px; }
+    .mast-for { font-size: 11px; color: var(--muted); }
+    .mast-for strong { color: var(--ink2); }
+    .mast-date { font-size: 11px; color: var(--muted); font-weight: 500; }
+
+    /* ── GLANCE ── */
+    .glance { padding: 20px 48px; border-bottom: 1px solid var(--rule); display: flex; gap: 40px; overflow-x: auto; }
+    .gi { flex-shrink: 0; }
+    .gi-label { font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .gi-text { font-size: 12px; font-weight: 500; color: var(--ink2); max-width: 200px; line-height: 1.4; }
+
+    /* ── MAIN LAYOUT ── */
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 48px 80px; }
+
+    /* ── SECTION HEADER ── */
+    .sh { display: flex; align-items: center; gap: 14px; padding: 40px 0 16px; border-bottom: 1px solid var(--rule); margin-bottom: 20px; }
+    .sh-label { font-size: 10px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); }
+    .sh-line { flex: 1; height: 1px; background: var(--rule); }
+    .sh-tag { font-size: 9px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 3px 10px; border-radius: 2px; }
+    .sh-tag.live { background: var(--red); color: #fff; }
+    .sh-tag.priority { background: var(--gold); color: #fff; }
+    .sh-tag.sports { background: var(--ink); color: #fff; }
+
+    /* ── CARDS ── */
+    .grid { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+    .g2 { grid-template-columns: 1fr 1fr; }
+    .g3 { grid-template-columns: 1fr 1fr 1fr; }
+    .g-wide { grid-template-columns: 2fr 1fr 1fr; }
+    .g-hero { grid-template-columns: 1.8fr 1fr; }
+
+    .card { background: var(--surface); padding: 24px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 10px; transition: background 0.12s; }
+    .card:hover { background: #FAFAF8; }
+    .card-tag { font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+    .card-tag.red { color: var(--red); }
+    .card-tag.gold { color: var(--gold); }
+    .card h3 { font-size: 15px; font-weight: 600; line-height: 1.35; color: var(--ink); letter-spacing: -0.01em; }
+    .card.hero h3 { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
+    .card p { font-size: 13px; line-height: 1.65; color: var(--ink2); }
+    .card-foot { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--rule); font-size: 10px; font-weight: 500; color: var(--muted); letter-spacing: 0.05em; display: flex; justify-content: space-between; }
+
+    /* ── DARK CARD (DOJ) ── */
+    .card.dark { background: var(--dark); }
+    .card.dark:hover { background: #162336; }
+    .card.dark .card-tag { color: rgba(255,255,255,0.35); }
+    .card.dark .card-tag.gold { color: var(--gold); }
+    .card.dark h3 { color: #fff; }
+    .card.dark p { color: rgba(255,255,255,0.55); }
+    .card.dark .card-foot { border-top-color: rgba(255,255,255,0.08); color: rgba(255,255,255,0.25); }
+    .card.dark .callout { background: rgba(201,168,76,0.1); border-left: 2px solid var(--gold); padding: 10px 12px; font-size: 12px; color: rgba(255,255,255,0.55); font-style: italic; }
+
+    /* ── SPORT CARD ── */
+    .sport-card { background: var(--surface); padding: 22px 24px 18px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 6px; border-top: 3px solid var(--rule); transition: background 0.12s; }
+    .sport-card:hover { background: #FAFAF8; }
+    .sport-card.nhl { border-top-color: #003f8f; }
+    .sport-card.mlb { border-top-color: #003087; }
+    .sport-card.ncaa { border-top-color: #e55b13; }
+    .sport-league { font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+    .sport-card h3 { font-size: 14px; font-weight: 600; line-height: 1.3; color: var(--ink); letter-spacing: -0.01em; }
+    .sport-card .card-foot { margin-top: auto; padding-top: 10px; border-top: 1px solid var(--rule); font-size: 10px; color: var(--muted); display: flex; justify-content: space-between; }
+    .sport-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--dark); padding: 28px 48px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-brand { font-size: 16px; font-weight: 700; letter-spacing: -0.02em; color: #fff; }
+    .footer-brand span { color: var(--gold); }
+    .footer-meta { font-size: 10px; color: rgba(255,255,255,0.25); margin-top: 4px; }
+    .footer-right { font-size: 10px; color: rgba(255,255,255,0.2); text-align: right; }
+
+    @media (max-width: 900px) {
+      .g3, .g-wide, .g-hero { grid-template-columns: 1fr 1fr; }
+      .sport-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      body { overflow-x: hidden; }
+      .header, .masthead, .glance, .wrap, footer { padding-left: 20px; padding-right: 20px; }
+      .g2, .g3, .g-wide, .g-hero, .sport-grid { grid-template-columns: 1fr; }
+      .mast-title { font-size: 44px; }
+      .glance { gap: 24px; }
+    }
   </style>
 </head>
 <body>
-<div class="top-bar"><div>U.S. Department of Justice &bull; Criminal Division</div><div><span>The Docket</span> &bull; Wednesday, March 4, 2026</div></div>
+
+<div class="header">
+  <div class="header-left">U.S. Department of Justice · Criminal Division</div>
+  <div class="header-right">The Docket · Mar 4, 2026</div>
+</div>
+
 <div class="masthead">
-  <div class="mast-eyebrow">Matt Reilly&rsquo;s Daily Brief &mdash; Issue No. 2</div>
-  <div class="mast-title">The <em>Docket</em></div>
+  <div class="mast-issue">Issue No. 2 · Daily Brief</div>
+  <div class="mast-title">The <span>Docket</span></div>
   <div class="mast-row">
-    <div class="mast-sub">Politics &bull; National &bull; International &bull; Business &bull; Federal &bull; DOJ &bull; NY Sports</div>
-    <div class="mast-meta">
-      <div class="mmi">Date &nbsp;<span>March 4, 2026</span></div>
-      <div class="mmi">By &nbsp;<span>Pavano</span></div>
-      <div class="mmi">Sources &nbsp;<span>AP &bull; NPR &bull; ESPN &bull; DOJ</span></div>
-    </div>
+    <div class="mast-for">For <strong>Matt Reilly</strong> · Curated by Pavano</div>
+    <div class="mast-date">Wednesday, March 4, 2026</div>
   </div>
 </div>
+
 <div class="glance">
-  <div class="gl">Today at a glance</div>
-  <div class="glance-grid"><div class="gi"><strong>Breaking:</strong> North Carolina Rep. Valerie Foushee holds narrow lead over challenger Nida Allam</div>
-<div class="gi"><strong>Politics:</strong> North Carolina Rep. Valerie Foushee holds narrow lead over challenger Nida Allam</div>
-<div class="gi"><strong>International:</strong> Gas and oil prices soar and shares tumble on fears conflict could escalate</div>
-<div class="gi"><strong>Sports:</strong> Rangers Fall to Blue Jackets 5-4 in Overtime</div></div>
+  <div class="gi">
+    <div class="gi-label">Iran / War</div>
+    <div class="gi-text">Gas & oil prices surge as conflict escalates. Asian markets plummet.</div>
+  </div>
+  <div class="gi">
+    <div class="gi-label">Politics</div>
+    <div class="gi-text">NC & TX primaries — Cooper vs. Whatley for Senate. Foushee holds lead.</div>
+  </div>
+  <div class="gi">
+    <div class="gi-label">Federal / DOJ</div>
+    <div class="gi-text">Investment advisor indicted $3.3M fraud. MN probe into federal immigration officers.</div>
+  </div>
+  <div class="gi">
+    <div class="gi-label">Sports</div>
+    <div class="gi-text">Rangers lost 5–4 OT. Mets vs. Israel today. Syracuse dropped to Louisville.</div>
+  </div>
 </div>
-<div class="section-top">
-  <div class="sh"><div class="sh-label">Top Story</div><div class="sh-tag">&#128308; Breaking</div></div>
-  <div class="top-layout">
-    <a class="top-hero" href="https://www.npr.org/2026/03/04/nx-s1-5734577/north-carolina-election-results-foushee-allam" target="_blank">
-      <div class="hero-flag">&#128308; Breaking</div>
-      <h2>North Carolina Rep. Valerie Foushee holds narrow lead over challenger Nida Allam</h2>
-      <div class="foot"><span>NPR News</span><span>2026-03-04</span></div>
+
+<div class="wrap">
+
+  <!-- BREAKING -->
+  <div class="sh">
+    <div class="sh-label">Breaking</div>
+    <div class="sh-line"></div>
+    <div class="sh-tag live">Live</div>
+  </div>
+  <div class="grid g-hero">
+    <a class="card hero" href="https://www.bbc.com/news/articles/cr5lz0vgy52o" target="_blank">
+      <div class="card-tag red">Iran · Markets</div>
+      <h3>Gas and Oil Prices Soar, Shares Tumble as Iran Conflict Escalates</h3>
+      <p>Energy markets are in turmoil as the US-Israel-Iran war enters its fifth day. Global oil prices spiked, gas prices jumped overnight at US pumps, and Asian markets plummeted on fears the conflict could escalate further and disrupt Gulf supply chains.</p>
+      <div class="card-foot"><span>BBC World</span><span>Mar 4, 2026</span></div>
     </a>
-    <div class="top-sidebar"><a class="top-side-card" href="https://www.npr.org/2026/03/03/nx-s1-5734513/north-carolina-congress-election-results-cooper-whatley" target="_blank">
-        <h3>Roy Cooper, Michael Whatley set to compete for a high-stakes North Carolina U.S. Senate seat</h3>
-        <div class="foot"><span>NPR News</span><span>2026-03-04</span></div>
-      </a><a class="top-side-card" href="https://www.npr.org/2026/03/03/nx-s1-5734515/texas-primary-election-results-james-talarico-jasmine-crockett-john-cornyn-ken-paxton" target="_blank">
-        <h3>Talarico wins Democratic nomination for Texas Senate seat; Republicans set for runoff</h3>
-        <div class="foot"><span>NPR News</span><span>2026-03-04</span></div>
-      </a></div>
-  </div>
-</div>
-<main>
-<div class="section-politics">
-  <div class="sh"><div class="sh-label">Politics &amp; National</div><div class="sh-tag">Today</div></div>
-  <div class="pol-grid"><a class="pol-card  lead" href="https://www.npr.org/2026/03/04/nx-s1-5734577/north-carolina-election-results-foushee-allam" target="_blank">
-      <div class="pol-kicker">&#127937; Politics</div>
-      <h3>North Carolina Rep. Valerie Foushee holds narrow lead over challenger Nida Allam</h3>
-      <div class="foot"><span>NPR Politics</span><span>2026-03-04</span></div>
-    </a><a class="pol-card" href="https://www.npr.org/2026/03/03/nx-s1-5734513/north-carolina-congress-election-results-cooper-whatley" target="_blank">
-      <div class="pol-kicker">&#127937; Politics</div>
-      <h3>Roy Cooper, Michael Whatley set to compete for a high-stakes North Carolina U.S. Senate seat</h3>
-      <div class="foot"><span>NPR Politics</span><span>2026-03-04</span></div>
-    </a><a class="pol-card" href="https://www.npr.org/2026/03/03/nx-s1-5734515/texas-primary-election-results-james-talarico-jasmine-crockett-john-cornyn-ken-paxton" target="_blank">
-      <div class="pol-kicker">&#127937; Politics</div>
-      <h3>Talarico wins Democratic nomination for Texas Senate seat; Republicans set for runoff</h3>
-      <div class="foot"><span>NPR Politics</span><span>2026-03-04</span></div>
-    </a></div>
-</div>
-</main>
-<div class="section-intl">
-  <div style="max-width:1300px;margin:0 auto">
-    <div class="sh"><div class="sh-label">International</div><div class="sh-tag">Global</div></div>
-    <div class="intl-grid"><a class="intl-card c1" href="https://www.bbc.com/news/articles/cr5lz0vgy52o?at_medium=RSS&amp;at_campaign=rss" target="_blank">
-      <div class="intl-region">&#127470;&#127479; International</div>
-      <h3>Gas and oil prices soar and shares tumble on fears conflict could escalate</h3>
-      <div class="foot"><span>BBC World</span><span>2026-03-04</span></div>
-    </a><a class="intl-card c2" href="https://www.bbc.com/news/articles/c93wwq1n542o?at_medium=RSS&amp;at_campaign=rss" target="_blank">
-      <div class="intl-region">&#127466;&#127480; Europe</div>
-      <h3>Spain's Pedro Sánchez hits back at Trump threat to sever trade saying 'no to war'</h3>
-      <div class="foot"><span>BBC World</span><span>2026-03-04</span></div>
-    </a><a class="intl-card c3" href="https://www.bbc.com/news/articles/cgjzz4gn64zo?at_medium=RSS&amp;at_campaign=rss" target="_blank">
-      <div class="intl-region">&#127758; Global</div>
-      <h3>US and Ecuador forces launch operation to fight drug trafficking</h3>
-      <div class="foot"><span>BBC World</span><span>2026-03-04</span></div>
-    </a></div>
-  </div>
-</div>
-<div class="section-markets">
-  <div style="max-width:1300px;margin:0 auto">
-    <div class="sh"><div class="sh-label">Business &amp; Markets</div><div class="sh-tag">Iran Impact</div></div>
-    <a class="mkt-card" href="https://www.nytimes.com/2026/03/04/business/iran-stocks-natural-gas-oil.html" target="_blank">
-      <div class="mkt-flag">&#9981; Markets</div>
-      <h3>Markets in Asia Plummet as Energy Fears Offset A.I. Optimism</h3>
-      <div class="foot"><span>NY Times Business</span><span>2026-03-04</span></div>
-    </a><a class="mkt-card" href="https://www.nytimes.com/2026/03/03/business/india-workers-iran-persian-gulf.html" target="_blank">
-      <div class="mkt-flag">&#9981; Markets</div>
-      <h3>9 Million Indians Live in the Persian Gulf. The Money They Send Home Is a Lifeline.</h3>
-      <div class="foot"><span>NY Times Business</span><span>2026-03-04</span></div>
-    </a>
-  </div>
-</div>
-<main>
-<div style="padding:40px 0 0">
-  <div class="sh"><div class="sh-label">&#127963; Federal &amp; DOJ</div><div class="sh-desc">your beat</div><div class="sh-tag" style="background:var(--gold);color:var(--navy);border:none">&#9733; Priority</div></div>
-  <div class="g g3"><a class="card dk" href="https://www.justice.gov/usao-ct/pr/indictment-charges-investment-advisor-defrauding-financial-services-companies-33-0" target="_blank">
-      <div class="flags"><span class="f f-rd">DOJ / SEC</span></div>
-      <h3>Investment Advisor Indicted for $3.3 Million Fraud</h3>
-      <div class="foot"><span>United States Department of Justice</span><span>March 3, 2026</span></div>
-    </a><a class="card dk" href="https://www.pbs.org/newshour/nation/minnesota-launches-probe-that-could-bring-charges-against-federal-immigration-officers" target="_blank">
-      <div class="flags"><span class="f f-rd">DOJ / SEC</span></div>
-      <h3>Minnesota Prosecutor Launches Probe into Federal Immigration Officers</h3>
-      <div class="foot"><span>Unnamed news outlet covering Minnesota</span><span>March 4, 2026</span></div>
-    </a><a class="card dk" href="https://www.justice.gov/usao/pressreleases" target="_blank">
-      <div class="flags"><span class="f f-rd">DOJ / SEC</span></div>
-      <h3>Federal Charges Filed for Criminal Threats Against the President</h3>
-      <div class="foot"><span>United States Department of Justice</span><span>March 3, 2026</span></div>
-    </a></div>
-</div>
-<div class="section-sports">
-  <div class="sh"><div class="sh-label">NY Sports</div><div class="sh-tag">&#127944;</div></div>
-  <div class="sports-grid"><a class="sport-card nhl" href="https://cuse.com/news/2026/3/3/mens-basketball-orange-topped-by-louisville-on-the-road" target="_blank">
-          <div class="sport-league">NHL</div>
-          <h3 style="font-family:'DM Serif Display',serif;font-size:17px;line-height:1.25;color:var(--ink)">Rangers Fall to Blue Jackets 5-4 in Overtime</h3>
-          <div class="foot"><span>TSN</span><span>March 3, 2026</span></div>
-        </a><a class="sport-card mlb" href="https://www.fingerlakes1.com/2026/03/03/syracuse-mens-basketball-drops-fourth-straight-in-loss-at-louisville-full-coverage/" target="_blank">
-          <div class="sport-league">MLB Spring</div>
-          <h3 style="font-family:'DM Serif Display',serif;font-size:17px;line-height:1.25;color:var(--ink)">Mets to Play Israel on March 4</h3>
-          <div class="foot"><span>FOX Sports</span><span>March 4, 2026</span></div>
-        </a></div>
-</div>
-</main>
-<footer>
-  <div class="fi">
-    <div>
-      <div class="ft">The <em>Docket</em></div>
-      <div class="fs">Curated by Pavano &#129302; for <span style="color:var(--gold)">Matt Reilly</span> &bull; Powered by Wally</div>
+    <div class="grid" style="grid-template-columns:1fr;gap:1px;background:var(--rule);">
+      <a class="card" href="https://www.nytimes.com/2026/03/04/business/iran-stocks-natural-gas-oil.html" target="_blank">
+        <div class="card-tag">Markets</div>
+        <h3>Markets in Asia Plummet as Energy Fears Offset AI Optimism</h3>
+        <div class="card-foot"><span>NY Times</span><span>Mar 4, 2026</span></div>
+      </a>
+      <a class="card" href="https://www.nytimes.com/2026/03/03/business/india-workers-iran-persian-gulf.html" target="_blank">
+        <div class="card-tag">Gulf Impact</div>
+        <h3>9 Million Indians Live in the Persian Gulf. The Money They Send Home Is at Risk.</h3>
+        <div class="card-foot"><span>NY Times</span><span>Mar 4, 2026</span></div>
+      </a>
     </div>
-    <div class="fr">Wednesday, March 4, 2026<br>Issue No. 2<br><span style="color:rgba(255,255,255,0.15)">No fabrication. Verified today.</span></div>
+  </div>
+
+  <!-- POLITICS -->
+  <div class="sh">
+    <div class="sh-label">Politics & National</div>
+    <div class="sh-line"></div>
+  </div>
+  <div class="grid g3">
+    <a class="card" href="https://www.npr.org/2026/03/04/nx-s1-5734577/north-carolina-election-results-foushee-allam" target="_blank">
+      <div class="card-tag">NC Senate</div>
+      <h3>NC Rep. Valerie Foushee Holds Narrow Lead Over Challenger Nida Allam</h3>
+      <div class="card-foot"><span>NPR</span><span>Mar 4, 2026</span></div>
+    </a>
+    <a class="card" href="https://www.npr.org/2026/03/03/nx-s1-5734513/north-carolina-congress-election-results" target="_blank">
+      <div class="card-tag">NC Senate</div>
+      <h3>Roy Cooper & Michael Whatley Set to Compete for High-Stakes North Carolina Senate Seat</h3>
+      <div class="card-foot"><span>NPR</span><span>Mar 4, 2026</span></div>
+    </a>
+    <a class="card" href="https://www.npr.org/2026/03/03/nx-s1-5734515/texas-primary-election-results-james-talarico" target="_blank">
+      <div class="card-tag">Texas Primary</div>
+      <h3>Talarico Wins Democratic Nomination for Texas Senate Seat; Republicans Face Runoff</h3>
+      <div class="card-foot"><span>NPR</span><span>Mar 4, 2026</span></div>
+    </a>
+  </div>
+
+  <!-- INTERNATIONAL -->
+  <div class="sh">
+    <div class="sh-label">International</div>
+    <div class="sh-line"></div>
+  </div>
+  <div class="grid g3">
+    <a class="card" href="https://www.bbc.com/news/articles/c93wwq1n542o" target="_blank">
+      <div class="card-tag">EU · Trade</div>
+      <h3>Spain's Sánchez Hits Back at Trump's Trade Threat: "No Threats, No Submission"</h3>
+      <div class="card-foot"><span>BBC World</span><span>Mar 4, 2026</span></div>
+    </a>
+    <a class="card" href="https://www.bbc.com/news/articles/cgjzz4gn64zo" target="_blank">
+      <div class="card-tag">Americas</div>
+      <h3>US and Ecuador Forces Launch Joint Operation Against Drug Trafficking Networks</h3>
+      <div class="card-foot"><span>BBC World</span><span>Mar 4, 2026</span></div>
+    </a>
+    <a class="card" href="https://www.nytimes.com/2026/03/03/business/india-workers-iran-persian-gulf.html" target="_blank">
+      <div class="card-tag">Gulf · Remittances</div>
+      <h3>Gulf Migrant Workers in Limbo as War Threatens Remittance Flows to South Asia</h3>
+      <div class="card-foot"><span>NY Times</span><span>Mar 4, 2026</span></div>
+    </a>
+  </div>
+
+  <!-- FEDERAL / DOJ -->
+  <div class="sh">
+    <div class="sh-label">Federal & DOJ</div>
+    <div class="sh-line"></div>
+    <div class="sh-tag priority">★ Your Beat</div>
+  </div>
+  <div class="grid g3">
+    <a class="card dark" href="https://www.justice.gov/usao-ct/pr/indictment-charges-investment-advisor-defraud" target="_blank">
+      <div class="card-tag gold">DOJ · Criminal</div>
+      <h3>Investment Advisor Indicted for $3.3 Million Fraud</h3>
+      <div class="callout">📌 Wire fraud / securities. DOJ-CT. Watch for related SEC referral.</div>
+      <div class="card-foot"><span>DOJ</span><span>Mar 3, 2026</span></div>
+    </a>
+    <a class="card dark" href="https://www.pbs.org/newshour/nation/minnesota-launches-probe-that-could-bring-ch" target="_blank">
+      <div class="card-tag gold">State vs. Federal</div>
+      <h3>Minnesota Prosecutor Launches Probe Into Federal Immigration Officers</h3>
+      <div class="callout">📌 Supremacy Clause confrontation. DOJ Civil Rights + Criminal Division watching closely.</div>
+      <div class="card-foot"><span>PBS NewsHour</span><span>Mar 4, 2026</span></div>
+    </a>
+    <a class="card dark" href="https://www.justice.gov/usao/pressreleases" target="_blank">
+      <div class="card-tag gold">DOJ · National Security</div>
+      <h3>Federal Charges Filed for Criminal Threats Against the President</h3>
+      <div class="callout">📌 NSD matter. Wartime context likely a factor in charging decision.</div>
+      <div class="card-foot"><span>DOJ</span><span>Mar 3, 2026</span></div>
+    </a>
+  </div>
+
+  <!-- NY SPORTS -->
+  <div class="sh">
+    <div class="sh-label">NY Sports</div>
+    <div class="sh-line"></div>
+    <div class="sh-tag sports">ESPN · Mar 4</div>
+  </div>
+  <div class="sport-grid">
+    <a class="sport-card nhl" href="https://cuse.com/news/2026/3/3/mens-basketball-orange-topped-by-louisville-on-th" target="_blank">
+      <div class="sport-league">NHL · Rangers</div>
+      <h3>Rangers Fall 5–4 in OT to Blue Jackets — Marchenko at 1:04</h3>
+      <div class="card-foot"><span>TSN</span><span>Mar 3, 2026 · 23-29-7</span></div>
+    </a>
+    <a class="sport-card mlb" href="https://www.fingerlakes1.com/2026/03/03/syracuse-mens-basketball-drops-fourth-st" target="_blank">
+      <div class="sport-league">MLB · Spring Training</div>
+      <h3>Mets vs. Israel Today — Grapefruit League, 5-3 on the season</h3>
+      <div class="card-foot"><span>FOX Sports</span><span>Mar 4, 2026</span></div>
+    </a>
+    <a class="sport-card ncaa" href="https://cuse.com/news/2026/3/3/mens-basketball-orange-topped-by-louisville-on-th" target="_blank">
+      <div class="sport-league">NCAAM · Syracuse Orange</div>
+      <h3>Orange Dropped by Louisville — 15-15, 6-11 ACC, Tournament Bubble Fading</h3>
+      <div class="card-foot"><span>Cuse.com</span><span>Mar 3, 2026</span></div>
+    </a>
+  </div>
+
+</div><!-- /wrap -->
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">The <span>Docket</span></div>
+      <div class="footer-meta">For Matt Reilly · Curated by Pavano · Powered by Wally · Sources: AP, NPR, BBC, NYT, DOJ, ESPN</div>
+    </div>
+    <div class="footer-right">Wednesday, March 4, 2026<br>Issue No. 2<br>Verified. No fabrication.</div>
   </div>
 </footer>
+
 </body>
 </html>
