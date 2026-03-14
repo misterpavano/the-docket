@@ -36,6 +36,7 @@ body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-se
 .grid{display:grid;gap:1px;background:var(--rule)}
 .g2{grid-template-columns:1fr 1fr}
 .g3{grid-template-columns:1fr 1fr 1fr}
+.g4{grid-template-columns:1fr 1fr 1fr 1fr}
 .g-wide{grid-template-columns:1.65fr 1fr}
 .card{background:var(--surface);padding:28px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px;transition:background 0.12s}
 .card:hover{background:#FAFAF7}
@@ -60,6 +61,8 @@ body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-se
 .s-politics .card.xl h3{font-size:20px}
 .s-intl .sh-label{background:var(--blue);color:#fff}
 .s-intl .sh-line{background:var(--blue);opacity:0.1}
+.s-usnews .sh-label{background:#2D4A6A;color:#fff}
+.s-usnews .sh-line{background:#2D4A6A;opacity:0.1}
 .s-doj .sh-label{background:var(--gold);color:var(--dark)}
 .s-doj .sh-line{background:var(--gold);opacity:0.18}
 .s-doj .card{background:var(--dark)}
@@ -75,6 +78,17 @@ body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-se
 .s-markets .card .eyebrow{color:var(--amber)}
 .s-markets .card h3{color:#FDE68A;font-size:17px;font-weight:700}
 .s-markets .card .foot{border-color:rgba(217,119,6,0.1);color:rgba(217,119,6,0.35)}
+.s-science .sh-label{background:#1A3A2A;color:#4ADE80}
+.s-science .sh-line{background:#4ADE80;opacity:0.15}
+.s-science .card{background:#0D1F15}
+.s-science .card:hover{background:#122019}
+.s-science .card .eyebrow{color:#4ADE80;opacity:0.7}
+.s-science .card h3{color:#D1FAE5;font-size:15px}
+.s-science .card .foot{border-color:rgba(74,222,128,0.1);color:rgba(74,222,128,0.35)}
+.s-dclocal .sh-label{background:#4A3728;color:#F5DEB3}
+.s-dclocal .sh-line{background:#8B6A4A;opacity:0.2}
+.s-legal .sh-label{background:#3B1F5E;color:#DDD6FE}
+.s-legal .sh-line{background:#7C3AED;opacity:0.15}
 .s-sports .sh-label{color:var(--muted);border:1px solid var(--rule)}
 .s-sports .sh-line{background:var(--rule)}
 .sport-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#181818}
@@ -98,25 +112,24 @@ body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-se
 .sport-news a{display:block;padding:10px 20px;font-size:11.5px;font-weight:500;line-height:1.45;color:rgba(255,255,255,0.38);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.03);transition:color 0.12s}
 .sport-news a:hover{color:rgba(255,255,255,0.75)}
 .sport-empty{padding:10px 20px;font-size:11px;color:rgba(255,255,255,0.18)}
-.foot-wrap{background:var(--dark);margin-top:72px;border-top:2px solid var(--gold)}
-.foot-inner{max-width:1200px;margin:0 auto;padding:28px 48px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
-.foot-brand{font-size:16px;font-weight:900;letter-spacing:-0.03em;color:#fff}
+.foot-wrap{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);margin-top:64px}
+.foot-inner{max-width:1200px;margin:0 auto;padding:32px 48px;display:flex;justify-content:space-between;align-items:flex-start}
+.foot-brand{font-size:20px;font-weight:900;letter-spacing:-0.04em;color:#fff;margin-bottom:6px}
 .foot-brand em{color:var(--gold);font-style:normal}
-.foot-sub{font-size:9.5px;color:rgba(255,255,255,0.18);margin-top:4px}
-.foot-right{font-size:9.5px;color:rgba(255,255,255,0.18);text-align:right;line-height:1.7}
-@media(max-width:900px){.g3,.g-wide,.sport-cards{grid-template-columns:1fr 1fr}.mast-eyebrow,.mast-core,.page,.foot-inner{padding-left:24px;padding-right:24px}}
-@media(max-width:620px){.mast-core{flex-direction:column;align-items:flex-start;padding:40px 20px 32px}.mast-meta{text-align:left}.mast-eyebrow,.page,.foot-inner{padding-left:20px;padding-right:20px}.mast-wordmark{font-size:64px}.glance{grid-template-columns:1fr 1fr}.gi{border-bottom:1px solid rgba(255,255,255,0.05)}.g2,.g3,.g-wide,.sport-cards{grid-template-columns:1fr}}
+.foot-sub{font-size:10px;color:rgba(255,255,255,0.25);line-height:1.7;letter-spacing:0.02em}
+.foot-right{font-size:10.5px;color:rgba(255,255,255,0.25);text-align:right;line-height:1.8}
+@media(max-width:620px){.mast-core{flex-direction:column;align-items:flex-start;padding:40px 20px 32px}.mast-meta{text-align:left}.mast-eyebrow,.page,.foot-inner{padding-left:20px;padding-right:20px}.mast-wordmark{font-size:64px}.glance{grid-template-columns:1fr 1fr}.gi{border-bottom:1px solid rgba(255,255,255,0.05)}.g2,.g3,.g4,.g-wide,.sport-cards{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <header class="mast">
   <div class="mast-eyebrow">
-    <span>U.S. Dept. of Justice &middot; Criminal Division</span>
-    <span><b>The Docket</b> &middot; Saturday, March 14, 2026</span>
+    <span>The <b>Docket</b> &mdash; Daily Intelligence Brief</span>
+    <span>Saturday &middot; March 14, 2026</span>
   </div>
   <div class="mast-core">
     <div>
-      <div class="mast-kicker">Daily Brief &middot; Issue No. 12</div>
+      <div class="mast-kicker">Daily Intelligence Brief</div>
       <div class="mast-wordmark">The <em>Docket</em></div>
     </div>
     <div class="mast-meta">
@@ -128,39 +141,131 @@ body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-se
 </header>
 <div class="glance"><div class="gi"><div class="gi-tag">Breaking</div><div class="gi-text">These are the casualties and cost of the war in Iran 2 weeks into the conflict</div></div><div class="gi"><div class="gi-tag">Politics</div><div class="gi-text">Unlike past eras, anti-Muslim GOP rhetoric draws little pushback from party leaders</div></div><div class="gi"><div class="gi-tag">DOJ</div><div class="gi-text">FBI Identifies Suspect in Michigan Synagogue Attack, Investigation Ongoing</div></div><div class="gi"><div class="gi-tag">Sports</div><div class="gi-text">NY Rangers Face Minnesota Wild in Tonight's Matchup</div></div></div>
 <div class="page">
+
 <div class="section s-breaking">
   <div class="sh"><div class="sh-label">Breaking</div><div class="sh-line"></div></div>
   <div class="grid g-wide">
     <a class="card xl" href="https://www.npr.org/2026/03/14/nx-s1-5746623/iran-war-cost-deaths" target="_blank"><div class="eyebrow">&#128308;&ensp;Top Story</div><h3>These are the casualties and cost of the war in Iran 2 weeks into the conflict</h3><div class="foot"><span>NPR News</span><span>2026-03-14</span></div></a>
-    <div class="grid" style="gap:1px;background:var(--rule)"><a class="card" href="https://www.npr.org/2026/03/13/nx-s1-5746783/potomac-sewage-lawsuit" target="_blank"><h3>Class-action lawsuit filed after the Potomac sewage spill</h3><div class="foot"><span>NPR News</span><span>2026-03-14</span></div></a><a class="card" href="https://www.npr.org/2026/03/13/nx-s1-5747149/grenell-kennedy-center-president" target="_blank"><h3>Kennedy Center president departs – months before the art complex's scheduled closing</h3><div class="foot"><span>NPR News</span><span>2026-03-14</span></div></a></div>
+    <div class="grid" style="gap:1px;background:var(--rule)">
+      <a class="card" href="https://www.npr.org/2026/03/13/nx-s1-5746783/potomac-sewage-lawsuit" target="_blank"><h3>Class-action lawsuit filed after the Potomac sewage spill</h3><div class="foot"><span>NPR News</span><span>2026-03-14</span></div></a>
+      <a class="card" href="https://www.npr.org/2026/03/13/nx-s1-5747149/grenell-kennedy-center-president" target="_blank"><h3>Kennedy Center president departs &#8211; months before the art complex&#8217;s scheduled closing</h3><div class="foot"><span>NPR News</span><span>2026-03-14</span></div></a>
+      <a class="card" href="https://www.npr.org/2026/03/13/nx-s1-5747122/doj-federal-reserve-jerome-powell-jeanine-pirro" target="_blank"><h3>Judge blocks DOJ&#8217;s criminal probe of Federal Reserve, blasting it as political</h3><div class="foot"><span>NPR News</span><span>2026-03-14</span></div></a>
+    </div>
   </div>
 </div>
+
 <div class="section s-politics">
   <div class="sh"><div class="sh-label">Politics &amp; National</div><div class="sh-line"></div></div>
-  <div class="grid g3"><a class="card xl" href="https://www.npr.org/2026/03/13/nx-s1-5746733/unlike-past-eras-anti-muslim-gop-rhetoric-draws-little-pushback-from-party-leaders" target="_blank"><div class="eyebrow">Politics</div><h3>Unlike past eras, anti-Muslim GOP rhetoric draws little pushback from party leaders</h3><div class="foot"><span>NPR Politics</span><span>2026-03-14</span></div></a><a class="card" href="https://www.npr.org/2026/03/13/nx-s1-5745964/muslim-voters-react-to-rep-andy-ogles-comments-that-they-dont-belong" target="_blank"><div class="eyebrow">Politics</div><h3>Muslim voters react to Rep. Andy Ogles' comments that they 'don't belong'</h3><div class="foot"><span>NPR Politics</span><span>2026-03-14</span></div></a><a class="card" href="https://www.npr.org/2026/03/13/nx-s1-5727509/apprenticeships-manufacturing-workforce-trump-arkansas" target="_blank"><div class="eyebrow">Politics</div><h3>Desperate for skilled workers, a furniture maker looks to apprenticeships for relief</h3><div class="foot"><span>NPR Politics</span><span>2026-03-14</span></div></a></div>
+  <div class="grid g3">
+    <a class="card xl" href="https://www.npr.org/2026/03/13/nx-s1-5746733/unlike-past-eras-anti-muslim-gop-rhetoric-draws-little-pushback-from-party-leaders" target="_blank"><div class="eyebrow">Politics</div><h3>Unlike past eras, anti-Muslim GOP rhetoric draws little pushback from party leaders</h3><div class="foot"><span>NPR Politics</span><span>2026-03-14</span></div></a>
+    <a class="card" href="https://www.npr.org/2026/03/13/nx-s1-5745964/muslim-voters-react-to-rep-andy-ogles-comments-that-they-dont-belong" target="_blank"><div class="eyebrow">Politics</div><h3>Muslim voters react to Rep. Andy Ogles&#8217; comments that they &#8216;don&#8217;t belong&#8217;</h3><div class="foot"><span>NPR Politics</span><span>2026-03-14</span></div></a>
+    <a class="card" href="https://www.npr.org/2026/03/13/nx-s1-5727509/apprenticeships-manufacturing-workforce-trump-arkansas" target="_blank"><div class="eyebrow">Economy</div><h3>Desperate for skilled workers, a furniture maker looks to apprenticeships for relief</h3><div class="foot"><span>NPR Politics</span><span>2026-03-14</span></div></a>
+    <a class="card" href="https://www.npr.org/2026/03/13/nx-s1-5713908/bucking-stigma-more-places-turn-to-factory-built-affordable-housing" target="_blank"><div class="eyebrow">Housing</div><h3>Bucking stigma, more places turn to factory-built for affordable housing</h3><div class="foot"><span>NPR Politics</span><span>2026-03-14</span></div></a>
+  </div>
 </div>
+
 <div class="section s-intl">
   <div class="sh"><div class="sh-label">International</div><div class="sh-line"></div></div>
-  <div class="grid g3"><a class="card" href="https://www.bbc.com/news/articles/cq8gj9n12g8o?at_medium=RSS&amp;at_campaign=rss" target="_blank" style="border-left:2px solid var(--red)"><div class="eyebrow" style="color:var(--red)">&#127470;&#127479;&ensp;International</div><h3>More US Marines and warships to be moved to Middle East, reports say</h3><div class="foot"><span>BBC World</span><span>2026-03-14</span></div></a><a class="card" href="https://www.bbc.com/news/articles/cev7111kx9wo?at_medium=RSS&amp;at_campaign=rss" target="_blank" style="border-left:2px solid var(--gold)"><div class="eyebrow" style="color:var(--gold)">&#127466;&#127480;&ensp;Europe</div><h3>Rescuers blame weather and 'underprepared skiers' for rise in Alps avalanche deaths</h3><div class="foot"><span>BBC World</span><span>2026-03-14</span></div></a><a class="card" href="https://www.bbc.com/news/articles/cn9ewxq98e5o?at_medium=RSS&amp;at_campaign=rss" target="_blank" style="border-left:2px solid #3B82F6"><div class="eyebrow" style="color:#3B82F6">&#127758;&ensp;Global</div><h3>Los Angeles asks for investigation into LA28 Olympics chief over Epstein ties</h3><div class="foot"><span>BBC World</span><span>2026-03-14</span></div></a></div>
+  <div class="grid g2">
+    <a class="card" href="https://www.bbc.com/news/articles/cq8gj9n12g8o?at_medium=RSS&amp;at_campaign=rss" target="_blank" style="border-left:2px solid var(--red)"><div class="eyebrow" style="color:var(--red)">&#127470;&#127479;&ensp;Middle East</div><h3>More US Marines and warships to be moved to Middle East, reports say</h3><div class="foot"><span>BBC World</span><span>2026-03-14</span></div></a>
+    <a class="card" href="https://www.bbc.com/news/articles/c79505804lpo?at_medium=RSS&amp;at_campaign=rss" target="_blank" style="border-left:2px solid var(--red)"><div class="eyebrow" style="color:var(--red)">&#127470;&#127479;&ensp;Iran</div><h3>Under drone fire, exiled Kurds wait to confront Iranian regime</h3><div class="foot"><span>BBC World</span><span>2026-03-14</span></div></a>
+    <a class="card" href="https://www.bbc.com/news/articles/cev7111kx9wo?at_medium=RSS&amp;at_campaign=rss" target="_blank" style="border-left:2px solid var(--gold)"><div class="eyebrow" style="color:var(--gold)">&#127466;&#127480;&ensp;Europe</div><h3>Rescuers blame weather and &#8216;underprepared skiers&#8217; for rise in Alps avalanche deaths</h3><div class="foot"><span>BBC World</span><span>2026-03-14</span></div></a>
+    <a class="card" href="https://www.bbc.com/news/articles/cn9ewxq98e5o?at_medium=RSS&amp;at_campaign=rss" target="_blank" style="border-left:2px solid #3B82F6"><div class="eyebrow" style="color:#3B82F6">&#127758;&ensp;Global</div><h3>Los Angeles asks for investigation into LA28 Olympics chief over Epstein ties</h3><div class="foot"><span>BBC World</span><span>2026-03-14</span></div></a>
+  </div>
 </div>
+
+<div class="section s-usnews">
+  <div class="sh"><div class="sh-label">U.S. News</div><div class="sh-line"></div></div>
+  <div class="grid g3">
+    <a class="card xl" href="https://www.bbc.com/news/articles/c1e9yy84we8o?at_medium=RSS&amp;at_campaign=rss" target="_blank"><div class="eyebrow">Iran Conflict</div><h3>Mission accomplished? The 2003 boast that haunts today&#8217;s Iran conflict</h3><div class="foot"><span>BBC US</span><span>2026-03-14</span></div></a>
+    <a class="card" href="https://www.bbc.com/news/articles/cwy6z25y7z0o?at_medium=RSS&amp;at_campaign=rss" target="_blank"><div class="eyebrow">Federal</div><h3>Judge says &#8216;no evidence&#8217; to justify Federal Reserve probe</h3><div class="foot"><span>BBC US</span><span>2026-03-14</span></div></a>
+    <a class="card" href="https://www.bbc.com/news/articles/cly0lpn76ygo?at_medium=RSS&amp;at_campaign=rss" target="_blank"><div class="eyebrow">Crime</div><h3>Fugitive from FBI&#8217;s Top Ten Most Wanted list arrested at record speed</h3><div class="foot"><span>BBC US</span><span>2026-03-14</span></div></a>
+  </div>
+</div>
+
 <div class="section s-markets">
   <div class="sh"><div class="sh-label">Business &amp; Markets</div><div class="sh-line"></div></div>
-  <div class="grid g2"><a class="card" href="https://www.nytimes.com/2026/03/14/world/asia/pakistan-oil-prices.html" target="_blank"><div class="eyebrow">&#9660;&ensp;Markets</div><h3>Surge in Oil Prices Shakes Pakistan’s Already Fragile Economy</h3><div class="foot"><span>NY Times Business</span><span>2026-03-14</span></div></a><a class="card" href="https://www.nytimes.com/2026/03/14/business/china-oil-cars.html" target="_blank"><div class="eyebrow">&#9660;&ensp;Markets</div><h3>China’s Edge in an Oil Shock: Electric Cars and Renewables</h3><div class="foot"><span>NY Times Business</span><span>2026-03-14</span></div></a></div>
+  <div class="grid g2">
+    <a class="card" href="https://www.nytimes.com/2026/03/14/world/asia/pakistan-oil-prices.html" target="_blank"><div class="eyebrow">&#9660;&ensp;Oil Markets</div><h3>Surge in Oil Prices Shakes Pakistan&#8217;s Already Fragile Economy</h3><div class="foot"><span>NY Times Business</span><span>2026-03-14</span></div></a>
+    <a class="card" href="https://www.nytimes.com/2026/03/14/business/china-oil-cars.html" target="_blank"><div class="eyebrow">&#9650;&ensp;Energy</div><h3>China&#8217;s Edge in an Oil Shock: Electric Cars and Renewables</h3><div class="foot"><span>NY Times Business</span><span>2026-03-14</span></div></a>
+    <a class="card" href="https://www.nytimes.com/2026/03/13/business/tiktok-investors-set-to-pay-10-billion-fee-to-trump-administration.html" target="_blank"><div class="eyebrow">Tech &amp; Policy</div><h3>TikTok Investors Set to Pay $10 Billion Fee to Trump Administration</h3><div class="foot"><span>NY Times Business</span><span>2026-03-14</span></div></a>
+    <a class="card" href="https://www.nytimes.com/2026/03/13/business/jared-kushner-affinity-mideast-funds.html" target="_blank"><div class="eyebrow">Government</div><h3>Jared Kushner Solicits Funds for His Firm While Working as Mideast Envoy</h3><div class="foot"><span>NY Times Business</span><span>2026-03-14</span></div></a>
+  </div>
 </div>
+
+<div class="section s-science">
+  <div class="sh"><div class="sh-label">Science &amp; Tech</div><div class="sh-line"></div></div>
+  <div class="grid g3">
+    <a class="card" href="https://www.nytimes.com/2026/03/12/science/nasa-moon-artemis-launch-april.html" target="_blank"><div class="eyebrow">[RETURNING] &#128640;&ensp;Space</div><h3>NASA Says Artemis II Moon Launch Is On Track for April 1</h3><div class="foot"><span>NY Times Science</span><span>2026-03-14</span></div></a>
+    <a class="card" href="https://www.nytimes.com/2026/03/12/science/moon-red-alert-close-call.html" target="_blank"><div class="eyebrow">[RETURNING] &#128640;&ensp;Space</div><h3>Space Jam: NASA&#8217;s MADCAP Team Directs Traffic at the Moon</h3><div class="foot"><span>NY Times Science</span><span>2026-03-14</span></div></a>
+    <a class="card" href="https://www.nytimes.com/2026/03/12/science/moss-forensics-crime.html" target="_blank"><div class="eyebrow">[RETURNING] &#128300;&ensp;Forensics</div><h3>In Criminal Cases, Moss Is Often Underfoot and Overlooked</h3><div class="foot"><span>NY Times Science</span><span>2026-03-14</span></div></a>
+  </div>
+</div>
+
+<div class="section s-dclocal">
+  <div class="sh"><div class="sh-label">DC &amp; Regional</div><div class="sh-line"></div></div>
+  <div class="grid g2">
+    <a class="card" href="https://wtop.com/news/2026/03/que-debes-saber-sobre-la-isla-de-kharg-el-pequeno-afloramiento-de-coral-en-el-corazon-de-la-industria-petrolera-de-iran/" target="_blank"><div class="eyebrow">&#127759;&ensp;Iran / Energy</div><h3>Qu&#233; debes saber sobre la isla de Kharg, el peque&#241;o afloramiento de coral en el coraz&#243;n de la industria petrolera de Ir&#225;n</h3><div class="foot"><span>WTOP News</span><span>2026-03-14</span></div></a>
+    <a class="card" href="https://wtop.com/sports/2026/03/golden-state-takes-on-new-york-seeks-to-break-4-game-skid/" target="_blank"><div class="eyebrow">&#127936;&ensp;NBA</div><h3>Golden State takes on New York, seeks to break 4-game skid</h3><div class="foot"><span>WTOP News</span><span>2026-03-14</span></div></a>
+    <a class="card" href="https://wtop.com/sports/2026/03/cleveland-hosts-dallas-for-out-of-conference-game/" target="_blank"><div class="eyebrow">&#127936;&ensp;NBA</div><h3>Cleveland hosts Dallas for out-of-conference game</h3><div class="foot"><span>WTOP News</span><span>2026-03-14</span></div></a>
+    <a class="card" href="https://wtop.com/sports/2026/03/detroit-faces-toronto-on-3-game-win-streak/" target="_blank"><div class="eyebrow">&#127936;&ensp;NBA</div><h3>Detroit faces Toronto on 3-game win streak</h3><div class="foot"><span>WTOP News</span><span>2026-03-14</span></div></a>
+  </div>
+</div>
+
 <div class="section s-doj">
   <div class="sh"><div class="sh-label">&#9733;&ensp;Federal &amp; DOJ &middot; Your Beat</div><div class="sh-line"></div></div>
-  <div class="grid g3"><a class="card" href="https://www.net25.com/news/article-581" target="_blank"><div class="eyebrow">NET25::News / Bangladesh Sangbad Sangstha (BSS) / WRAL</div><h3>FBI Identifies Suspect in Michigan Synagogue Attack, Investigation Ongoing</h3><div class="doj-note">&#128204;&ensp;The FBI confirmed the Temple Israel synagogue attack in suburban Detroit was a targeted act of violence, identifying Aym</div><div class="foot"><span>NET25::News / Bangladesh Sangbad Sangstha (BSS) / WRAL</span><span>March 14, 2026</span></div></a><a class="card" href="https://www.bssnews.net/international/368695" target="_blank"><div class="eyebrow">Justice.gov</div><h3>Guatemalan National Indicted for Assaulting Federal Officer in Louisiana</h3><div class="doj-note">&#128204;&ensp;Jacobo Eduardo US-Real, an 18-year-old Guatemalan national, was indicted on March 5, 2026, for assaulting a U.S. Immigra</div><div class="foot"><span>Justice.gov</span><span>March 12, 2026</span></div></a><a class="card" href="https://www.wral.com/news/ap/057b1-what-to-know-about-attacks-at-a-virginia-university-and-michigan-synagogue/" target="_blank"><div class="eyebrow">Justice.gov</div><h3>Queens Man Indicted for Sex Trafficking Five Victims, Including Three Minors</h3><div class="doj-note">&#128204;&ensp;Tyrone Stylistic Crooks was charged in a 12-count indictment with sex trafficking five victims, including three minor gi</div><div class="foot"><span>Justice.gov</span><span>March 12, 2026</span></div></a></div>
+  <div class="grid g3">
+    <a class="card" href="https://www.net25.com/news/article-581" target="_blank"><div class="eyebrow">FBI / Synagogue Attack</div><h3>FBI Identifies Suspect in Michigan Synagogue Attack, Investigation Ongoing</h3><div class="foot"><span>NET25 News</span><span>March 14, 2026</span></div></a>
+    <a class="card" href="https://www.bssnews.net/international/368695" target="_blank"><div class="eyebrow">Federal Indictment</div><h3>Guatemalan National Indicted for Assaulting Federal Officer in Louisiana</h3><div class="foot"><span>Justice.gov</span><span>March 12, 2026</span></div></a>
+    <a class="card" href="https://www.wral.com/news/ap/057b1-what-to-know-about-attacks-at-a-virginia-university-and-michigan-synagogue/" target="_blank"><div class="eyebrow">Federal Indictment</div><h3>Queens Man Indicted for Sex Trafficking Five Victims, Including Three Minors</h3><div class="foot"><span>Justice.gov</span><span>March 12, 2026</span></div></a>
+  </div>
 </div>
+
+<div class="section s-legal">
+  <div class="sh"><div class="sh-label">Legal &amp; Courts</div><div class="sh-line"></div></div>
+  <div class="grid g3">
+    <a class="card" href="https://www.justice.gov/usao-edla/pr/guatemalan-illegal-alien-indicted-assaulting-federal-officer" target="_blank"><div class="eyebrow">Supreme Court</div><h3>Supreme Court Observes Mandatory Menstrual Leave Could Harm Women&#8217;s Careers</h3><div class="foot"><span>Vajiram &amp; Ravi</span><span>March 14, 2026</span></div></a>
+    <a class="card" href="https://www.justice.gov/usao-edny/pr/queens-man-indicted-sex-trafficking-five-victims-including-three-minors-hotels-long" target="_blank"><div class="eyebrow">Supreme Court</div><h3>Nine-Judge Supreme Court Bench to Hear Arguments on &#8216;Industry&#8217; Definition</h3><div class="foot"><span>The Hindu</span><span>March 14, 2026</span></div></a>
+    <a class="card" href="https://vajiramandravi.com/current-affairs/upsc-mains-current-affairs/2026/03/14/" target="_blank"><div class="eyebrow">FBI / Fugitive</div><h3>FBI Ten Most Wanted Fugitive Apprehended in Mexico</h3><div class="foot"><span>Justice.gov</span><span>March 12, 2026</span></div></a>
+  </div>
+</div>
+
 <div class="section s-sports">
   <div class="sh"><div class="sh-label">NY Sports</div><div class="sh-line"></div></div>
-  <div class="sport-cards"><div class="sport-card"><div class="sport-board nhl"><div class="sport-home"><div class="sport-league">NHL</div><div class="sport-name">Rangers</div><div class="sport-rec">27-30-8</div></div><div class="sport-mid"><div class="sport-gdate">Tonight</div><div class="sport-gtime">6:00 PM ET</div><div class="sport-gvs">@</div></div><div class="sport-away"><div class="sport-opp-label">Opponent</div><div class="sport-opp">Minnesota</div></div></div><div class="sport-news"><a href="https://www.thehindu.com/news/national/nine-judge-sc-bench-to-hear-arguments-on-march-17-on-definition-of-industry/article70742485.ece" target="_blank">NY Rangers Face Minnesota Wild in Tonight's Matchup</a></div></div><div class="sport-card"><div class="sport-board mlb"><div class="sport-home"><div class="sport-league">MLB</div><div class="sport-name">Mets</div><div class="sport-rec">10-7-1</div></div><div class="sport-mid"><div class="sport-gdate">Tonight</div><div class="sport-gtime">6:05 PM ET</div><div class="sport-gvs">@</div></div><div class="sport-away"><div class="sport-opp-label">Opponent</div><div class="sport-opp">Houston</div></div></div><div class="sport-news"><a href="https://www.justice.gov/opa/pr/fbi-ten-most-wanted-fugitive-charged-double-homicide-apprehended-mexico" target="_blank">Mets Reliever A.J. Minter Aims for May Return After Injury</a></div></div><div class="sport-card"><div class="sport-board ncaa"><div class="sport-home"><div class="sport-league">NCAAM</div><div class="sport-name">Syracuse</div><div class="sport-rec">15-17</div></div><div class="sport-mid"><div class="sport-gdate" style="color:rgba(255,255,255,0.2)">No upcoming game</div></div><div class="sport-away"></div></div><div class="sport-news"><div class="sport-empty">No news today.</div></div></div></div>
+  <div class="sport-cards">
+    <div class="sport-card">
+      <div class="sport-board nhl">
+        <div class="sport-home"><div class="sport-league">NHL</div><div class="sport-name">Rangers</div><div class="sport-rec">27-30-8</div></div>
+        <div class="sport-mid"><div class="sport-gdate">Tonight</div><div class="sport-gtime">7:00 PM ET</div><div class="sport-gvs">vs</div></div>
+        <div class="sport-away"><div class="sport-opp-label">Opponent</div><div class="sport-opp">Minnesota</div></div>
+      </div>
+      <div class="sport-news"><a href="https://www.thehindu.com/news/national/nine-judge-sc-bench-to-hear-arguments-on-march-17-on-definition-of-industry/article70742485.ece" target="_blank">NY Rangers Face Minnesota Wild in Tonight&#8217;s Matchup</a></div>
+    </div>
+    <div class="sport-card">
+      <div class="sport-board mlb">
+        <div class="sport-home"><div class="sport-league">MLB</div><div class="sport-name">Mets</div><div class="sport-rec">Spring Training</div></div>
+        <div class="sport-mid"><div class="sport-gdate">Injury News</div></div>
+        <div class="sport-away"></div>
+      </div>
+      <div class="sport-news"><a href="https://www.justice.gov/opa/pr/fbi-ten-most-wanted-fugitive-charged-double-homicide-apprehended-mexico" target="_blank">Mets Reliever A.J. Minter Aims for May Return After Injury</a></div>
+    </div>
+    <div class="sport-card">
+      <div class="sport-board ncaa">
+        <div class="sport-home"><div class="sport-league">NCAAM</div><div class="sport-name">March Madness</div></div>
+        <div class="sport-mid"><div class="sport-gdate" style="color:rgba(255,255,255,0.2)">Selection Sunday</div></div>
+        <div class="sport-away"></div>
+      </div>
+      <div class="sport-news"><div class="sport-empty">Bracket revealed today.</div></div>
+    </div>
+  </div>
 </div>
+
 </div>
 <footer class="foot-wrap">
   <div class="foot-inner">
     <div>
       <div class="foot-brand">The <em>Docket</em></div>
-      <div class="foot-sub">For Matt Reilly &middot; Curated by Pavano &middot; Sources: AP, NPR, BBC, NYT, DOJ.gov, ESPN &middot; Verified. No fabrication.</div>
+      <div class="foot-sub">For Matt Reilly &middot; Curated by Pavano &middot; Sources: AP, NPR, BBC, NYT, DOJ.gov, WTOP &middot; Verified. No fabrication.</div>
     </div>
     <div class="foot-right">Saturday, March 14, 2026<br>Issue No. 12</div>
   </div>
